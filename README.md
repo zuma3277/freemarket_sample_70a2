@@ -25,7 +25,7 @@ Things you may want to cover:
 
 ## Credit-Cards テーブル
 
-| column          | Type    | Options                   |
+| Column          | Type    | Options                   |
 | --------------- | ------- | ------------------------- |
 | card-number     | integer | null: false, unique: true |
 | expiration_date | integer | null: false               |
@@ -37,7 +37,7 @@ Things you may want to cover:
 
 ## Profiles テーブル
 
-| column           | Type       | Options                        |
+| Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | family_name      | string     | null: false                    |
 | first_name       | string     | null: false                    |
@@ -51,9 +51,9 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## destination テーブル
+## Destination テーブル
 
-| column                       | Type       | Options                        |
+| Column                       | Type       | Options                        |
 | ---------------------------- | ---------- | ------------------------------ |
 | user_id                      | references | null: false, foreign_key: true |
 | destination_family_name      | string     | null: false                    |
@@ -75,7 +75,7 @@ Things you may want to cover:
 
 ## Products テーブル
 
-| column               | Type       | Options                        |
+| Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
 | name                 | string     | null: false                    |
 | price                | integer    | null: false                    |
@@ -93,14 +93,14 @@ Things you may want to cover:
 - belongs_to :size
 - belongs_to :category
 - belongs_to :shipment
-- belongs_to :produc_condition
+- belongs_to :produc_conditions
 - has_many :favorite_products dependent: :destroy
 - has_many :comments dependent: : destory
 - has_many :product_img
 
-## users テーブル
+## Users テーブル
 
-| column        | Type   | Options                             |
+| Column        | Type   | Options                             |
 | ------------- | ------ | ----------------------------------- |
 | nickname      | string | null: false                         |
 | emailadress   | string | null: false, unque:true, index:ture |
@@ -116,10 +116,10 @@ Things you may want to cover:
 
 ## Comments テーブル
 
-| column     | Type       | Options                        |
+| Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | user_id    | references | null: false,foreign_key: true  |
-| product_id | references | null: false, foreign_key: true |
+| product_id | references | null: false,foreign_key: true  |
 | comment    | text       | null: false                    |
 
 ### Association
@@ -127,18 +127,17 @@ Things you may want to cover:
 - belong_to :user
 - belong_to :products
 
+## Product_imgsテーブル
 
-### Product_imgsテーブル
-
-|Column    |Type      |Options                      |
-|----------|----------|-----------------------------|
-|Product_id|references|null: false, foregn_key: true|
-|image     |string    |null: false                  |
+|Column    |Type      |Options                       |
+|----------|----------|------------------------------|
+|Product_id|references|null: false, foreign_key: true|
+|image     |string    |null: false                   |
 
 ### Association
 - belong_to :products
 
-### Categoriesテーブル
+## Categoriesテーブル
 
 |Column  |Type  |Options    |
 |--------|------|-----------|
@@ -148,11 +147,52 @@ Things you may want to cover:
 ### Association
 - has_many :products
 
-### Sizesテーブル
+## Sizesテーブル
 
 |Column|Type  |Options    |
 |------|------|-----------|
-|size  |string|null: fales|
+|size  |string|null: false|
+
+### Association
+
+- has_many :products
+
+## Favorite_productsテーブル
+
+|Column    |Type      |Options                        |
+|----------|----------|-------------------------------|
+|user_id   |references|null: false, foreign_key: true |
+|Product_id|references|null: false, foreign_key: true |
+
+### Association
+
+- belong_to :user
+- belong_to :products
+
+## Brandsテーブル
+
+|Column|Type  |Options    |
+|------|------|-----------|
+|name  |string|           |
+
+### Association
+
+- has_many :products
+
+## Product_conditionsテーブル
+
+|Column             |Type  |Options    |
+|-------------------|------|-----------|
+|product_condition |string|null: false |
+
+### Association
+- has_many :products
+
+## Shipmentテーブル
+
+|Column   |Type  |Options    |
+|---------|------|-----------|
+|shipment |string|null: false|
 
 ### Association
 - has_many :products
