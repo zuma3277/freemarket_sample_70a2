@@ -51,6 +51,27 @@ Things you may want to cover:
 
 - belongs_to :user
 
+
+| column                       | Type       | Options                        |
+| ---------------------------- | ---------- | ------------------------------ |
+| user_id                      | references | null: false, foreign_key: true |
+| destination_family_name      | string     | null: false                    |
+| destination_first_name       | string     | null: false                    |
+| destination_family_name_kana | string     | null: false                    |
+| destination_first_name_kana  | string     | null: false                    |
+| postal_code                  | integer    | null: false                    |
+| prefecture(use gem)          | integer    | null: false                    |
+| prefecture(don't user gem)   | string     | null: false                    |
+| city                         | string     | null: false                    |
+| address                      | string     | null: false                    |
+| building_name                | string     |                                |
+| phone_namber                 | integer    | null: false, unque:true        |
+
+### Association
+
+- belongs_to :user
+
+
 ## Products テーブル
 
 | column               | Type       | Options                        |
