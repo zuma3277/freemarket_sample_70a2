@@ -5,70 +5,102 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+- Ruby version
 
-* System dependencies
+- System dependencies
 
-* Configuration
+- Configuration
 
-* Database creation
+- Database creation
 
-* Database initialization
+- Database initialization
 
-* How to run the test suite
+- How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+- Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+- Deployment instructions
 
-* ...
+- ...
 
-## Credit-Cardsテーブル
+## Credit-Cards テーブル
 
-|column|Type|Options|
-|------|----|-------|
-|card-number|integer|null: false, unique: true|
-|expiration_date|integer|null: false|
-|security_code|integer|null: false|
+| column          | Type    | Options                   |
+| --------------- | ------- | ------------------------- |
+| card-number     | integer | null: false, unique: true |
+| expiration_date | integer | null: false               |
+| security_code   | integer | null: false               |
 
 ### Association
+
 - belongs_to :user
 
-## Profilesテーブル
+## Profiles テーブル
 
-|column|Type|Options|
-|------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|Birthday|date|null: false|
-|introduction|text|
-|user_id|references|null: false, foreign_key: true|
+| column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| family_name      | string     | null: false                    |
+| first_name       | string     | null: false                    |
+| family_name_kana | string     | null: false                    |
+| first_name_kana  | string     | null: false                    |
+| Birthday         | date       | null: false                    |
+| introduction     | text       |
+| user_id          | references | null: false, foreign_key: true |
 
 ### Association
+
 - belongs_to :user
 
-## Productsテーブル
+## Products テーブル
 
-|column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|price|integer|null: false|
-|category_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
-|product_condition_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
-|dealing_status|enum|null: false|
-|shipment_id|references|null: false, foreign_key: true|
-|product_introduction|text|
+| column               | Type       | Options                        |
+| -------------------- | ---------- | ------------------------------ |
+| name                 | string     | null: false                    |
+| price                | integer    | null: false                    |
+| category_id          | references | null: false, foreign_key: true |
+| brand_id             | references | null: false, foreign_key: true |
+| product_condition_id | references | null: false, foreign_key: true |
+| size_id              | references | null: false, foreign_key: true |
+| dealing_status       | enum       | null: false                    |
+| shipment_id          | references | null: false, foreign_key: true |
+| product_introduction | text       |
 
 ### Association
+
 - belongs_to :brand
 - belongs_to :size
 - belongs_to :category
 - belongs_to :shipment
 - belongs_to :produc_condition
 - has_many :favorite_products dependent: :destroy
-- has_many :comments   dependent: : destory
+- has_many :comments dependent: : destory
 - has_many :product_img
+
+## users テーブル
+
+| column        | Type   | Options                             |
+| ------------- | ------ | ----------------------------------- |
+| nickname      | string | null: false                         |
+| emailadress   | string | null: false, unque:true, index:ture |
+| user_password | string | null: false                         |
+
+### Association
+
+- has_one :credit_card dependent: :destroy
+- has_one :profile dependent: :destroy
+- has_many :comments dependent: :destroy
+- has_one :destination dependent: :destroy
+- has_many :favorite_products dependent: :destroy
+
+## Comments テーブル
+
+| column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| user_id    | references | null: false,foreign_key: true  |
+| product_id | references | null: false, foreign_key: true |
+| comment    | text       | null: false                    |
+
+### Association
+
+- belong_to :user
+- belong_to :products
