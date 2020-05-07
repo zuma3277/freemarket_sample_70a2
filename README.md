@@ -51,6 +51,7 @@ Things you may want to cover:
 
 - belongs_to :user
 
+## destination テーブル
 
 | column                       | Type       | Options                        |
 | ---------------------------- | ---------- | ------------------------------ |
