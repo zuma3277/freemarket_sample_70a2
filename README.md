@@ -126,3 +126,33 @@ Things you may want to cover:
 
 - belong_to :user
 - belong_to :products
+
+
+### Product_imgsテーブル
+
+|Column    |Type      |Options                      |
+|----------|----------|-----------------------------|
+|Product_id|references|null: false, foregn_key: true|
+|image     |string    |null: false                  |
+
+### Association
+- belong_to :products
+
+### Categoriesテーブル
+
+|Column  |Type  |Options    |
+|--------|------|-----------|
+|name    |string|null: false|
+|ancestry|string|null: false|
+
+### Association
+- has_many :products
+
+### Sizesテーブル
+
+|Column|Type  |Options    |
+|------|------|-----------|
+|size  |string|null: fales|
+
+### Association
+- has_many :products
