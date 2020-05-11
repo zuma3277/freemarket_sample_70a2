@@ -23,17 +23,21 @@ Things you may want to cover:
 
 - ...
 
-## Credit-Cards テーブル
+## Users テーブル
 
-| Column          | Type    | Options                   |
-| --------------- | ------- | ------------------------- |
-| card-number     | integer | null: false, unique: true |
-| expiration_date | integer | null: false               |
-| security_code   | integer | null: false               |
+| Column        | Type   | Options                             |
+| ------------- | ------ | ----------------------------------- |
+| nickname      | string | null: false                         |
+| emailadress   | string | null: false, unque:true, index:ture |
+| user_password | string | null: false                         |
 
 ### Association
 
-- belongs_to :user
+- has_one :credit_card dependent: :destroy
+- has_one :profile dependent: :destroy
+- has_many :comments dependent: :destroy
+- has_one :destination dependent: :destroy
+- has_many :favorite_products dependent: :destroy
 
 ## Profiles テーブル
 
@@ -46,6 +50,18 @@ Things you may want to cover:
 | Birthday         | date       | null: false                    |
 | introduction     | text       |
 | user_id          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## Credit-Cards テーブル
+
+| Column          | Type    | Options                   |
+| --------------- | ------- | ------------------------- |
+| card-number     | integer | null: false, unique: true |
+| expiration_date | integer | null: false               |
+| security_code   | integer | null: false               |
 
 ### Association
 
@@ -72,6 +88,30 @@ Things you may want to cover:
 
 - belongs_to :user
 
+## Comments テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| user_id    | references | null: false,foreign_key: true  |
+| product_id | references | null: false,foreign_key: true  |
+| comment    | text       | null: false                    |
+
+### Association
+
+- belong_to :user
+- belong_to :products
+
+## Favorite_productsテーブル
+
+|Column    |Type      |Options                        |
+|----------|----------|-------------------------------|
+|user_id   |references|null: false, foreign_key: true |
+|Product_id|references|null: false, foreign_key: true |
+
+### Association
+
+- belong_to :user
+- belong_to :products
 
 ## Products テーブル
 
@@ -97,35 +137,6 @@ Things you may want to cover:
 - has_many :favorite_products dependent: :destroy
 - has_many :comments dependent: : destory
 - has_many :product_img
-
-## Users テーブル
-
-| Column        | Type   | Options                             |
-| ------------- | ------ | ----------------------------------- |
-| nickname      | string | null: false                         |
-| emailadress   | string | null: false, unque:true, index:ture |
-| user_password | string | null: false                         |
-
-### Association
-
-- has_one :credit_card dependent: :destroy
-- has_one :profile dependent: :destroy
-- has_many :comments dependent: :destroy
-- has_one :destination dependent: :destroy
-- has_many :favorite_products dependent: :destroy
-
-## Comments テーブル
-
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| user_id    | references | null: false,foreign_key: true  |
-| product_id | references | null: false,foreign_key: true  |
-| comment    | text       | null: false                    |
-
-### Association
-
-- belong_to :user
-- belong_to :products
 
 ## Product_imgsテーブル
 
@@ -156,18 +167,6 @@ Things you may want to cover:
 ### Association
 
 - has_many :products
-
-## Favorite_productsテーブル
-
-|Column    |Type      |Options                        |
-|----------|----------|-------------------------------|
-|user_id   |references|null: false, foreign_key: true |
-|Product_id|references|null: false, foreign_key: true |
-
-### Association
-
-- belong_to :user
-- belong_to :products
 
 ## Brandsテーブル
 
