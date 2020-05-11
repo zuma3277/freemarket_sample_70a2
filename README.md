@@ -38,6 +38,7 @@ Things you may want to cover:
 - has_many :comments dependent: :destroy
 - has_one :destination dependent: :destroy
 - has_many :favorite_products dependent: :destroy
+- has_many :products dependent:destroy
 
 ## Profiles テーブル
 
@@ -55,11 +56,11 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## Credit-Cards テーブル
+## Credit_Cards テーブル
 
 | Column          | Type    | Options                   |
 | --------------- | ------- | ------------------------- |
-| card-number     | integer | null: false, unique: true |
+| card_number     | integer | null: false, unique: true |
 | expiration_date | integer | null: false               |
 | security_code   | integer | null: false               |
 
@@ -98,8 +99,8 @@ Things you may want to cover:
 
 ### Association
 
-- belong_to :user
-- belong_to :products
+- belongs_to :user
+- belongs_to :product
 
 ## Favorite_productsテーブル
 
@@ -110,8 +111,8 @@ Things you may want to cover:
 
 ### Association
 
-- belong_to :user
-- belong_to :products
+- belongs_to :user
+- belongs_to :product
 
 ## Products テーブル
 
@@ -129,6 +130,7 @@ Things you may want to cover:
 
 ### Association
 
+- belongs_to :user
 - belongs_to :brand
 - belongs_to :size
 - belongs_to :category
@@ -146,7 +148,7 @@ Things you may want to cover:
 |image     |string    |null: false                   |
 
 ### Association
-- belong_to :products
+- belongs_to :products
 
 ## Categoriesテーブル
 
