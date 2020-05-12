@@ -35,6 +35,7 @@ Things you may want to cover:
 
 - has_one :credit_card dependent: :destroy
 - has_one :profile dependent: :destroy
+- has_one :address dependent: :destroy
 - has_many :comments dependent: :destroy
 - has_one :destination dependent: :destroy
 - has_many :favorite_products dependent: :destroy
@@ -63,6 +64,27 @@ Things you may want to cover:
 | card_number     | integer | null: false, unique: true |
 | expiration_date | integer | null: false               |
 | security_code   | integer | null: false               |
+
+### Association
+
+- belongs_to :user
+
+## Address テーブル
+
+| Column                       | Type       | Options                        |
+| ---------------------------- | ---------- | ------------------------------ |
+| user_id                      | references | null: false, foreign_key: true |
+| destination_family_name      | string     | null: false                    |
+| destination_first_name       | string     | null: false                    |
+| destination_family_name_kana | string     | null: false                    |
+| destination_first_name_kana  | string     | null: false                    |
+| postal_code                  | integer    | null: false                    |
+| prefecture(use gem)          | integer    | null: false                    |
+| prefecture(don't user gem)   | string     | null: false                    |
+| city                         | string     | null: false                    |
+| address                      | string     | null: false                    |
+| building_name                | string     |                                |
+| phone_namber                 | integer    | null: false, unque:true        |
 
 ### Association
 
@@ -135,7 +157,7 @@ Things you may want to cover:
 - belongs_to :size
 - belongs_to :category
 - belongs_to :shipment
-- belongs_to :produc_conditions
+- belongs_to :product_conditions
 - has_many :favorite_products dependent: :destroy
 - has_many :comments dependent: : destory
 - has_many :product_img
@@ -148,7 +170,7 @@ Things you may want to cover:
 |image     |string    |null: false                   |
 
 ### Association
-- belongs_to :products
+- belong_to :products
 
 ## Categoriesテーブル
 
