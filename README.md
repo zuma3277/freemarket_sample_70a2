@@ -157,7 +157,7 @@ Things you may want to cover:
 - belongs_to :size
 - belongs_to :category
 - belongs_to :shipment
-- belongs_to :product_conditions
+- belong_to :product_conditions
 - has_many :favorite_products dependent: :destroy
 - has_many :comments dependent: : destory
 - has_many :product_img
