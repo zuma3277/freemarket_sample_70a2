@@ -59,11 +59,12 @@ Things you may want to cover:
 
 ## Credit_Cards テーブル
 
-| Column          | Type    | Options                   |
-| --------------- | ------- | ------------------------- |
-| card_number     | integer | null: false, unique: true |
-| expiration_date | integer | null: false               |
-| security_code   | integer | null: false               |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user_id         | references | null: false, foreign_key: true |
+| card_number     | integer    | null: false, unique: true      |
+| expiration_date | integer    | null: false                    |
+| security_code   | integer    | null: false                    |
 
 ### Association
 
