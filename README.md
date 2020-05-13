@@ -23,17 +23,23 @@ Things you may want to cover:
 
 - ...
 
-## Credit-Cards テーブル
+## Users テーブル
 
-| Column          | Type    | Options                   |
-| --------------- | ------- | ------------------------- |
-| card-number     | integer | null: false, unique: true |
-| expiration_date | integer | null: false               |
-| security_code   | integer | null: false               |
+| Column        | Type   | Options                             |
+| ------------- | ------ | ----------------------------------- |
+| nickname      | string | null: false                         |
+| emailadress   | string | null: false, unque:true, index:ture |
+| user_password | string | null: false                         |
 
 ### Association
 
-- belongs_to :user
+- has_one :credit_card dependent: :destroy
+- has_one :profile dependent: :destroy
+- has_one :address dependent: :destroy
+- has_many :comments dependent: :destroy
+- has_one :destination dependent: :destroy
+- has_many :favorite_products dependent: :destroy
+- has_many :products dependent:destroy
 
 ## Profiles テーブル
 
@@ -46,6 +52,40 @@ Things you may want to cover:
 | Birthday         | date       | null: false                    |
 | introduction     | text       |
 | user_id          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## Credit_Cards テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user_id         | references | null: false, foreign_key: true |
+| card_number     | integer    | null: false, unique: true      |
+| expiration_date | integer    | null: false                    |
+| security_code   | integer    | null: false                    |
+
+### Association
+
+- belongs_to :user
+
+## Address テーブル
+
+| Column                       | Type       | Options                        |
+| ---------------------------- | ---------- | ------------------------------ |
+| user_id                      | references | null: false, foreign_key: true |
+| destination_family_name      | string     | null: false                    |
+| destination_first_name       | string     | null: false                    |
+| destination_family_name_kana | string     | null: false                    |
+| destination_first_name_kana  | string     | null: false                    |
+| postal_code                  | integer    | null: false                    |
+| prefecture(use gem)          | integer    | null: false                    |
+| prefecture(don't user gem)   | string     | null: false                    |
+| city                         | string     | null: false                    |
+| address                      | string     | null: false                    |
+| building_name                | string     |                                |
+| phone_namber                 | integer    | null: false, unque:true        |
 
 ### Association
 
@@ -72,11 +112,36 @@ Things you may want to cover:
 
 - belongs_to :user
 
+## Comments テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| user_id    | references | null: false,foreign_key: true  |
+| product_id | references | null: false,foreign_key: true  |
+| comment    | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :product
+
+## Favorite_productsテーブル
+
+|Column    |Type      |Options                        |
+|----------|----------|-------------------------------|
+|user_id   |references|null: false, foreign_key: true |
+|Product_id|references|null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :product
 
 ## Products テーブル
 
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
+| user_id              | references |null: false, foreign_key: true | 
 | name                 | string     | null: false                    |
 | price                | integer    | null: false                    |
 | category_id          | references | null: false, foreign_key: true |
@@ -89,43 +154,15 @@ Things you may want to cover:
 
 ### Association
 
+- belongs_to :user
 - belongs_to :brand
 - belongs_to :size
 - belongs_to :category
 - belongs_to :shipment
-- belongs_to :produc_conditions
+- belong_to :product_condition
 - has_many :favorite_products dependent: :destroy
 - has_many :comments dependent: : destory
-- has_many :product_img
-
-## Users テーブル
-
-| Column        | Type   | Options                             |
-| ------------- | ------ | ----------------------------------- |
-| nickname      | string | null: false                         |
-| emailadress   | string | null: false, unque:true, index:ture |
-| user_password | string | null: false                         |
-
-### Association
-
-- has_one :credit_card dependent: :destroy
-- has_one :profile dependent: :destroy
-- has_many :comments dependent: :destroy
-- has_one :destination dependent: :destroy
-- has_many :favorite_products dependent: :destroy
-
-## Comments テーブル
-
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| user_id    | references | null: false,foreign_key: true  |
-| product_id | references | null: false,foreign_key: true  |
-| comment    | text       | null: false                    |
-
-### Association
-
-- belong_to :user
-- belong_to :products
+- has_many :product_imgs
 
 ## Product_imgsテーブル
 
@@ -135,7 +172,7 @@ Things you may want to cover:
 |image     |string    |null: false                   |
 
 ### Association
-- belong_to :products
+- belong_to :product
 
 ## Categoriesテーブル
 
@@ -156,18 +193,6 @@ Things you may want to cover:
 ### Association
 
 - has_many :products
-
-## Favorite_productsテーブル
-
-|Column    |Type      |Options                        |
-|----------|----------|-------------------------------|
-|user_id   |references|null: false, foreign_key: true |
-|Product_id|references|null: false, foreign_key: true |
-
-### Association
-
-- belong_to :user
-- belong_to :products
 
 ## Brandsテーブル
 
