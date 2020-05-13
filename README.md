@@ -158,10 +158,10 @@ Things you may want to cover:
 - belongs_to :size
 - belongs_to :category
 - belongs_to :shipment
-- belong_to :product_conditions
+- belong_to :product_condition
 - has_many :favorite_products dependent: :destroy
 - has_many :comments dependent: : destory
-- has_many :product_img
+- has_many :product_imgs
 
 ## Product_imgsテーブル
 
@@ -171,7 +171,7 @@ Things you may want to cover:
 |image     |string    |null: false                   |
 
 ### Association
-- belong_to :products
+- belong_to :product
 
 ## Categoriesテーブル
 
