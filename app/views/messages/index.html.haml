@@ -110,11 +110,13 @@
                 前の商品
             %li.next-item
               %a{:href => "#"}
-                %span 後ろの商品
+                %span 
+                後ろの商品
                 %i.fa.fa-angle-right
           .relation-item
             %a{:href => "#"} ベビー・キッズをもっと見る
-            .productLists
+            /* 関連アイテムの商品窓の表示（参考：トップページの下の方にあるやつ）*/
+            .relation-item__lists
 
 .footer
   = render partial: 'messages/footer'

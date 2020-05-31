@@ -108,7 +108,7 @@ body {
             text-align: center;
             display: flex;
             flex-direction: column;
-            > span {
+            span {
               font-size: 46px;
               font-weight: bold;
               margin: 0 10px 0 0;
@@ -193,7 +193,7 @@ body {
           background-color: #fff;
           margin: 10px 0;
           text-align: center;
-          #comment-box {
+          textarea {
             width: 100%;
             min-height: 104px;
             padding: 10px;
