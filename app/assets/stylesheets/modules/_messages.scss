@@ -124,17 +124,17 @@ body {
           }
           &--table {
             margin-bottom: 20px;
-            > table {
+            table {
               width: 100%;
               height: 375px;
               border-collapse: collapse;
               border: 1px solid #f8f8f8;
-              > tbody {
+              tbody {
                 display: table-row-group;
                 vertical-align: middle;
                 border-color: inherit;
-                > tr {
-                  > th {
+                tr {
+                  th {
                     width: 20%;
                     background-color: #eee;
                     font-weight: 400;
@@ -143,11 +143,15 @@ body {
                     font-size: 14px;
                     text-align: center;
                   }
-                  > td {
+                  td {
                     width: 61%;
                     padding: 15px 15px;
                     border: 1px solid #dedede;
                     font-size: 14px;
+                    a {
+                      text-decoration: none;
+                      color: #3CCACE;
+                    }
                   }
                 }
               }
