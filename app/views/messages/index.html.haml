@@ -3,6 +3,26 @@
 
 %html
   %body
+    %nav.root
+      %ul
+        %li
+          %a{:href => "/"} FURIMA
+        %li
+          %i.fa.fa-angle-right
+        %li
+          %a{:href => "#"} 大カテゴリー
+        %li
+          %i.fa.fa-angle-right
+        %li
+          %a{:href => "#"} 中カテゴリー
+        %li
+          %i.fa.fa-angle-right
+        %li
+          %a{:href => "#"} 小カテゴリー
+        %li
+          %i.fa.fa-angle-right
+        %li
+          %p 商品名
     .main
       .content
         .item
@@ -65,10 +85,10 @@
             .item__box--option
               %ul
                 .like
-                  /*iconのクラス*/
+                  %i.fa.fa-star
                   お気に入り 0
-              %ul.optional
-                %li.optional-btn
+              %ul.report
+                %li.report-btn
                   %a{:href => "#"}
                     %i.fa.fa-flag
                     不適切な商品の通報
@@ -83,21 +103,21 @@
               %i.fa.fa-comment
               コメントする
           %ul.links
-            %li
+            %li.prev-item
               %a{:href => "#"}
                 %i.fa.fa-angle-left
                 %span
                 前の商品
-            %li
+            %li.next-item
               %a{:href => "#"}
                 %span 後ろの商品
                 %i.fa.fa-angle-right
-          .relatedItems
+          .relation-item
             %a{:href => "#"} ベビー・キッズをもっと見る
             .productLists
 
 .footer
   = render partial: 'messages/footer'
-  
+
 .exhibition_icon
   = render partial: 'messages/exhibition_icon'

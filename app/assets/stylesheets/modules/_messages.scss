@@ -24,20 +24,38 @@ table {
   border-spacing: 2px;
 }
 
-ul {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-}
-
 /* メインコンテンツの枠 */
-
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+/* 詳細ページまでのルート表示 (ヘッダーとメインの間)*/
+  .root {
+    width: 100%;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    position: relative;
+    padding: 0 60px;
+    ul {
+      padding: 17px 0 16px;
+      width: 100%;
+      max-width: 1040px;
+      font-size: 14px;
+      margin: 0 auto;
+      &::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+      li {
+        padding: 0 10px 0 0;
+        float: left;
+        a {
+          text-decoration: none;
+          color: #333;
+        }
+      }
+    }
+  }
+  /* 商品の情報の大枠 */
   .main {
     background: #f8f8f8;
     .content {
@@ -65,6 +83,10 @@ body {
                 width: 560px;
                 align-items: center;
                 margin: 0 auto;
+                img {
+                  object-fit: cover;
+                  height: 346px;
+                }
                 ul {
                   display: flex;
                   justify-content: center;
@@ -74,7 +96,7 @@ body {
                     margin: 0 10px 0 0;
                     img {
                       object-fit: cover;
-                      height: 346px;
+                      height: 87px;
                     }
                   }
                 }
@@ -143,13 +165,20 @@ body {
                 border-radius: 40px;
                 color: #3CCACE;
                 border: 1px solid #ffb340;
-                > i {
+              }
+            }
+            .report{
+              margin: 10px 0 0;
+              display: flex;
+              .report-btn {
+                font-size: 14px;
+                a {
+                  padding: 6px 10px;
                   display: inline-block;
-                  font: normal normal normal 14px/1 FontAwesome;
-                  font-size: inherit;
-                  text-rendering: auto;
-                  -webkit-font-smoothing: antialiased;
-                  -moz-osx-font-smoothing: grayscale;
+                  border-radius: 4px;
+                  color: #333;
+                  border: 1px solid #333;
+                  text-decoration: none;
                 }
               }
             }
@@ -186,6 +215,39 @@ body {
             width: 60%;
             font-size: 18px;
             border-radius: 100px;
+          }
+        }
+        ul {
+          .prev-item {
+            float: left;
+            a {
+              text-decoration: none;
+              color: #3CCACE;
+            }
+          }
+          .next-item {
+            float: right;
+            a {
+              text-decoration: none;
+              color: #3CCACE;
+            }
+          }
+          &::after{
+            display: block;
+            content: "";
+            clear: both;
+          }
+        }
+        .relation-item {
+          a {
+            display: block;
+            margin: 24px 0 8px;
+            color: #3CCACE;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+            position: relative;
+        
           }
         }
       }
