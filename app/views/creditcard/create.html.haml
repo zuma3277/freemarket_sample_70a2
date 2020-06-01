@@ -1,0 +1,31 @@
+.wrapper
+  = render "messages/header"
+  %main{class:"main__lists"}
+    .main__lists__contents
+      .main__lists__contents--edit
+        %h2{class:"edit__frame__title"}
+          登録クレジットカード情報
+        .edit__frame__contents
+          .credit__card__lists
+            .credit__card__lists--title
+              クレジットカード一覧
+            .credit__card__lists--view
+              .credit__card__lists--view--group
+                .credit__card__info
+                  .credit_card__info--brand
+                    %img{src:"/assets/CreditCard/logo_visa.gif", width:"51",height:"33"}
+                .credit__card__info--numbers
+                  .number
+                    = "**** **** ****  4242"
+                .expiration__date
+                  .expiration__date__info
+                    = "12 / 21"
+                %a{href:"/card/new",class: "delete__btn"}
+                  削除する
+          .payment__details
+            %a{href:"#",class: "payment__details__btn"} 
+              支払い方法について >
+    = render "messages/navlists"
+  = render "messages/aside"
+  = render "messages/footer"
+  = render "messages/exhibition_icon"

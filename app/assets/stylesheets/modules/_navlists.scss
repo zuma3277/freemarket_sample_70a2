@@ -1,0 +1,60 @@
+$gray: #eeee;
+$white: #ffffff;
+.main__lists__navigates {
+  width: 280px;
+  margin: 0 40px 0 0;
+  nav {
+    display: block;
+    .main__lists__navigates--mypage {
+      li {
+        border-top: 1px solid $gray;
+        a {
+          text-decoration: none;
+          color: black;
+          background-color: $white;
+          font-weight: 600;
+          padding: 16px;
+          display: block;
+          min-height: 48px;
+          position: relative;
+        }
+      }
+    }
+    .main__lists__navigates--furimaPay {
+      li {
+        border-top: 1px solid $gray;
+        a {
+          text-decoration: none;
+          color: black;
+          background-color: $white;
+          font-weight: 600;
+          padding: 16px;
+          display: block;
+          min-height: 48px;
+          position: relative;
+        }
+      }
+    }
+    h3 {
+      margin: 40px 0 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .main__lists__navigates--setting {
+      li {
+        display: list-item;
+        border-top: 1px solid $gray;
+        a {
+          text-decoration: none;
+          color: black;
+          display: block;
+          position: relative;
+          padding: 16px;
+          min-height: 48px;
+          background: $white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

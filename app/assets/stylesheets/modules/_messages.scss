@@ -1,0 +1,56 @@
+.main__lists {
+  width: 1020px;
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+
+  &__contents {
+    width: 700px;
+    float: right;
+    background: #ffffff;
+    .main__lists__user__icon {
+      height: 200px;
+      position: relative;
+      padding: 20px;
+      background-color: rgba(89, 208, 255, 0.507);
+      a {
+        margin: 0 auto;
+        display: block;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        h1 {
+          margin: 8px 0 0;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .main__lists__user__contents {
+          display: inline-flex;
+          margin: 8px 0 0;
+
+          .furima__user__number {
+          }
+          .furima__user__shopping {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .main__lists__to--do--lists {
+      ul {
+        li {
+          a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+    }
+
+    .main__lists--Purchased--goods {
+    }
+  }
+}

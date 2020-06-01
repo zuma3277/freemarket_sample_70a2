@@ -1,0 +1,61 @@
+.main__lists__contents__card {
+  margin: 0;
+  background: #fff;
+  h2 {
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    line-height: 1.4;
+  }
+  &--single {
+    padding: 64px;
+    border-top: 1px solid #f5f5f5;
+    section {
+      .main__lists__contents__card--single--content {
+        max-width: 320px;
+        margin: 0 auto;
+
+        h3 {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+    &--add {
+      padding: 24px 0;
+      border-bottom: 1px solid #eee;
+      &--create {
+        max-width: 320px;
+        margin: 0 auto;
+        .card-btn {
+          margin: 0;
+          margin-bottom: 8px;
+          color: #fff;
+          background-color: #ea352d;
+          border: 1px solid #ea352d;
+          display: block;
+          font-size: 14px;
+          width: 100%;
+          line-height: 48px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &--footer {
+      a {
+        display: block;
+        margin: 40px 0 0;
+        text-align: right;
+        text-decoration: none;
+        color: #0099eb;
+        span {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
