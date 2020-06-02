@@ -2,7 +2,6 @@
   width: 1020px;
   margin: 40px auto 0;
   padding: 0 0 40px;
-
   &__contents {
     width: 700px;
     float: right;
@@ -29,7 +28,6 @@
         .main__lists__user__contents {
           display: inline-flex;
           margin: 8px 0 0;
-
           .furima__user__number {
           }
           .furima__user__shopping {
@@ -38,7 +36,6 @@
         }
       }
     }
-
     .main__lists__to--do--lists {
       ul {
         li {
@@ -49,7 +46,6 @@
         }
       }
     }
-
     .main__lists--Purchased--goods {
     }
   }
