@@ -1,11 +1,11 @@
 .wrapper
   = render "messages/header"
-  %main{class:"main__lists"}
+  %main.main__lists
     .main__lists__contents
       .main__lists__contents__logout
         %form
           .main__lists__contents__logout--single{href:"#"}
-            %button{class:"button"}
+            %button.button
               = link_to "ログアウト","#", method: :delete
     = render "messages/navlists"
   = render "messages/aside"

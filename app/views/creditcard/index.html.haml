@@ -1,6 +1,6 @@
 .wrapper
   = render "messages/header"
-  %main{class:"main__lists"}
+  %main.main__lists
     .main__lists__contents
       .main__lists__contents__card
         %h2 支払い方法
@@ -8,11 +8,11 @@
           %section
             .main__lists__contents__card--single--content
               %h3 クレジットカード一覧
-          %section{class:"main__lists__contents__card--single--add"}
+          %section.main__lists__contents__card--single--add
             .main__lists__contents__card--single--add--create
-              %a{href:"/creditcard/new", class:"card-btn"}
+              %a.card-btn{href:"/creditcard/new"}
                 %i{class:"icon-card"}
-                = icon('fas', 'credit-card', class: "card__icon")
+                = icon('fas', 'credit-card',class:"card__icon")
                 クレジットカードを追加する
           .main__lists__contents__card--single--footer
             %a{href:"/"}
