@@ -1,4 +1,4 @@
-body {
+.wrapper {
   position: relative;
   min-height: 100%;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -9,6 +9,7 @@ body {
   margin: 0 auto;
   border-style: solid;
   border-width: 0;
+  padding: 0 0 220px;
 }
 
 * {
@@ -30,10 +31,6 @@ body {
 
 ul {
   list-style: none;
-}
-
-.purchase-confirmation {
-  padding: 0 0 220px;
 }
 
 h3 {
@@ -229,7 +226,7 @@ footer {
       }
     }
   }
-  .single-footer-logo {
+  .single-footer__logo {
     width: 150px;
     height: 39px;
     margin: 40px auto 0;
