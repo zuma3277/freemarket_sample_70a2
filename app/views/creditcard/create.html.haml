@@ -13,18 +13,16 @@
               .credit__card__lists--view--group
                 .credit__card__info
                   .credit_card__info--brand
-                    %img{src:"/assets/CreditCard/logo_visa.gif", width:"51",height:"33"}
+                    = image_tag "/assets/CreditCard/logo_visa.gif", width:"51",height:"33"
                 .credit__card__info--numbers
                   .number
                     = "**** **** ****  4242"
                 .expiration__date
                   .expiration__date__info
                     = "12 / 21"
-                %a.delete__btn{href:"/card/new"}
-                  削除する
+                = link_to "削除する", new_creditcard_path, class:"delete__btn"
           .payment__details
-            %a.payment__details__btn{href:"#"} 
-              支払い方法について >
+            = link_to "支払い方法について >", new_creditcard_path, class:"payment__details__btn"
     = render "messages/navlists"
   = render "messages/aside"
   = render "messages/footer"

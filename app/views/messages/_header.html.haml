@@ -3,10 +3,10 @@
     .header__inner--top
       %h1
         %a{href:"/"}
-          %img{src:"/assets/logo.png"}
+          = image_tag "logo.png"
       %form
         %input{placeholder:"キーワードを探してください"}
-        %img.search-btn{src:"/assets/icon-search 1.png"}
+        = image_tag "icon-search 1.png", class:"search-btn"
     .header__inner--under
       %nav.nav__lists
         .nav__lists--left
@@ -14,14 +14,14 @@
             %li
               %h2
                 %a{href:"#"}
-                  %img{src:"/assets/icon_category.png", width:"30"}
+                  = image_tag "icon_category.png", width:"30"
                   %span カテゴリーから探す
               %ul
                 %li
             %li
               %h2
                 %a{href:"#"}
-                  %img{src:"/assets/icon_brand.png", width:"30"}
+                  = image_tag "icon_brand.png", width:"30"
                   %span ブランドから探す
         .nav__lists--right
           %ul
@@ -39,7 +39,7 @@
                 %span やることリスト
             %li
               %a{href:"#"}
-                %img{src:"/assets/member_photo_noimage_thumb.png", width:"25"}
+                = image_tag "member_photo_noimage_thumb.png", width:"25"
                 %span マイページ
 
 

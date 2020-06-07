@@ -1,6 +1,6 @@
 .btn {
   width: 120px;
-  background-color: #3ccace;
+  background-color: $skyblue;
   position: fixed;
   bottom: 32px;
   right: 32px;
@@ -10,7 +10,7 @@
   cursor: pointer;
   text-decoration: none;
   &__text {
-    color: white;
+    color: $white;
     font-size: 20px;
   }
   img {

@@ -10,12 +10,12 @@
               %h3 クレジットカード一覧
           %section.main__lists__contents__card--single--add
             .main__lists__contents__card--single--add--create
-              %a.card-btn{href:"/creditcard/new"}
+              %a.card-btn{href:new_creditcard_path}
                 %i.icon-card
                 = icon('fas', 'credit-card',class:"card__icon")
                 クレジットカードを追加する
           .main__lists__contents__card--single--footer
-            %a{href:"/"}
+            %a{href: root_path}
               %span 支払い方法について
     = render "messages/navlists"
   = render "messages/aside"

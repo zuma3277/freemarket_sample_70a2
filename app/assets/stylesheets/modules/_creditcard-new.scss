@@ -1,16 +1,14 @@
-$red: #ea352d;
-$white: #fff;
 .main__lists__contents--details {
   .card__title {
     font-size: 24px;
     padding: 8px 24px;
     text-align: center;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid $border-color;
     line-height: 1.4;
   }
   &--input {
     padding: 40px 40px 64px;
-    border-top: 1px solid #f5f5f5;
+    border-top: 1px solid $border-color;
     .form__main__container {
       max-width: 343px;
       margin: 0 auto;
@@ -36,7 +34,7 @@ $white: #fff;
           height: 48px;
           padding: 10px 16px 8px;
           border-radius: 8px;
-          border: 1px solid #cccccc;
+          border: 1px solid $input-border-color;
           line-height: 1.5;
           font-size: 16px;
           background: $white;
@@ -67,7 +65,7 @@ $white: #fff;
               height: 48px;
               padding: 0 16px;
               border-radius: 4px;
-              border: 1px solid #cccccc;
+              border: 1px solid $input-border-color;
               font-size: 16px;
               background: $white;
               cursor: pointer;
@@ -84,7 +82,7 @@ $white: #fff;
           height: 48px;
           padding: 10px 16px 8px;
           border-radius: 8px;
-          border: 1px solid #cccccc;
+          border: 1px solid $input-border-color;
           line-height: 1.5;
           font-size: 16px;
           background: $white;
@@ -94,13 +92,13 @@ $white: #fff;
           margin: 8px 0 0;
           &__text {
             text-align: right;
-            color: #0099eb;
+            color: $blue;
             .form__question {
               display: inline-block;
               width: 14px;
               height: 14px;
               border-radius: 50%;
-              background-color: #0099eb;
+              background-color: $blue;
               color: $white;
               line-height: 14px;
               font-size: 12px;

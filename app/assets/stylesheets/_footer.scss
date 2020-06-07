@@ -1,7 +1,7 @@
 .footer__list {
-  background-color: #272722;
+  background-color: $dark-brown;
   text-align: center;
-  color: white;
+  color: $white;
   padding: 60px 0;
 
   .footer__contents {
@@ -22,7 +22,7 @@
         list-style: none;
         li {
           a {
-            color: #fff;
+            color: $white;
             text-decoration: none;
             line-height: 32px;
             font-size: 12px;

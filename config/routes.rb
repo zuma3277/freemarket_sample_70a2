@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root "messages#index"
-  get 'logout/index'
-  get 'creditcard/index'
-  get 'creditcard/new'
-  get 'creditcard/create'
+  resources :logout, only: [:index]
+  resources :creditcard, only:[:index, :new, :create]
 end

@@ -4,7 +4,7 @@
     .main__lists__contents
       %section.main__lists__contents--details
         %h2.card__title クレジットカード情報入力
-        = form_tag("/creditcard/create", method: :get, id: 'charge-form',  name: "inputForm", class: "main__lists__contents--details--input") do
+        = form_tag("/creditcard", method: :post, id: 'charge-form',  name: "inputForm", class: "main__lists__contents--details--input") do
           .form__main__container
             .form__content
               %label.payment__card カード番号
@@ -12,12 +12,12 @@
               = text_field_tag 'payment_card_no', "", class: 'creditcardnumber', id: "payment_card_no", placeholder: '半角数字のみ', type: "text", maxlength: "16"
               .card__list
                 .card__list__picture
-                  %img{src:"/assets/CreditCard/logo_visa.gif", width:"34",height:"22"}
-                  %img{src:"/assets/CreditCard/mc_vrt_opt_pos_46_2x.png", width:"34",height:"22"}
-                  %img{src:"/assets/CreditCard/jcb-logomark-img-01.gif", width:"32",height:"20"}
-                  %img{src:"/assets/CreditCard/amex-logomark-img-04.gif", width:"21",height:"20"}
-                  %img{src:"/assets/CreditCard/diners-logomark-img-01.gif", width:"28",height:"20"}
-                  %img{src:"/assets/CreditCard/discover-logomark-img-08.gif", width:"32",height:"20"}
+                  = image_tag "/assets/CreditCard/logo_visa.gif", width:"34",height:"22"
+                  = image_tag "/assets/CreditCard/mc_vrt_opt_pos_46_2x.png", width:"34",height:"22"
+                  = image_tag "/assets/CreditCard/jcb-logomark-img-01.gif", width:"32",height:"20"
+                  = image_tag "/assets/CreditCard/amex-logomark-img-04.gif", width:"21",height:"20"
+                  = image_tag "/assets/CreditCard/diners-logomark-img-01.gif", width:"28",height:"20"
+                  = image_tag "/assets/CreditCard/discover-logomark-img-08.gif", width:"32",height:"20"
             .form__content.top__contents
               %label.payment__card 有効期限
               %span.require__form 必須

@@ -4,8 +4,8 @@
     .main__lists__contents
       .main__lists__user__icon
         %a{href:"#"}
-          %img{src:"/assets/member_photo_noimage_thumb.png", width:"60"}
-            %h1 フリマ
+          = image_tag'member_photo_noimage_thumb.png', width:"60"
+          %h1 フリマ
           .main__lists__user__contents
             .furima__user__number 評価
             .furima__user__shopping 出品数
@@ -13,10 +13,10 @@
         %ul
           %li
             %h3
-              %a{href:"#"} お知らせ
+              = link_to "お知らせ", "#" 
           %li
             %h3
-              %a{href:"#"} やることリスト
+              = link_to "やることリスト", "#"
         .main-lists
           %ul
             %li
