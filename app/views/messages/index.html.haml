@@ -1,5 +1,68 @@
-.wrapper
-  = render "header"
-  /*　こちらにメインページのクラスを入れてく */
-  = render "footer"
-  = render "exhibition_icon"
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}/
+  %body
+    .purchase-confirmation
+      %header.purchase-header
+        %h1
+          %a{:hret => "#"}
+            %img{src:"/assets/logo.png"}
+      %main.purchase-main
+        %section.purchased-item
+          %h2.purchased-item-head 購入内容の確認
+          %section.purchased-buy-item
+            .buy-content-inner
+              .buy-item-box
+                %h3.buy-item-image
+                  %img{src:"/assets/logo.png", width:"80"}
+                .item-detail
+                  %p.item-name サンプルTシャツ
+                  %p.item-price
+                    %span ¥1,0000
+                    %span.item-shipping-fee （税込）送料込み
+          %section.buy-content-buy-item
+            .buy-content-inner
+              %form.buy-form{:action => "", :method => "post"}
+                %ul.buy-price-box
+                  %li.buy-price-box-you-pay
+                    .buy-price-box-you-pay-label 支払い金額
+                    .buy-price-box-cell
+                      %span{"date-buy-pay" => "10000"} ¥1,0000
+                %ul.buy-accorbion-buy-not-have-point
+                  %li.accorbion-perent
+                    .checkbox-default-buy-use-point
+                      %input{:disabled => "disabled", :type => "checkbox"}
+                      %i.icon-check
+                      %label ポイントを使用 （所持ポイント: P0）
+                %section.buy-content-buy-user-info
+                  .buy-content-inner
+                    %h3 支払い方法
+                    %a{:href => "#"}
+                      %p.buy-user-info-text
+                        %i.icon-plus-circle
+                        %span.buy-register-text 登録してください
+                %section.buy-content-buy-user-info
+                  .buy-content-inner
+                    %h3 配送先
+                    %a{:href => "#"}
+                      %p.buy-user-info-text
+                        %i.icon-plus-circle
+                        %span.buy-register-text 登録してください
+                %section.buy-content-buy-user-info
+                  %p.has-info-text 郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更する事は可能です。出品者が発送作業を開始した後は受取の変更はできませんので、早めに変更を行ってください。
+                  %button.btn-default.btn-red.bold{:disabled => "disabled", :type => "submit"} 購入する
+                  %input#user_info_is_not_complete{:type => "hidden"}/
+      %footer.single-footer
+        %nav
+          %ul.clearfix
+            %li
+              %a{:hret => "#"} プライバシポリシー
+            %li
+              %a{:hret => "#"} フリマ利用規約
+            %li
+              %a{:hret => "#"} 特定商取引に関する表記
+        %a.single-footer-logo{:href => "#"}
+          %img{src:"/assets/logo.png", width:"150", heigt: "39"}
+        %p
+          %small © FURIMA, Inc.
