@@ -1,9 +1,9 @@
 .wrapper
 
   .header
-    %a.header_logo(href="#")
+    = link_to '#',class:'header_logo' do
+      = image_tag '/assets/logo.png', class: 'header_logo__img'
       -#ヘッダーのロゴ部分。ロゴをクリックするとホーム画面へ戻れるようにする。
-      %img.header_logo__img(src="/assets/logo.png" alt="logo_Fruima" )
 
   .main
     %form.main_display(action="#" id="main_display")
@@ -21,7 +21,7 @@
           -#写真をアップロードするフォーム
           %label.input-label(for="input-function")
             %input.input-function(type="file" accept="image/png,image/jpeg" id="input-function")
-            %img.logo_camera(src="/assets/icon_camera.png" alt="logo_camera")
+            = image_tag '/assets/icon_camera.png', class: 'logo_camera'
             %p.input-text
               ドラックアンドドロップ
               %br またはクリックしてファイルをダウンロード
@@ -52,7 +52,7 @@
             %span.count(id="count")
               0
             ／1000
-            -#java sciptを使用して文字数制限を設定する
+            -#java scriptを使用して文字数制限を設定する
       
       .main_details
         -#商品の詳細情報の入力
@@ -72,16 +72,16 @@
               %option(label="レディース")
               %option(label="メンズ")
               %option(label="ベビー・キッズ")
-              %option(label="インテリア・住まい・小物" value="4")
-              %option(label="本・音楽・ゲーム" value="5")
-              %option(label="おもちゃ・ホビー・グッズ" value="6")
-              %option(label="コスメ・香水・美容" value="7")
-              %option(label="家電・スマホ・カメラ" value="8")
-              %option(label="スポーツ・レジャー" value="9")
-              %option(label="ハンドメイド" value="10")
-              %option(label="チケット" value="11")
-              %option(label="自動車・オートバイ" value="12")
-              %option(label="その他" value="13")
+              %option(label="インテリア・住まい・小物")
+              %option(label="本・音楽・ゲーム")
+              %option(label="おもちゃ・ホビー・グッズ")
+              %option(label="コスメ・香水・美容" )
+              %option(label="家電・スマホ・カメラ")
+              %option(label="スポーツ・レジャー" )
+              %option(label="ハンドメイド" )
+              %option(label="チケット")
+              %option(label="自動車・オートバイ")
+              %option(label="その他")
 
         .main_details__brand
           .main_display__title
@@ -121,7 +121,7 @@
               必須
           .main_delivery__fee-select
             -# 配送料の負担方法の選択
-            %select(name="delivery-fee" class="delivery-fee" id="delivery-fee")
+            %select.delivery-fee(name="delivery-fee" id="delivery-fee")
               %option(selected value label="選択してください" aria-selected="true")
               %option(label="送料込み")
               %option(label="着払い")
@@ -204,8 +204,8 @@
         .main_price__title
           %p.price
             価格（¥300~9,999,999)
-          %a.price_help(href="#")
-            %img.help_mark(src="/assets/はてなのアイコン.png" alt="ガイドへのヘルプマーク")
+          = link_to "#", class:"price_help" do
+            = image_tag "/assets/はてなのアイコン.png", class: "help_mark"
           
         .main_price__decide
           .main_price__decide-input
@@ -235,7 +235,7 @@
           出品する
         %button.draft(type="button" tabindex="0" id="draft")
           下書きに保存
-        %a.return(href="#")
+        = link_to "#", class:"return" do
           もどる
       .main_warn
         %p.main_warn__note
@@ -249,7 +249,7 @@
       %li.law
         特定商取引に関する表記
     .footer_logo
-      %a.footer_logo(href="#")
-        %img(src="/assets/logo.png" alt="logo_frima-footer" class="footer_logo__img")
+      = link_to "#",class:"footer_logo" do
+        = image_tag '/assets/logo.png', class: 'footer_logo__img'
     %p.footer_furima
       © FURIMA
