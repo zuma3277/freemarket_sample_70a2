@@ -1,44 +1,41 @@
-.header
-  = render partial: 'messages/header'
+.wrapper
+  = render "header"
 
 %body
   /* 商品がどこのカテゴリーに分類されているか */
-  %nav.root
-    %ul
+  .root
+    .root__lists
       %li
-        %a{:href => "/"} FURIMA
-      %li
-        %i.fa.fa-angle-right
-      %li
-        %a{:href => "#"} 大カテゴリー
+        =link_to"FURIMA","#"
       %li
         %i.fa.fa-angle-right
       %li
-        %a{:href => "#"} 中カテゴリー
+        =link_to"大カテゴリー","#"
       %li
         %i.fa.fa-angle-right
       %li
-        %a{:href => "#"} 小カテゴリー
+        =link_to"中カテゴリー","#"
+      %li
+        %i.fa.fa-angle-right
+      %li
+        =link_to"小カテゴリー","#"
       %li
         %i.fa.fa-angle-right
       %li
         %p 商品名
-  .main
+  .main__contents
     .item
       .item__box
         /* 商品の説明欄 */
-        %h2.item__box--name 商品名
+        .item__box--name 商品名
         .item__box--photos
-          %ul
-            %li
-              %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"}/
-              %ul
-                %li
-                  %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", :width => "75"}/
-                %li
-                  %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png", :width => "75"}/
-                %li
-                  %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", :width => "75"}/
+          .main
+            .main__image
+              = image_tag "a.png", class: "main__image--pic", height: "346px"
+              .sub__images
+                = image_tag "b.png", class: "sub__images--pic-1", height: "87px"
+                = image_tag "c.png", class: "sub__images--pic-2", height: "87px"
+                = image_tag "d.png", class: "sub__images--pic-3", height: "87px"
         .item__box--price
           %span
             ¥30000
@@ -58,11 +55,11 @@
               %tr
                 %th カテゴリー
                 %td
-                  %a{:href => "#"} 大カテゴリー
+                  =link_to"大カテゴリー","#"
                   %br/
-                  %a{:href => "#"} 中カテゴリー
+                  =link_to"中カテゴリー","#"
                   %br/
-                  %a{:href => "#"} 小カテゴリー
+                  =link_to"小カテゴリー","#"
               %tr
                 %th ブランド
                 %td
@@ -78,20 +75,17 @@
               %tr
                 %th 発送元の地域
                 %td
-                  %a{:href => "#"} 岩手県
+                  =link_to"発送元の都道府県名","#"
               %tr
                 %th 発送日の目安
                 %td 4-7日で発送
         .item__box--option
-          %ul
-            .like
-              %i.fa.fa-star
-              お気に入り 0
-          %ul.report
-            %li.report-btn
-              %a{:href => "#"}
-                %i.fa.fa-flag
-                不適切な商品の通報
+          .like
+            = icon('fa', 'star', class: 'like__icon')
+            お気に入り 0
+          .report
+            = icon('fa', 'flag', class: 'report__icon')
+            = link_to "不適切な商品の通報","#"
       .item__comment
         /* 商品へのコメント蘭 */
         %textarea.item__comment__box(id="comment__box")
@@ -103,25 +97,19 @@
         %button.item__comment__btn{:name => "button", :type => "submit"}
           %i.fa.fa-comment
           コメントする
-      %ul.links
+      .links
         /* 同じ出品者の他の出品ページ */
-        %li.prev-item
-          %a{:href => "#"}
-            %i.fa.fa-angle-left
-            %span
-            前の商品
-        %li.next-item
-          %a{:href => "#"}
-            %span 
-            次の商品
-            %i.fa.fa-angle-right
+        .prev-item
+          %i.fa.fa-angle-left
+          = link_to "前の商品","#"
+        .next-item
+          = link_to "次の商品","#"
+          %i.fa.fa-angle-right
       .relation-item
-        %a{:href => "#"} ベビー・キッズをもっと見る
+        = link_to "大カテゴリーをもっと見る","#"
         /* 関連アイテムの商品窓の表示（参考：トップページの下の方にあるやつ）*/
         .relation-item__lists
 
-.footer
-  = render partial: 'messages/footer'
-
-.exhibition_icon
-  = render partial: 'messages/exhibition_icon'
+  = render "aside"
+  = render "footer"
+  = render "exhibition_icon" 

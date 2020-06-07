@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 100%;
-  vertical-align: bottom;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 2px;
-}
-
 /* メインコンテンツの枠 */
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
@@ -24,12 +14,14 @@ body {
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
     position: relative;
     padding: 0 60px;
-    ul {
+    background: rgb(255, 255, 255);
+    &__lists {
       padding: 17px 0 16px;
       width: 100%;
       max-width: 1040px;
       font-size: 14px;
       margin: 0 auto;
+      list-style: none;
       &::after {
         display: block;
         content: "";
@@ -47,7 +39,7 @@ body {
   }
 
   /* 商品の情報の大枠 */
-  .main {
+  .main__contents {
     background: #f8f8f8;
     padding: 40px;
     margin: 0 auto;
@@ -64,30 +56,37 @@ body {
         }
         &--photos {
           margin: 16px 0 0;
-          ul {
+          .main {
             display: flex;
             position: relative;
-            li {
+            &__image {
               display: flex;
               flex-direction: column;
               width: 560px;
               align-items: center;
               margin: 0 auto;
-              img {
+              &--pic {
                 object-fit: cover;
-                height: 346px;
               }
-              ul {
+              .sub__images {
                 display: flex;
                 justify-content: center;
                 margin-top: 10px;
-                li {
+                list-style: none;
+                &--pic-1 {
+                  object-fit: cover;
                   width: 25%;
                   margin: 0 10px 0 0;
-                  img {
-                    object-fit: cover;
-                    height: 87px;
-                  }
+                }
+                &--pic-2 {
+                  object-fit: cover;
+                  width: 25%;
+                  margin: 0 10px 0 0;
+                }
+                &--pic-3 {
+                  object-fit: cover;
+                  width: 25%;
+                  margin: 0 10px 0 0;
                 }
               }
             }
@@ -150,30 +149,36 @@ body {
         &--option {
           display: flex;
           justify-content: space-between;
-          ul {
+          .like {
             margin: 10px 0 0;
             display: flex;
-            .like {
-              margin-right: auto;
-              padding: 6px 10px;
-              border-radius: 40px;
-              color: #3CCACE;
-              border: 1px solid #ffb340;
+            margin-right: auto;
+            padding: 6px 10px;
+            border-radius: 40px;
+            color: #3CCACE;
+            border: 1px solid #ffb340;
+            &__icon {
+              display: flex;
+              align-items: center
             }
           }
           .report{
             margin: 10px 0 0;
             display: flex;
-            .report-btn {
+            font-size: 14px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #333;
+            display: inline-block;
+            &__icon {
+              padding-left: 6px;
+            }
+            a {
               font-size: 14px;
-              a {
-                padding: 6px 10px;
-                display: inline-block;
-                border-radius: 4px;
-                color: #333;
-                border: 1px solid #333;
-                text-decoration: none;
-              }
+              padding: 6px 10px 6px 4px;
+              display: inline-block;
+              text-decoration: none;
+              color: #333;
             }
           }
         }
@@ -211,9 +216,10 @@ body {
           border-radius: 100px;
         }
       }
-      ul {
+      .links {
         .prev-item {
           float: left;
+          color: #3CCACE;
           a {
             text-decoration: none;
             color: #3CCACE;
@@ -221,6 +227,7 @@ body {
         }
         .next-item {
           float: right;
+          color: #3CCACE;
           a {
             text-decoration: none;
             color: #3CCACE;
