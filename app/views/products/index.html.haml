@@ -2,7 +2,7 @@
 
   .header
     = link_to '#',class:'header_logo' do
-      = image_tag '/assets/logo.png', class: 'header_logo__img'
+      = image_tag 'logo.png', class: 'header_logo__img'
       -#ヘッダーのロゴ部分。ロゴをクリックするとホーム画面へ戻れるようにする。
 
   .main
@@ -21,7 +21,7 @@
           -#写真をアップロードするフォーム
           %label.input-label(for="input-function")
             %input.input-function(type="file" accept="image/png,image/jpeg" id="input-function")
-            = image_tag '/assets/icon_camera.png', class: 'logo_camera'
+            = image_tag 'icon_camera.png', class: 'logo_camera'
             %p.input-text
               ドラックアンドドロップ
               %br またはクリックしてファイルをダウンロード
@@ -205,7 +205,7 @@
           %p.price
             価格（¥300~9,999,999)
           = link_to "#", class:"price_help" do
-            = image_tag "/assets/はてなのアイコン.png", class: "help_mark"
+            = image_tag "はてなのアイコン.png", class: "help_mark"
           
         .main_price__decide
           .main_price__decide-input
@@ -250,6 +250,6 @@
         特定商取引に関する表記
     .footer_logo
       = link_to "#",class:"footer_logo" do
-        = image_tag '/assets/logo.png', class: 'footer_logo__img'
+        = image_tag 'logo.png', class: 'footer_logo__img'
     %p.footer_furima
       © FURIMA
