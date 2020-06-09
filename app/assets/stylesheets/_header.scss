@@ -10,7 +10,7 @@ html {
 
 .header {
   padding: 0 60px;
-  background: rgb(255, 255, 255);
+  background: $white;
   z-index: 1001;
 
   &__inner {
@@ -58,7 +58,7 @@ html {
           -webkit-box-pack: center;
           -webkit-box-align: center;
           cursor: pointer;
-          background-color: #3ccace;
+          background-color: $skyblue;
           z-index: 3;
           padding: 8px;
         }

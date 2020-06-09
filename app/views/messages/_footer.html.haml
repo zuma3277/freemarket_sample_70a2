@@ -5,41 +5,32 @@
         FURIMAについて
       %ul
         %li
-          %a{href:"#"}
-            会社概要（運営会社）
+          = link_to"会社概要（運営会社）", "#"
         %li
-          %a{href:"#"}
-            プライバシーポリシー
+          = link_to"プライバシーポリシー", "#"
         %li
-          %a{href:"#"}
-            FURIMA利用規約
+          = link_to"FURIMA利用規約", "#"
         %li
-          %a{href:"#"}
-            ポイントに関する特約
+          = link_to"ポイントに関する特約", "#"
     %li.footer__contents--three
       %h2 
         FURIMAを見る
       %ul
         %li
-          %a{href:"#"}
-            カテゴリー一覧
+          = link_to"カテゴリー一覧", "#"
         %li
-          %a{href:"#"}
-            ブランド一覧
+          = link_to"ブランド一覧", "#"
     %li.footer__contents--three
       %h2 
         ヘルプ&ガイド
       %ul
         %li
-          %a{href:"#"}
-            FURIMAガイド
+          = link_to "FURIMAガイド", "#"
         %li
-          %a{href:"#"}
-            FURIMAロゴ利用ガイドラン
+          = link_to"FURIMAロゴ利用ガイドラン", "#"
         %li
-          %a{href:"#"}
-            お知らせ
+          = link_to"お知らせ", "#"
   .footer__logo
-    %a{href:"/"}
-      %img{src:"/assets/logo-white.png"}
-  %p © FURIMA 
+    = link_to root_path do
+      = image_tag "logo-white.png"
+  %p © FURIMA
