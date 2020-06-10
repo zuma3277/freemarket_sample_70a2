@@ -1,0 +1,63 @@
+.main__lists__contents--edit {
+  .edit__frame__title {
+    font-size: 24px;
+    padding: 8px 24px;
+    text-align: center;
+    border-bottom: 1px solid $border-color;
+    line-height: 1.4;
+  }
+  .edit__frame__contents {
+    padding: 64px;
+    border-top: 1px solid $border-color;
+    font-weight: bold;
+    .credit__card__lists {
+      &--title {
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 16px;
+      }
+      &--view {
+        padding: 24px 0;
+        &--group {
+          position: relative;
+          border-bottom: 1px solid $gray;
+          max-width: 320px;
+          margin: 0 auto;
+          .credit__card__info--numbers {
+            .number {
+              font-size: 16px;
+              margin: 8px 0 0;
+            }
+          }
+          .expiration__date {
+            font-size: 16px;
+            margin: 8px 0 0;
+          }
+
+          .delete__btn {
+            top: 0;
+            position: absolute;
+            right: 0;
+            border: 1px solid $red;
+            color: $red;
+            background: $white;
+            padding: 4px 6px;
+            border-radius: 3px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .payment__details {
+      font-size: 14px;
+      font-weight: normal;
+      &__btn {
+        display: block;
+        margin: 40px 0 0;
+        text-align: right;
+        text-decoration: none;
+        color: $blue;
+      }
+    }
+  }
+}

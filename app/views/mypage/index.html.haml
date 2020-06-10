@@ -1,0 +1,55 @@
+.wrapper
+  = render "header"
+  %main.main__lists
+    .main__lists__contents
+      .main__lists__user__icon
+        = link_to "#" do
+          = image_tag'member_photo_noimage_thumb.png', width:"60"
+          %h1 フリマ
+          .main__lists__user__contents
+            .furima__user__number 評価
+            .furima__user__shopping 出品数
+      .main__lists__to-do-lists
+        %ul
+          %li
+            %h3
+              = link_to "お知らせ", "#" 
+          %li
+            %h3
+              = link_to "やることリスト", "#"
+        .main-lists
+          %ul
+            %li
+              = link_to "#" do
+                %figure
+                .main__lists--message
+                %i
+            %li
+              = link_to "#" do
+                %figure
+                .main__lists--message
+                %i
+            %li
+              = link_to "#" do
+                %figure
+                .main__lists--message
+                %i
+            %li
+              = link_to "#" do
+                %figure
+                .main__lists--message
+                %i
+            %li
+              = link_to "#" do
+                %figure
+                .main__lists--message
+                %i
+            %li.main__lists--etc
+          %ul
+            %li
+      .main__lists--Purchased--goods
+        購入した商品
+    = render "navlists"
+  = render "aside"
+  = render "footer"
+  = render "exhibition_icon"
