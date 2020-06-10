@@ -1,5 +1,5 @@
 .wrapper
-  = render "messages/header"
+  = render "mypage/header"
   %main.main__lists
     .main__lists__contents
       .main__lists__contents--edit
@@ -23,7 +23,7 @@
                 = link_to "削除する", new_creditcard_path, class:"delete__btn"
           .payment__details
             = link_to "支払い方法について >", new_creditcard_path, class:"payment__details__btn"
-    = render "messages/navlists"
-  = render "messages/aside"
-  = render "messages/footer"
-  = render "messages/exhibition_icon"
+    = render "mypage/navlists"
+  = render "mypage/aside"
+  = render "mypage/footer"
+  = render "mypage/exhibition_icon"

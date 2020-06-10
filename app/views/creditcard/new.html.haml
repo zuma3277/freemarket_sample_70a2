@@ -1,5 +1,5 @@
 .wrapper
-  = render "messages/header"
+  = render "mypage/header"
   %main.main__lists
     .main__lists__contents
       %section.main__lists__contents--details
@@ -64,7 +64,7 @@
                   %span カードの裏面の番号とは？
             .add
               = submit_tag "登録する", class: "add__btn", id: "payment_card_submit-button"
-    = render "messages/navlists"
-  = render "messages/aside"
-  = render "messages/footer"
-  = render "messages/exhibition_icon"
+    = render "mypage/navlists"
+  = render "mypage/aside"
+  = render "mypage/footer"
+  = render "mypage/exhibition_icon"
