@@ -61,8 +61,8 @@ header {
   .purchased-item {
     width: 700px;
     margin: 0 auto;
-    background: #fff;
-    .purchased-item-head {
+    background: $white;
+    &-head {
       font-size: 22px;
       padding: 32px;
       text-align: center;
@@ -133,7 +133,7 @@ header {
           }
         }
         .buy-accorbion-buy-not-have-point {
-          color: #888;
+          color: $gray;
           margin: 24px 0 32px;
           text-align: left;
         }
@@ -175,14 +175,14 @@ header {
             line-height: 48px;
             font-size: 14px;
             text-align: center;
-            border: 1px solid #888;
-            background: #888;
-            color: #fff;
+            border: 1px solid $gray;
+            background: $gray;
+            color: $white;
           
             btn-red bold {
-              border: 1px solid #888;
-              background: #888;
-              color: #fff;
+              border: 1px solid $gray;
+              background: $gray;
+              color: $white;
             }
           }
         }
@@ -220,7 +220,7 @@ footer {
         margin: 0 0 0 16px;
       }
       a {
-        color: #333;
+        color: $black;
         display: block;
         text-decoration: none;
       }
@@ -230,7 +230,7 @@ footer {
     width: 150px;
     height: 39px;
     margin: 40px auto 0;
-    color: #333;
+    color: $black;
     display: block;
     text-decoration: none;
   }
