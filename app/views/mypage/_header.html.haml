@@ -1,0 +1,45 @@
+%header.header
+  .header__inner
+    .header__inner--top
+      %h1
+        = link_to root_path do
+          = image_tag "logo.png"
+      %form
+        %input{placeholder:"キーワードを探してください"}
+        = image_tag "icon-search 1.png", class:"search-btn"
+    .header__inner--under
+      %nav.nav__lists
+        .nav__lists--left
+          %ul
+            %li
+              %h2
+                = link_to "#" do
+                  = image_tag "icon_category.png", width:"30"
+                  %span カテゴリーから探す
+              %ul
+                %li
+            %li
+              %h2
+                = link_to "#" do
+                  = image_tag "icon_brand.png", width:"30"
+                  %span ブランドから探す
+        .nav__lists--right
+          %ul
+            %li
+              = link_to "#" do
+                %i
+                %span いいね一覧
+            %li
+              = link_to "#" do
+                %i
+                %span お知らせ
+            %li
+              = link_to "#" do
+                %i
+                %span やることリスト
+            %li
+              = link_to "#" do
+                = image_tag "member_photo_noimage_thumb.png", width:"25"
+                %span マイページ
+
+
