@@ -1,7 +1,7 @@
 .sign_up_main
   %header.sign_up_header
     %h1
-      %img{src: "/assets/logo.png" , width: "200px" , height: "50px"}
+      =image_tag  "/assets/logo.png" , width: "200px" , height: "50px"
     %nav.prosess
       %li.info
         会員情報
@@ -58,11 +58,11 @@
             %label.input__label 生年月日
             %span.input__require 必須
             %br
-            %select{:name => "year", class: "select-default"}
+            %select{name: "year", class: "select-default"}
             %span 年
-            %select{:name => "month", class: "select-default"}
+            %select{name: "month", class: "select-default"}
             %span 月
-            %select{:name => "day", class: "select-default"}
+            %select{name: "day", class: "select-default"}
             %span 日
             %h3.text__info
               ※ 本人情報は正しく入力してください。
@@ -71,13 +71,15 @@
             %input{type: "submit" , class: "btn_default" , value: "次へ進む"}
           .from
             %p.form_tag
-              %a{href: "" , target: "_blank"}
+              =link_to href: "" , target: "_blank" , rel: "noopner" do
                 本人情報の登録について＞
               %i.icon-arrow-right
             %p.privacy
               This site is protected by reCAPTCHA and the Google
-              %a{href: "" , target: "_blank"} Privacy Policy 
+              =link_to href: "" , target: "_blank" , rel: "noopner" do
+                Privacy Policy 
               and 
-              %a{href: "" , target: "_blank"} Terms of Service apply.
+              =link_to href: "" , target: "_blank" , rel: "noopner" do
+                Terms of Service apply.
             
   %footer.sign_up_footer
