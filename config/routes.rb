@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :logout, only: [:index]
   resources :creditcard, only:[:index, :new, :create]
   root "products#index"
+  resources :products, only: [:index]
 end
