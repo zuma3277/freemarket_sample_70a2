@@ -2,126 +2,128 @@
   = render "header"
 
   /* 商品がどこのカテゴリーに分類されているか */
-%nav.root
-  .root__lists
-    %li
-      = link_to "#", class: "root__lists--top-page" do
-        FURIMA
-    %li
-      = icon('fa', 'angle-right', class: 'root__lists__icon')
-    %li
-      = link_to "#", class: "root__lists--big-category" do
-        大カテゴリー
-    %li
-      = icon('fa', 'angle-right', class: 'root__lists__icon')
-    %li
-      = link_to "#", class: "root__lists--middle-category" do
-        中カテゴリー
-    %li
-      = icon('fa', 'angle-right', class: 'root__lists__icon')
-    %li
-      = link_to "#", class: "root__lists--small-category" do
-        小カテゴリー
-    %li
-      = icon('fa', 'angle-right', class: 'root__lists__icon')
-    %li
-      %p 商品名
-.main__contents
-  .item
-    .item__box
-      /* 商品の説明欄 */
-      .item__box--name
-        商品名
-      .item__box--photos
-        .main
-          .main__image
-            = image_tag "a.png", class: "main__image--pic", height: "346px"
-            .sub__images
-              = image_tag "b.png", class: "sub__images--pic-1", height: "87px"
-              = image_tag "c.png", class: "sub__images--pic-2", height: "87px"
-              = image_tag "d.png", class: "sub__images--pic-3", height: "87px"
-      .item__box--price
-        %span
-          ¥30000
-        .item__box--price-detail
+  %nav.root
+    .root__lists
+      %li
+        = link_to "#", class: "root__lists--top-page" do
+          FURIMA
+      %li
+        = icon('fa', 'angle-right', class: 'root__lists__icon')
+      %li
+        = link_to "#", class: "root__lists--big-category" do
+          大カテゴリー
+      %li
+        = icon('fa', 'angle-right', class: 'root__lists__icon')
+      %li
+        = link_to "#", class: "root__lists--middle-category" do
+          中カテゴリー
+      %li
+        = icon('fa', 'angle-right', class: 'root__lists__icon')
+      %li
+        = link_to "#", class: "root__lists--small-category" do
+          小カテゴリー
+      %li
+        = icon('fa', 'angle-right', class: 'root__lists__icon')
+      %li
+        %p 
+          商品名
+  .main__contents
+    .item
+      .item__box
+        /* 商品の説明欄 */
+        .item__box--name
+          商品名
+        .item__box--photos
+          .main
+            .main__image
+              = image_tag "a.png", class: "main__image--pic", height: "346px"
+              .sub__images
+                = image_tag "b.png", class: "sub__images--pic-1", height: "87px"
+                = image_tag "c.png", class: "sub__images--pic-2", height: "87px"
+                = image_tag "d.png", class: "sub__images--pic-3", height: "87px"
+        .item__box--price
           %span
-            (税込)
-          %span
-            送料込み
-      .item__box--text 
-        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
-      .item__box--table
-        %table
-          %tbody
-            %tr
-              %th 出品者
-              %td 出品者名
-            %tr
-              %th カテゴリー
-              %td
-                = link_to "#", class:"big-category" do
-                  大カテゴリー
-                %br/
-                = link_to "#", class:"middle-category" do
-                  中カテゴリー
-                %br/
-                = link_to "#", class:"small-category" do
-                  小カテゴリー
-            %tr
-              %th ブランド
-              %td
-            %tr
-              %th 商品のサイズ
-              %td
-            %tr
-              %th 商品の状態
-              %td 未使用に近い
-            %tr
-              %th 配送料の負担
-              %td 送料込み（出品者負担）
-            %tr
-              %th 発送元の地域
-              %td
-                = link_to "#", class:"prefectures" do
-                  発送元の都道府県名
-            %tr
-              %th 発送日の目安
-              %td 4-7日で発送
-      .item__box--option
-        .like
-          = icon('fa', 'star', class: 'like__icon')
-          お気に入り 0
-        .report
-          = icon('fa', 'flag', class: 'report__icon')
-          = link_to "#", class: "report-btn" do
-            不適切な商品の通報
-    .item__comment
-      /* 商品へのコメント蘭 */
-      %textarea.item__comment__box(id="comment__box")
-      .item__comment__notice-message
-        相手のことを考え丁寧なコメントを心がけましょう。
-        %br/
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %br/
-      %button.item__comment__btn(type="submit")
-        = icon('fa', 'comment', class: 'comment__icon')
-        コメントする
-    .links
-      /* 同じ出品者の他の出品ページ */
-      .prev-item
-        = icon('fa', 'angle-left', class: 'prev-item__icon')
-        = link_to "#", class: "prev-item__link" do
-          前の商品
-      .next-item
-        = link_to "#", class: "next-item__link" do
-          次の商品
-        = icon('fa', 'angle-right', class: 'next-item__icon')
-    .relation-item
-      = link_to "#", class: "relation-item" do
-        関連商品をもっと見る
-      /* 関連アイテムの商品窓の表示（参考：トップページの下の方にあるやつ）*/
-      .relation-item__lists
-
-= render "aside"
-= render "footer"
-= render "exhibition_icon" 
+            ¥30000
+          .item__box--price-detail
+            %span
+              (税込)
+            %span
+              送料込み
+        .item__box--text 
+          親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        .item__box--table
+          %table
+            %tbody
+              %tr
+                %th 出品者
+                %td 出品者名
+              %tr
+                %th カテゴリー
+                %td
+                  = link_to "#", class:"big-category" do
+                    大カテゴリー
+                  %br/
+                  = link_to "#", class:"middle-category" do
+                    中カテゴリー
+                  %br/
+                  = link_to "#", class:"small-category" do
+                    小カテゴリー
+              %tr
+                %th ブランド
+                %td
+              %tr
+                %th 商品のサイズ
+                %td
+              %tr
+                %th 商品の状態
+                %td 未使用に近い
+              %tr
+                %th 配送料の負担
+                %td 送料込み（出品者負担）
+              %tr
+                %th 発送元の地域
+                %td
+                  = link_to "#", class:"prefectures" do
+                    発送元の都道府県名
+              %tr
+                %th 発送日の目安
+                %td 4-7日で発送
+        .item__box--option
+          .like
+            = icon('fa', 'star', class: 'like__icon')
+            お気に入り 0
+          .report
+            = icon('fa', 'flag', class: 'report__icon')
+            = link_to "#", class: "report-btn" do
+              不適切な商品の通報
+      .item__comment
+        /* 商品へのコメント蘭 */
+        %textarea.item__comment__box(id="comment__box")
+        .item__comment__notice-message
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br/
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %br/
+        %button.item__comment__btn(type="submit")
+          = icon('fa', 'comment', class: 'comment__icon')
+          コメントする
+      .links
+        /* 同じ出品者の他の出品ページ */
+        .prev-item
+          = icon('fa', 'angle-left', class: 'prev-item__icon')
+          = link_to "#", class: "prev-item__link" do
+            前の商品
+        .next-item
+          = link_to "#", class: "next-item__link" do
+            次の商品
+          = icon('fa', 'angle-right', class: 'next-item__icon')
+      .relation-item
+        = link_to "#", class: "relation-item" do
+          関連商品をもっと見る
+        /* 関連アイテムの商品窓の表示（参考：トップページの下の方にあるやつ）*/
+        .relation-item__lists
+        /* ここから下を作り忘れているので入れます */
+  
+  = render "aside"
+  = render "footer"
+  = render "exhibition_icon" 
