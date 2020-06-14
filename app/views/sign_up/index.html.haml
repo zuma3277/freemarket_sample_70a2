@@ -46,14 +46,14 @@
             %label.input__label お名前(全角)
             %span.input__require 必須
             %br
-            %input{type: "text", class: "input__default half", placeholder: ""}
-            %input{type: "text", class: "input__default half", placeholder: ""}
+            %input{type: "text", class: "input__default half", placeholder: "例）山田"}
+            %input{type: "text", class: "input__default half", placeholder: "例）太郎"}
           .input
             %label.input__label お名前カナ(全角)
             %span.input__require 必須
             %br
-            %input{type: "text", class: "input__default half", placeholder: ""}
-            %input{type: "text", class: "input__default half", placeholder: ""}
+            %input{type: "text", class: "input__default half", placeholder: "例）ヤマダ"}
+            %input{type: "text", class: "input__default half", placeholder: "例）タロウ"}
           .input
             %label.input__label 生年月日
             %span.input__require 必須
@@ -73,7 +73,6 @@
             %p.form_tag
               =link_to href: "" , target: "_blank" , rel: "noopner" do
                 本人情報の登録について＞
-              %i.icon-arrow-right
             %p.privacy
               This site is protected by reCAPTCHA and the Google
               =link_to href: "" , target: "_blank" , rel: "noopner" do
