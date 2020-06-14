@@ -1,0 +1,126 @@
+.main__lists__contents--details {
+  .card__title {
+    font-size: 24px;
+    padding: 8px 24px;
+    text-align: center;
+    border-bottom: 1px solid $border-color;
+    line-height: 1.4;
+  }
+  &--input {
+    padding: 40px 40px 64px;
+    border-top: 1px solid $border-color;
+    .form__main__container {
+      max-width: 343px;
+      margin: 0 auto;
+      .form__content {
+        margin: 0;
+        label {
+          font-weight: 600;
+          display: inline-block;
+          touch-action: manipulation;
+        }
+        .require__form {
+          background-color: $red;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: $white;
+          font-size: 12px;
+          vertical-align: top;
+        }
+        .creditcardnumber {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 8px;
+          border: 1px solid $input-border-color;
+          line-height: 1.5;
+          font-size: 16px;
+          background: $white;
+        }
+        .card__list {
+          margin: 8px 0 0;
+          &__picture {
+            img {
+              margin: 0 0 0 8px;
+            }
+          }
+        }
+      }
+      .form__content.top__contents {
+        margin-top: 32px;
+        margin: 24px 0 0;
+        .select__box {
+          position: relative;
+          background: $white;
+          margin: 8px 0 0;
+          &__half {
+            display: inline-table;
+            width: calc(50% - 2px);
+            select {
+              width: calc(100% - 38px);
+              outline: 0;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid $input-border-color;
+              font-size: 16px;
+              background: $white;
+              cursor: pointer;
+              line-height: 1.5;
+            }
+            span {
+              margin-left: 15px;
+            }
+          }
+        }
+        .cvc {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 8px;
+          border: 1px solid $input-border-color;
+          line-height: 1.5;
+          font-size: 16px;
+          background: $white;
+        }
+        .single__code {
+          position: relative;
+          margin: 8px 0 0;
+          &__text {
+            text-align: right;
+            color: $blue;
+            .form__question {
+              display: inline-block;
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              background-color: $blue;
+              color: $white;
+              line-height: 14px;
+              font-size: 12px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .add {
+        margin-top: 32px;
+        &__btn {
+          margin: 24px 0 0;
+          background: $red;
+          border: 1px solid $red;
+          color: $white;
+          display: block;
+          width: 100%;
+          height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

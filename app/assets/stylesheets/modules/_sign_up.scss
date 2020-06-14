@@ -1,10 +1,12 @@
 .sign_up_main {
   height: 100%;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: aliceblue;
 }
 
 .sign_up_header {
+  
+  background-color: #ffffff;
   height: 130px;
   display: flex;
   justify-content: center;
@@ -57,6 +59,7 @@
 }
 
 .sign_up_continer {
+  margin: 10px 0;
   height: 1300px;
   display: flex;
   justify-content: center;

@@ -1,0 +1,23 @@
+.wrapper
+  = render "mypage/header"
+  %main.main__lists
+    .main__lists__contents
+      .main__lists__contents__card
+        %h2 支払い方法
+        .main__lists__contents__card--single
+          %section
+            .main__lists__contents__card--single--content
+              %h3 クレジットカード一覧
+          %section.main__lists__contents__card--single--add
+            .main__lists__contents__card--single--add--create
+              = link_to new_creditcard_path, class:"card-btn" do
+                %i.icon-card
+                = icon('fas', 'credit-card',class:"card__icon")
+                クレジットカードを追加する
+          .main__lists__contents__card--single--footer
+            = link_to root_path do
+              %span 支払い方法について
+    = render "mypage/navlists"
+  = render "mypage/aside"
+  = render "mypage/footer"
+  = render "mypage/exhibition_icon"
