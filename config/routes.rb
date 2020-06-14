@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "mypage#index"
+  root "index#index"
   resources :logout, only: [:index]
   resources :creditcard, only:[:index, :new, :create]
 end

@@ -1,0 +1,179 @@
+
+= render 'mypage/header'
+
+.top
+  .top__sentence
+    %h2.top__title 人生を変えるフリマアプリ
+    %p.top__sentence
+      FURIMAはだれでもかんたんに出品・購入できる
+      %br
+      フリマアプリです
+    .top__app
+      = link_to "#" do
+        = image_tag "Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg", class:"appleApp__btn"
+      = link_to "#" do
+        = image_tag "google-play-badge.png", class:"googleApp__btn"
+.reasons 
+  %h2.reasons__title
+    FURIMAが選ばれる3つの理由
+    .reasons__title--option
+  %ul.reason__lists
+    %li.reason__list
+      .reason__list--pic
+        %span.reason__list--number 1
+        = image_tag "pict-reason-01.jpg" , class: "imgpic"
+      %h2.reason__body
+        %strong.reason__list__text 3分
+        ですぐに出品
+      %p.reason__list__sentence スマホで入力するだけで簡単に出品できる！
+    %li.reason__list
+      .reasson__list--pic
+        %span.reason__list--number 2
+        = image_tag "pict-reason-02.jpg" , class: "imgpic"
+      %h2.reason__body
+        %strong.reason__list__text シンプル
+        で使いやすい
+      %p.reason__list__sentence スマホで入力するだけで簡単に出品できる！
+    %li.reason__list__last
+      .reasson__list--pic
+        %span.reason__list--number 3
+        = image_tag "pict-reason-03.jpg" , class: "imgpic"
+      %h2.reason__body
+        手数料
+        %strong.reason__list__text 業界最安値
+      %p.reason__list__sentence 最大3％でお特に出品＆購入
+.middle
+  .middle__explain
+    .middle__title 会員数日本一位
+    %p.middle__sentence FURIMAは、フリマアプリで最も人気。
+    %p.middle__sentence 出品・購入回数も業界最多です！
+    %p.middle__sentence ほしかったあの商品に出会えるかもしれません。
+    .middle__app
+      .middle__app--apple
+        = link_to "#" do
+          = image_tag "Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg", class:"appleApp__btn"
+        = link_to "#" do
+          = image_tag "google-play-badge.png", class:"googleApp__btn"
+.features
+  %h2.features__title
+    FURIMAの特徴
+    .features__title--option
+  %ul.feature__lists
+    %li.feature__list
+      .feature__pic
+        = image_tag "icon-01.png", class: "imgpic"
+      %p.feature__text 簡単に売り買い出来る
+      %p.feature__sentence スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+    %li.feature__list
+      .feature__pic
+        = image_tag "icon-03.png", class: "imgpic"
+      %p.feature__text 売上金は即日振込みに対応
+      %p.feature__sentence 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+    %li.feature__list
+      .feature__pic
+        = image_tag "icon-04.png", class: "imgpic"
+      %p.feature__text 様々な支払いに対応
+      %p.feature__sentence お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+.display
+  .display__title ピックアップカテゴリー
+  .display__contents
+    .display__sentence
+      = link_to "新規投稿商品", "/", class: "display__link"
+    .display__lists
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+.display
+  .display__title ピックアップブランド
+  .display__contents
+    .display__sentence
+      = link_to "アーカイバ", "/" , class: "display__link"
+    .display__lists
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+      .display__list
+        = link_to "/" do
+          .display__pic
+            = image_tag "pict-reason-01.jpg" ,class:"imgpic"
+            .display__body
+              %h3.display__name product1
+              .display__details
+                %ul.display__content
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon 0
+                %p (税込)
+= render 'mypage/aside'
+= render 'mypage/footer'
+= render 'mypage/exhibition_icon'

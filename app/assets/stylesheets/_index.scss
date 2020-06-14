@@ -1,0 +1,266 @@
+// Place all the styles related to the index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a {
+  text-decoration: none;
+}
+.imgpic {
+  width: 100%;
+  vertical-align: bottom;
+}
+// btn
+.appleApp__btn {
+  width: 185px;
+  height: 54px;
+  margin-bottom: 11px;
+}
+.googleApp__btn {
+  width: 185px;
+  height: 77px; 
+}
+
+/* top */
+
+.top {
+  height: 560px;
+  background-image: url(bg-mainVisual-pict_pc.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  color: $white;
+  align-items: center;
+  padding: 0 60px;
+  &__title {
+  font-size: 60px ;
+  width: 100%;
+  line-height :1;
+  text-shadow:0 0 5px rgba(0,0,0,0.4);
+  margin: 0;
+  }
+  &__sentence {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    padding: 35px 0 0 0;
+    text-shadow:0 0 5px rgba(0,0,0,0.4);
+    font-size: 18px;
+  }
+  &top__app {
+    display: flex;
+    padding-top: 15px;
+    position: relative;
+  } a :hover{
+    opacity: 0.5;
+  }
+}
+
+
+/* reasons */
+
+.reasons  {
+  padding: 60px 20px;
+  background-color:$white;
+  &__title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  position: relative;
+  }
+  &__title--option {
+  height: 4px;
+  width: 70px;
+  background-color:$skyblue;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  }
+}
+.reason__lists {
+  display: flex;
+  text-align: center;
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+}
+.reason__list {
+  width:30%;
+  margin: 16px 5% 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.reason__list—-pic {
+  margin-bottom: 10px;
+}
+.reason__list--number {
+  padding: 10px 20px;
+  background-color: $skyblue;
+  position: absolute;
+  top: 0px;
+  font-size: 25px;
+  color: $white;
+  border-radius: 5%;
+}
+.reason__body {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 26px;
+}
+.reason__list__text {
+  color: $skyblue;
+  font-size: 26px;
+  font-weight: bold;
+}
+.reason__list__sentence {
+  margin: 20px 0 0 0 ;
+  font-size: 18px;
+  text-align: left;
+}
+.reason__list__last{
+  width:30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 16px 0 0;
+}
+
+// middle
+
+.middle {
+  background-image: url(bg-topMiddleDl-pict.jpg);
+  background-size: cover;
+  background-position: bottom right;
+  height: 400px;
+  display: flex;
+  align-items: center;
+    &__explain {
+    padding-left: 10%;
+    width: 100%;
+    }
+    &__title {
+    color:$white;
+    text-shadow:0 0 5px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    }
+    &__sentence {
+    color: white;
+    text-shadow:0 0 5px rgba(0,0,0,0.4);
+    font-size: 18px;
+    }
+    &__app {
+    display: flex;
+    margin: 30px 0 0 0;
+    } a :hover{
+    opacity: 0.5;
+  }
+}
+
+/* features */
+
+.features {
+  padding: 60px 80px;
+  background-color: $white;
+  &__title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+  }
+}
+.features__title--option {
+  height: 4px;
+  width: 70px;
+  background-color: $skyblue;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+}
+.feature__lists {
+  display: flex;
+  max-width: calc(1040px + 20px);
+  width: 100%;
+  margin: 0 auto;
+}
+.feature__list {
+  margin: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+.feature__pic {
+  width: 70%;
+  margin: 0 auto;
+}
+.feature__text {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.feature__sentence {
+  font-size: 16px;
+  text-align: left;
+}
+
+// display
+
+.display {
+  padding: 65px 0 45px 15px;
+  background-color: $light-gray;
+  height: 100%;
+  &__title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  }
+  &__sentence {
+  font-size: 24px ;
+  font-weight: bold;
+  color: $skyblue ;
+  text-align: center ;
+  margin-bottom: 20px;
+  }
+  &__lists {
+  width: 780px;
+  margin: 26px auto;
+  display: flex;
+  justify-content: space-around;
+  }
+  &__list {
+  width: 220px;
+  display: inline-block;
+  float: left;
+  } 
+  &__pic {
+  position: relative;
+  overflow: hidden;
+  z-index: auto;
+  }
+  &__body {
+  background-color: $white;
+  color: black;
+  padding: 16px;
+  }
+  &__content {
+  display:flex;
+  justify-content: space-between;
+  }
+  &__link {
+    color: $skyblue;
+  }
+  &__list :hover{
+    opacity: 0.5;
+  }
+}
+
+
