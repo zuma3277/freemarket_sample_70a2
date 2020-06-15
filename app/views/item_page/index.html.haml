@@ -118,12 +118,25 @@
             次の商品
           = icon('fa', 'angle-right', class: 'next-item__icon')
       .relation-item
-        = link_to "#", class: "relation-item" do
-          関連商品をもっと見る
-        /* 関連アイテムの商品窓の表示（参考：トップページの下の方にあるやつ）*/
-        .relation-item__lists
-        /* ここから下を作り忘れているので入れます */
+        .relation-item__category
+          = link_to "#", class: "relation-item__category--link" do
+            関連商品をもっと見る
+        .lists
+          .lists__body
+            .lists__body--left
+              = link_to "#" do
+                = image_tag 'IMG_9072.jpeg', width:"60"
+                .left-item__body
+                  .left-item__body--name
+                    ee
+                  .left-item__body--information
+                    %ul
+                      %li 1000円
+                      %li
+                        =icon('fa','star' , class: 'left-item__fav-icon')
+                        0
+                    %p (税込)
   
   = render "mypage/aside"
   = render "mypage/footer"
-  = render "mypage/exhibition_icon" 
+  = render "mypage/exhibition_icon"

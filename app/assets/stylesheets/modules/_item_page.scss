@@ -237,7 +237,7 @@
       }
     }
     .relation-item {
-      a {
+      .relation-item__category--link {
         display: block;
         margin: 24px 0 8px;
         color: $skyblue;
@@ -245,7 +245,50 @@
         font-weight: bold;
         font-size: 22px;
         position: relative;
-    
+      }
+      .lists {
+        &__body {
+          margin: 0 0 10px;
+          float: left;
+          width: calc(100% / 3);
+          &--left {
+            img {
+              width: 220px;
+              height: 150px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+              z-index: auto;
+            }
+            &__body {
+              background-color: white;
+              color: #333;
+              padding: 16px;
+              &--name {
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+                text-align: left;
+              }
+              &--infomation {
+                font-size: 16px;
+                ul {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  .left-item__fav-icon {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
