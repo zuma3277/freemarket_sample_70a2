@@ -1,8 +1,8 @@
 .wrapper
 
-  .header
-    = link_to '#',class:'header_logo' do
-      = image_tag 'logo.png', class: 'header_logo__img'
+  .product_header
+    = link_to '#',class:'product_header__logo' do
+      = image_tag 'logo.png', class: 'product_header__logo-img'
       -#ヘッダーのロゴ部分。ロゴをクリックするとホーム画面へ戻れるようにする。
 
   .main
@@ -240,7 +240,7 @@
       .main_warn
         %p.main_warn__note
           禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-  .footer
+  .product_footer
     %ul.document
       %li.privacy-policy
         プライバシーポリシー
@@ -248,8 +248,8 @@
         フリマ利用規約
       %li.law
         特定商取引に関する表記
-    .footer_logo
+    .product_footer__logo
       = link_to "#",class:"footer_logo" do
         = image_tag 'logo.png', class: 'footer_logo__img'
-    %p.footer_furima
+    %p.product_footer__furima
       © FURIMA

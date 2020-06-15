@@ -4,17 +4,17 @@
   min-height: 100vh;
   background-color:rgb(245,245,245);
   font-family:YuGothic,'Yu Gothic',sans-serif;
-  .header{
+  .product_header{
     width: 100%;
     height: 126px;
     align-items: center;
     display: flex;
     justify-content: center;
     background-color: inherit;
-    &_logo{
+    &__logo{
       color: inherit;
       text-decoration: none;
-      &__img{
+      &-img{
         height: 55.55px;
         width: 180px;
       }
@@ -271,7 +271,7 @@
       }
     }
   }
-  .footer{
+  .product_footer{
     padding: 40px 0px 41px;
     .document{
       display: flex;
@@ -283,7 +283,7 @@
         margin: 16px 0px 0px 16px;
       }
     }
-    &_logo{
+    &__logo{
       display: flex;
       align-items: center;
       justify-content: center;
@@ -293,7 +293,7 @@
         margin-bottom: 8px;
       }
     }
-    &_furima{
+    &__furima{
       text-align: center;
       font-size: 12px;
     }
