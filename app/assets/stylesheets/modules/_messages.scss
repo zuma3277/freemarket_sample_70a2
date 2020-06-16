@@ -142,6 +142,9 @@ header {
           .buy-content-inner {
             max-width: 343px;
             margin: 0 auto;
+            a{
+              text-decoration:none; 
+            }
             .i[class^='icon-'], i[class*='icon-'] {
               display: inline-block;
               font-family: 'icon-font';
@@ -157,6 +160,7 @@ header {
               content: '\e023'
             }
             .buy-user-info-text {
+                color: #0000FF	;
                 text-align: left;
                 margin: 8px 0 0;
                 font-size: 14px;
