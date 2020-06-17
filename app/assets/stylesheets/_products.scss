@@ -26,7 +26,7 @@
     align-items: center;
     .main_display{
       
-      background-color: #ffffff;
+      background-color:$white;
       max-width: 700px;
 
       %main_title{
@@ -55,14 +55,14 @@
         }
         .required{
           @extend %label-size;
-          color: #ffffff;
+          color: $white;
           background-color: red;
         }
       }
 
       select{
-        background-color: #fff;
-        border: solid 1px #ccc;
+        background-color: $white;
+        border: solid 1px $input-border-color;
         border-radius: 4px;
         box-sizing: border-box;
         color: #222;
@@ -75,7 +75,7 @@
       }
 
       input{
-        border: 1px solid #ccc;
+        border: 1px solid $input-border-color;
         border-radius: 4px;
         height: 48px;
         width: 100%;
@@ -131,7 +131,7 @@
           &-form{
             .input-sentences{
               margin-top: 16px;
-              border: 1px solid #ccc;
+              border: 1px solid $input-border-color;
               border-radius: 4px;
               color: #222;
               font-size: 16px;
@@ -249,16 +249,16 @@
           cursor: pointer;
         }
         .exhibition{
-          background-color:#15ced1;
-          color: #ffffff;
+          background-color:$skyblue;
+          color: $white;
         }
         .draft{
           margin: 24px 0 24px;
-          background-color: #ccc;
+          background-color: $input-border-color;
           color: #222;
         }
         .return{
-          color: #0095ee;
+          color: $blue;
           text-decoration: none;
         }
       }
