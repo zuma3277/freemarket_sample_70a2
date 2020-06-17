@@ -257,10 +257,9 @@
         font-weight: bold;
       }
       .item__list {
-        width: 220px;
-        display: inline-block;
+        margin: 0 0 10px;
         float: left;
-        text-decoration: none;
+        width: calc(100% / 3);
         .item__image {
           height: 150px;
           position: relative;
