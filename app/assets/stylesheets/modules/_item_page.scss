@@ -237,7 +237,7 @@
       }
     }
     .relation-item {
-      .relation-item__category--link {
+      &__link {
         display: block;
         margin: 24px 0 8px;
         color: $skyblue;
@@ -246,46 +246,57 @@
         font-size: 22px;
         position: relative;
       }
-      .lists {
-        &__body {
-          margin: 0 0 10px;
-          float: left;
-          width: calc(100% / 3);
-          &--left {
-            img {
-              width: 220px;
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-              z-index: auto;
+    }
+    .item__lists {
+      width: 700px;
+      margin: 26px auto;
+      display: flex;
+      text-decoration: none;
+      a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .item__list {
+        width: 220px;
+        display: inline-block;
+        float: left;
+        text-decoration: none;
+        .item__image {
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          z-index: auto;
+          .item__pic {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+        .item__body {
+          background-color: $white;
+          color: $dark-gray;
+          padding: 16px;
+          .item__name {
+            overflow: hidden;
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: left;
+          }
+          .item__details {
+            font-size: 16px;
+            .item__info{
+              display:flex;
+              justify-content: space-between;
             }
-            &__body {
-              background-color: white;
-              color: #333;
-              padding: 16px;
-              &--name {
-                overflow: hidden;
-                line-height: 1.5;
-                font-size: 16px;
-                text-align: left;
-              }
-              &--infomation {
-                font-size: 16px;
-                ul {
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  .left-item__fav-icon {
-                    display: inline-block;
-                    font: normal normal normal 14px/1 FontAwesome;
-                    font-size: inherit;
-                    text-rendering: auto;
-                    -webkit-font-smoothing: antialiased;
-                    -moz-osx-font-smoothing: grayscale;
-                  }
-                }
-              }
+            p {
+              font-size: 10px;
+              text-align: left;
             }
           }
         }

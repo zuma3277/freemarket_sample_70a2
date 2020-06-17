@@ -118,25 +118,20 @@
             次の商品
           = icon('fa', 'angle-right', class: 'next-item__icon')
       .relation-item
-        .relation-item__category
-          = link_to "#", class: "relation-item__category--link" do
-            関連商品をもっと見る
-        .lists
-          .lists__body
-            .lists__body--left
-              = link_to "#" do
-                = image_tag 'IMG_9072.jpeg', width:"60"
-                .left-item__body
-                  .left-item__body--name
-                    ee
-                  .left-item__body--information
-                    %ul
-                      %li 1000円
-                      %li
-                        =icon('fa','star' , class: 'left-item__fav-icon')
-                        0
-                    %p (税込)
-  
+        = link_to "関連商品を見る", "#", class: "relation-item__link"
+      .item__lists
+        .item__list
+          = link_to "#" do
+            .item__image
+              = image_tag "IMG_9072.jpeg" ,class:"item__pic"
+            .item__body
+              %h3.item__name product1
+              .item__details
+                %ul.item__info
+                  %li 1000円
+                  %li.fa.fa-star.likeIcon  0
+                %p (税込)
+                
   = render "mypage/aside"
   = render "mypage/footer"
   = render "mypage/exhibition_icon"
