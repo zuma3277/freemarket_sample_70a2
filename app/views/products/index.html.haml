@@ -3,12 +3,9 @@
   .product_header
     = link_to '#',class:'product_header__logo' do
       = image_tag 'logo.png', class: 'product_header__logo-img'
-      -#ヘッダーのロゴ部分。ロゴをクリックするとホーム画面へ戻れるようにする。
-
+      
   .main
     %form.main_display(action="#" id="main_display")
-      -#メインを全て一括でフォームとして作成。一番下のサブミットボタン（%button.exhibition）を押すとこのフォームの内容が送られる。
- 
       .main_image
         .main_display__title
           %label.title
@@ -18,7 +15,6 @@
         %p.main_image-text
           最大10枚までアップロードできます。
         .main_image-input
-          -#写真をアップロードするフォーム
           %label.input-label(for="input-function")
             %input.input-function(type="file" accept="image/png,image/jpeg" id="input-function")
             = image_tag 'icon_camera.png', class: 'logo_camera'
@@ -27,10 +23,7 @@
               %br またはクリックしてファイルをダウンロード
 
       .main_text
-        -#商品名と商品の説明を入力する
-
         .main_text__input__name
-          -#商品名入力フォーム
           .main_display__title
             %label.title
               商品名
@@ -40,7 +33,6 @@
             %input.input-name(type="text" placeholder="40文字まで")
 
         .main_text__input__explanation
-          -#商品の説明文入力フォーム。（字数制限１０００文字）
           .main_display__title
             %label.title
               商品の説明
@@ -52,10 +44,8 @@
             %span.count(id="count")
               0
             ／1000
-            -#java scriptを使用して文字数制限を設定する
       
       .main_details
-        -#商品の詳細情報の入力
         %p.details
           商品の詳細
 
@@ -66,7 +56,6 @@
             %span.required
               必須
           .main_details__category-select
-            -# カテゴリーの選択（多階層カテゴリーを使用して更に細かい選択肢の実装が必要）
             %select.category(name="category" id="category")
               %option(selected value label="選択してください" aria-selected="true")
               %option(label="レディース")
@@ -90,7 +79,6 @@
             %span.optional
               任意
           .main_details__brand-form
-            -# ブランドの入力フォーム
             %input.input-brand(type="text" name="name" placeholder="例）シャネル" id="input-brand")
           
         .main_details__status
@@ -100,7 +88,6 @@
             %span.required
               必須
           .main_details__status-select
-            -# 商品の状態の選択
             %select.status(name="status" id="status")
               %option(selected value label="選択してください" aria-selected="true")
               %option(label="新品・未使用")
@@ -120,7 +107,6 @@
             %span.required
               必須
           .main_delivery__fee-select
-            -# 配送料の負担方法の選択
             %select.delivery-fee(name="delivery-fee" id="delivery-fee")
               %option(selected value label="選択してください" aria-selected="true")
               %option(label="送料込み")
@@ -133,7 +119,6 @@
             %span.required
               必須
           .main_delivery__area-select
-            -#発送元の地域を選択
             %select.area(name="area" id="area")
               %option(selected value label="選択してください" aria-selected="true")
               %option(label="北海道")
@@ -192,7 +177,6 @@
             %span.required
               必須
           .main_delivery__days-select
-            -#発送までに必要な日数を選択
             %select.days(name="days" id="days")
               %option(selected value label="選択してください" aria-selected="true")
               %option(label="1~2日で発送")
@@ -200,7 +184,6 @@
               %option(label="4~7日で発送")
             
       .main_price
-        -#商品販売価格の入力。
         .main_price__title
           %p.price
             価格（¥300~9,999,999)
@@ -219,17 +202,16 @@
             .main_price__decide-input-form
               %input.price(type="number" name="price" id="price" placeholder="0")
           .main_price__decide-fee
-            -#java scriptを使用して入力した値段に対して販売手数料が自動で算出されるようにする。
             %p.fee-label
               販売手数料（10％）
             %span.fee-value
               ー
           .main_price__decide-profit
-            -#java scriptを使用して入力した値段に対して販売利益が自動で算出されるようにする。
             %p.profit-label
               販売利益
             %span.profit-value
               ー
+
       .main_send
         %button.exhibition(type ="submit" tabindex="0" id="exhibition" form="main_display")
           出品する
