@@ -291,7 +291,12 @@
             font-size: 16px;
             .item__info{
               display:flex;
-              justify-content: space-between;
+              li {
+                margin-left: 0;
+              }
+              .item__info__icon {
+                margin-left: 120px;
+              }
             }
             p {
               font-size: 10px;

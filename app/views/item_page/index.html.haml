@@ -129,7 +129,8 @@
               .item__details
                 %ul.item__info
                   %li 1000円
-                  %li.fa.fa-star.likeIcon  0
+                  = icon('fa', 'star', class: 'item__info__icon')
+                  0
                 %p (税込)
                 
   = render "mypage/aside"
