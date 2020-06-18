@@ -78,26 +78,25 @@ a {
   bottom: -10px;
   transform: translateX(-50%);
   }
-}
-.reason__lists {
+  &__lists {
   display: flex;
   text-align: center;
   max-width: 1020px;
   width: 100%;
   margin: 0 auto;
-}
-.reason__list {
+  }
+  &__list {
   width:30%;
   margin: 16px 5% 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-}
-.reason__list—-pic {
+  }
+  &__list—-pic {
   margin-bottom: 10px;
-}
-.reason__list--number {
+  }
+  &__list--number {
   padding: 10px 20px;
   background-color: $skyblue;
   position: absolute;
@@ -105,29 +104,30 @@ a {
   font-size: 25px;
   color: $white;
   border-radius: 5%;
-}
-.reason__body {
+  }
+  &__body {
   margin-top: 15px;
   font-weight: bold;
   font-size: 26px;
-}
-.reason__list__text {
+  }
+  &__list__text {
   color: $skyblue;
   font-size: 26px;
   font-weight: bold;
-}
-.reason__list__sentence {
+  }
+  &__list__sentence {
   margin: 20px 0 0 0 ;
   font-size: 18px;
   text-align: left;
-}
-.reason__list__last{
+  }
+  &__list__last{
   width:30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   margin: 16px 0 0;
+  }
 }
 
 // middle
@@ -175,8 +175,7 @@ a {
     margin-bottom: 20px;
     position: relative;
   }
-}
-.features__title--option {
+  &__title--option {
   height: 4px;
   width: 70px;
   background-color: $skyblue;
@@ -184,32 +183,33 @@ a {
   left: 50%;
   bottom: -10px;
   transform: translateX(-50%);
-}
-.feature__lists {
+  }
+  &__lists {
   display: flex;
   max-width: calc(1040px + 20px);
   width: 100%;
   margin: 0 auto;
-}
-.feature__list {
+  }
+  &__list {
   margin: 25px 25px;
   display: flex;
   flex-direction: column;
   text-align: center;
   position: relative;
-}
-.feature__pic {
+  }
+  &__pic {
   width: 70%;
   margin: 0 auto;
-}
-.feature__text {
+  }
+  &__text {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 20px;
-}
-.feature__sentence {
+  }
+  &__sentence {
   font-size: 16px;
   text-align: left;
+  }
 }
 
 // display
