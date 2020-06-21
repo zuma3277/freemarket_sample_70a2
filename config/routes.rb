@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-   root "sign_up#index"
-   root "mypage#index"
-   resources :logout, only: [:index]
-   resources :creditcard, only:[:index, :new, :create]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "mypage#index"
+  resources :messages, only: [:index]
+  resources :logout, only: [:index]
+  resources :creditcard, only:[:index, :new, :create]
+  resources :item_page, only: [:index]
+  resources :products, only: [:index]
+  resources :sign_up, only: [:index]
 end
