@@ -1,0 +1,29 @@
+%header.header
+  .header__inner
+    .header__inner--top
+      %h1
+        = link_to root_path do
+          = image_tag "logo.png"
+      %form
+        %input{placeholder:"キーワードを探してください"}
+        = image_tag "icon-search 1.png", class:"search-btn"
+    .header__inner--under
+      %nav.nav__lists
+        .nav__lists--left
+          %ul
+            %li
+              %h2
+                = link_to "#" do
+                  %span  カテゴリー
+            %li
+              %h2
+                = link_to "#" do
+                  %span  ブランド
+        .nav__lists--right
+          %ul
+            %li
+              = link_to '#' do
+                %span ログイン
+            %li
+              = link_to '#' do
+                %span 新規登録
