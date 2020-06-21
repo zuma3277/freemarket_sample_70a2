@@ -114,7 +114,8 @@
             次の商品
           = icon('fa', 'angle-right', class: 'next-item__icon')
       .relation-item
-        = link_to "関連商品を見る", "#", class: "relation-item__link"
+        = link_to "#", class: "relation-item__link" do
+          関連商品を見る
       .item__lists
         .item__list
           = link_to "#" do

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   root "index#index"
-
+  resources :purchase, only: [:index]
   resources :logout, only: [:index]
   resources :creditcard, only:[:index, :new, :create]
   resources :mypages, only: [:index]
