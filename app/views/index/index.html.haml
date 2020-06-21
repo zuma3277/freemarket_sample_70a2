@@ -74,7 +74,26 @@
         = image_tag "icon-04.png", class: "imgpic"
       %p.features__text 様々な支払いに対応
       %p.features__sentence お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-= render 'display'
+.display
+  .display__title ピックアップカテゴリー
+  .display__contents
+    .display__sentence
+      = link_to "新規投稿商品", "/", class: "display__link"
+    .display__lists
+      = render 'display'
+      = render 'display'
+      = render 'display'
+      = render 'display'
+.display
+  .display__title ピックアップブランド
+  .display__contents
+    .display__sentence
+      = link_to "アーカイバ", "/" , class: "display__link"
+    .display__lists
+      = render 'display'
+      = render 'display'
+      = render 'display'
+      = render 'display'
 = render 'mypages/aside'
 = render 'mypages/footer'
 = render 'mypages/exhibition_icon'
