@@ -1,5 +1,5 @@
 .wrapper
-  = render "mypage/header"
+  = render "mypages/header"
   %main.main__lists
     .main__lists__contents
       .main__lists__contents__logout
@@ -7,7 +7,7 @@
           .main__lists__contents__logout--single
             %button.button
               = link_to "ログアウト","#", method: :delete
-    = render "mypage/navlists"
-  = render "mypage/aside"
-  = render "mypage/footer"
-  = render "mypage/exhibition_icon"
+    = render "mypages/navlists"
+  = render "mypages/aside"
+  = render "mypages/footer"
+  = render "mypages/exhibition_icon"
