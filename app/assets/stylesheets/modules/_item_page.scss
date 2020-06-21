@@ -1,11 +1,8 @@
-/* 共通のクラス */
-
 * {
   box-sizing: border-box;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
-/* 詳細ページまでのルート表示 (ヘッダーとメインの間)*/
 .root {
   width: 100%;
   border-top: 1px solid $gray;
@@ -35,7 +32,6 @@
     }
   }
 }
-/* 商品の情報の大枠 */
 .main__contents {
   background: $dark-white;
   padding: 40px;

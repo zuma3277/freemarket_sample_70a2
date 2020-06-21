@@ -1,7 +1,6 @@
 .wrapper
-  = render "mypage/header"
+  = render "mypages/header"
 
-  /* 商品がどこのカテゴリーに分類されているか */
   %nav.root
     .root__lists
       %li
@@ -30,7 +29,6 @@
   .main__contents
     .item
       .item__box
-        /* 商品の説明欄 */
         .item__box--name
           商品名
         .item__box--photos
@@ -97,7 +95,6 @@
             = link_to "#", class: "report-btn" do
               不適切な商品の通報
       .item__comment
-        /* 商品へのコメント蘭 */
         %textarea.item__comment__box(id="comment__box")
         .item__comment__notice-message
           相手のことを考え丁寧なコメントを心がけましょう。
@@ -108,7 +105,6 @@
           = icon('fa', 'comment', class: 'comment__icon')
           コメントする
       .links
-        /* 同じ出品者の他の出品ページ */
         .prev-item
           = icon('fa', 'angle-left', class: 'prev-item__icon')
           = link_to "#", class: "prev-item__link" do
@@ -133,6 +129,6 @@
                   0
                 %p (税込)
                 
-  = render "mypage/aside"
-  = render "mypage/footer"
-  = render "mypage/exhibition_icon"
+  = render "mypages/aside"
+  = render "mypages/footer"
+  = render "mypages/exhibition_icon"
