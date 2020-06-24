@@ -1,0 +1,2 @@
+module CompRegHelper
+end

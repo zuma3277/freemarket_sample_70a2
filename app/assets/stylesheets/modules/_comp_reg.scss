@@ -1,0 +1,157 @@
+.comp_reg_main {
+  height: 100%;
+  width: 100%;
+  background-color: aliceblue;
+
+}
+
+.comp_reg_header {
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  nav{
+    padding: 40px 0 0 44px;
+    border: 0;
+    .info{
+      margin-left: 50px;
+      font-weight: 600;
+      color: #ccc;
+      .process_status{
+        height: 12px;
+        width: 12px;
+        margin-top: 12px;
+        margin-left: 26px;
+        border-radius: 50%;
+        background-color: #ea352d;
+        .process_bar{
+          position: absolute;
+          height: 2px;
+          width: 122px;
+          background-color: #ea352d;
+          margin-top: 5px;
+          margin-left: 12px;
+        }
+      }
+    }
+    .fin{
+      margin-left: 75px;
+      color: #ea352d;
+      .process_status{
+        height: 12px;
+        width: 12px;
+        margin-top: 12px;
+        margin-left: 16px;
+        border-radius: 50%;
+        background-color: #ea352d;
+      }
+    }
+    li{
+      list-style: none;
+      display: inline-block;
+    }
+  }
+  h1{
+    margin-top: 50px;
+  }
+  
+}
+
+.comp_reg_mid {
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  .comp_reg_continer{
+    background-color: #fff;
+    height: 600px;
+    width: 700px;
+    &__header{
+      height: 100px;
+      position: relative;
+      border-bottom: solid 1px #f5f5f5;
+      &--info{
+        position: absolute;
+        top: 27px;
+        left: 260px;
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+    &__main{
+      height: 500px;
+      position: relative;
+      &--info{
+        position: absolute;
+        left: 267px;
+        top: 27px;
+      }
+      input {
+        opacity: 0.5;
+        position: absolute;
+        top: 100px;
+        left: 213px;
+        height: 48px;
+        width: 274px;
+        background-color: #3ccace;
+        font-size: 15px;
+        color: #ffffff;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        cursor: pointer;
+      }
+      &--pic{
+        position: absolute;
+        bottom: 0;
+        height: 325px;
+        width: 100%;
+      }
+      &--app{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+      &--cat{
+        position: absolute;
+        bottom: 160px;
+        margin-left: 20px;
+        color: #fff;
+        font-size: 40px;
+        text-shadow: 0 0 5px black;
+      }
+      &--sub{
+        position: absolute;
+        bottom: 80px;
+        margin-left: 20px;
+        color: #fff;
+        text-shadow: 0 0 5px black;
+      }
+      a :hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.appleApp__btn {
+  width: 185px;
+  height: 54px;
+  margin-bottom: 11px;
+}
+.googleApp__btn {
+  width: 185px;
+  height: 77px; 
+}
+
+
+
+
+
+
+
+.comp_reg_footer{
+  height: 220px;
+}
+
+
