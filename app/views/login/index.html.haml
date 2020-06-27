@@ -12,9 +12,20 @@
             
         .login_continer__login_panel--form
           .input
+            %button{class: "btn_default btn_sns btn_sns_google"}
+              = icon('fab', 'google', class: 'icon icon_google')
+              Googleでログイン
+            %button{class: "btn_default btn_sns btn_sns_facebook"}
+              = icon('fab', 'facebook-f', class: 'icon icon_facebook')
+              facebookでログイン
+            %button{class: "btn_default btn_sns btn_sns_app"}
+              = icon('fab', 'apple', class: 'icon icon_app')
+              Appでログイン
             %input{type: "text", class: "input__default", placeholder: "メールアドレス"}
             %input{type: "password", class: "input__default", placeholder: "パスワード"}
-            %input{type: "submit" , class: "btn_default" , value: "ログイン"}
-              
+            %button{class: "btn_default btn_login"}
+              ログイン
+            =link_to "#" , class: "pass_info" do
+              パスワードをお忘れの方
   %footer.login_footer
     = render "mypages/footer"
