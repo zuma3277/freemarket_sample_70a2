@@ -1,0 +1,89 @@
+.login_main {
+  height: 100%;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+
+.login_header {
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  h1{
+    margin-top: 50px;
+  }
+}
+
+
+.login_mid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  .login_continer{
+    &__login_panel{
+      background-color: #fff;
+      height: 500px;
+      width: 450px;
+      
+      
+      &--no_account{
+        height: 140px;
+        width: 100%;
+        padding: 30px 64px;
+        text-align: center;
+        border-bottom: solid 1px #f5f5f5;
+        p{
+          font-size: 14px;
+        }
+        .btn_default{
+          display: block;
+          margin: 8px 13px;
+          border-radius: 4px;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          width: 300px;
+          cursor: pointer;
+        }
+      }
+      &--form{
+        height: 360px;
+        .input{
+          max-width: 300px;
+          margin: 0 auto;
+          &__default{
+            width: 100%;
+            margin: 30px 0 0;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          .btn_default{
+            width: 100%;
+            display: block;
+            margin: 90px 0 0;
+            border-radius: 4px;
+            border: 1px solid #3ccace;
+            background:  #3ccace;
+            color: #fff;
+            line-height: 40px;
+            cursor: pointer;
+          }
+        }
+        
+      }
+    }
+    
+  }
+}
+
+
+.login_footer{
+  height: 220px;
+}

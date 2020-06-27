@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :comp_reg, only: [:index]
   resources :products, only: [:index]
   resources :sign_up, only: [:index]
+  resources :login, only: [:index]
 end
