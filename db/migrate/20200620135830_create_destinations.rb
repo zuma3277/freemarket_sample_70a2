@@ -11,9 +11,9 @@ class CreateDestinations < ActiveRecord::Migration[5.2]
       t.string :prefecture,                   null: false
       t.string :city,                         null: false
       t.string :address,                      null: false
-      t.string :building_name,                
+      t.string :building_name                
       t.integer :phone_number,                null: false, unque: true
-      t.timestamps :
+      t.timestamps
     end
   end
 end
