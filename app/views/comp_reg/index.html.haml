@@ -1,0 +1,43 @@
+.comp_reg_main
+  %header.comp_reg_header
+    %h1
+      =image_tag  "logo.png" , width: "200px" , height: "50px"
+    %nav.prosess
+      %li.info
+        会員情報
+        .process_status
+          .process_bar
+      %li.fin
+        完了
+        .process_status
+  %main.comp_reg_mid
+    .comp_reg_continer
+      .comp_reg_continer__header
+        %h.comp_reg_continer__header--info
+          会員登録完了
+      .comp_reg_continer__main
+        %p.comp_reg_continer__main--info
+          ありがとうございます。
+          %br
+          会員登録完了しました。
+        .input
+          %input{type: "submit" , class: "btn_default" , value: "FURIMAを始める"}
+        
+        .comp_reg_continer__main--pic
+          %h1
+            =image_tag  "bg-mainVisual-pict_pc.jpg" , width: "100%" , height: "325px"
+        .comp_reg_continer__main--cat
+          %p2
+            人生を変えるフリマアプリ
+        .comp_reg_continer__main--sub
+          %p3
+            FURIMAはだれでもかんたんに出品・購入できる
+            %br
+            フリマアプリです。
+        .comp_reg_continer__main--app
+          = link_to "#" do
+            = image_tag "Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg", class:"appleApp__btn"
+          = link_to "#" do
+            = image_tag "google-play-badge.png", class:"googleApp__btn"
+  %footer.comp_reg_footer
+    =render "login/simple_footer"

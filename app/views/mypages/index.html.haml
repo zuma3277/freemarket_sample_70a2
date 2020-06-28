@@ -45,10 +45,22 @@
                 .main__lists--message
                 %i
             %li.main__lists--etc
-          %ul
-            %li
+          %ul.main-lists--todo
+            %li 現在やることリストはありません
       .main__lists--Purchased--goods
-        購入した商品
+        %h2.main__lists--Purchased--goods__text 購入した商品
+        %ul
+          %li
+            %h3
+              = link_to "取引中", "#"
+          %li
+            %h3
+              = link_to "過去の取引", "#"
+          .trade-contents
+            %Ul.trade-contents--now
+              %li 取引中の商品がありません
+            %ul.trade-contents--past
+              %li
     = render "navlists"
   = render "aside"
   = render "footer"

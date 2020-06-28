@@ -1,0 +1,128 @@
+.main__lists {
+  width: 1020px;
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+  &__contents {
+    width: 700px;
+    float: right;
+    background: $white;
+    .main__lists__user__icon {
+      height: 200px;
+      position: relative;
+      padding: 20px;
+      background: linear-gradient(#05fbff, #8070fa);
+      a {
+        margin: 0 auto;
+        display: block;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        h1 {
+          margin: 8px 0 0;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .main__lists__user__contents {
+          display: inline-flex;
+          margin: 8px 0 0;
+          .furima__user__shopping {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .main__lists__to-do-lists {
+      ul {
+        background-color: $white;
+        border: 0;
+        font-size: 0;
+        width: 100%;
+        cursor: pointer;
+        li {
+          display: inline-block;
+          text-align: center;
+          width: 50%;
+          h3 {
+            font-size: 22px;
+            border: 1px solid $gray;
+            a {
+              text-decoration: none;
+              color: black;
+              line-height: 72px;
+            }
+          }
+        }
+      }
+      .main-lists {
+        &--todo {
+          display: block;
+          text-align: center;
+          border: 1px solid $gray;
+          li {
+            padding: 160px 0 60px;
+            font-size: 16px;
+            background-image: image-url("logo.png");
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center 90px;
+            opacity: 0.8;
+            color: $input-border-color;
+          }
+        }
+      }
+    }
+    .main__lists--Purchased--goods {
+      border-top: 40px solid aliceblue;
+      background-color: $white;
+
+      &__text {
+        border: 1px solid $gray;
+        padding: 0 16px;
+        background: $light-gray;
+        font-size: 16px;
+        line-height: 72px;
+      }
+      ul {
+        background-color: $white;
+        width: 100%;
+        border: 0;
+        font-size: 0;
+        cursor: pointer;
+        li {
+          width: 50%;
+          display: inline-block;
+          text-align: center;
+          h3 {
+            font-size: 22px;
+            border: 1px solid $gray;
+            a {
+              text-decoration: none;
+              color: black;
+              line-height: 72px;
+            }
+          }
+        }
+        .trade-contents {
+          &--now {
+            display: block;
+            text-align: center;
+            border: 1px solid $gray;
+            li {
+              padding: 160px 0 60px;
+              font-size: 16px;
+              background-image: image-url("logo.png");
+              background-size: 50%;
+              background-repeat: no-repeat;
+              background-position: center 90px;
+              opacity: 0.8;
+              color: $input-border-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
