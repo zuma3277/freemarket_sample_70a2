@@ -7,6 +7,6 @@ class Product < ApplicationRecord
   belongs_to :shipment
   belongs_to :product_condition
   has_many :favorite_products, dependent: :destroy
-  has_many :comments, dependent: :destory
+  has_many :comments, dependent: :destroy
   has_many :product_imgs
 end
