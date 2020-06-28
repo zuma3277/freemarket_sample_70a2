@@ -57,12 +57,11 @@
 }
 
 .sign_up_continer {
-  margin: 10px 0;
-  height: 1300px;
+  height: 2300px;
   display: flex;
   justify-content: center;
   &__registration {
-    height: 1300px;
+    height: 2300px;
     width: 700px;
     background-color: #fff;
     &__header {
@@ -95,6 +94,13 @@
             padding: 2px 4px;
             border-radius: 2px;
             color: #fff;
+            font-size: 12px;
+          }
+          &__any{
+            border: 1px solid;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
             font-size: 12px;
           }
           &__default{
