@@ -1,6 +1,6 @@
 class FavoriteProduct < ApplicationRecord
   
   belong_to :user
-  belong_to :products
+  belong_to :product
   
 end
