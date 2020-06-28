@@ -6,7 +6,7 @@
 .root {
   width: 100%;
   border-top: 1px solid $gray;
-  box-shadow: 0 3px 3px 0 $black;
+  box-shadow: 0 3px 3px 0 $black2;
   position: relative;
   padding: 0 60px;
   background: $white;
@@ -27,7 +27,7 @@
       float: left;
       a {
         text-decoration: none;
-        color: $dark-gray;
+        color: $black;
       }
     }
   }
@@ -158,9 +158,9 @@
           margin: 10px 0 0;
           display: flex;
           font-size: 14px;
-          border: 1px solid $dark-gray;
+          border: 1px solid $black;
           border-radius: 4px;
-          color: $dark-gray;
+          color: $black;
           display: inline-block;
           &__icon {
             padding-left: 6px;
@@ -170,7 +170,7 @@
             padding: 6px 10px 6px 4px;
             display: inline-block;
             text-decoration: none;
-            color: $dark-gray;
+            color: $black;
           }
         }
       }
@@ -274,7 +274,7 @@
         }
         .item__body {
           background-color: $white;
-          color: $dark-gray;
+          color: $black;
           padding: 16px;
           .item__name {
             overflow: hidden;
