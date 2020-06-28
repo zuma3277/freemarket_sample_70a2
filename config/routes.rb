@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
   root "index#index"
   resources :purchase, only: [:index]
   resources :logout, only: [:index]
