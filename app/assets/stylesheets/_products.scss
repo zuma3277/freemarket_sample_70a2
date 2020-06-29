@@ -24,9 +24,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .main_display{
-      
-      background-color:$white;
+    form{
+      background-color: $white;
       max-width: 700px;
 
       %main_title{
@@ -240,7 +239,8 @@
         width: 360px;
         margin: 0px auto 32px;
         text-align: center;
-        button{
+        
+        .exhibition{
           font-size: 17px;
           min-height: 48px;
           padding: 0 24px;
@@ -249,15 +249,9 @@
           border: 1px solid transparent;
           font-weight: 600;
           cursor: pointer;
-        }
-        .exhibition{
           background-color:$skyblue;
           color: $white;
-        }
-        .draft{
-          margin: 24px 0 24px;
-          background-color: $input-border-color;
-          color: #222;
+          margin-bottom: 10px;
         }
         .return{
           color: $blue;

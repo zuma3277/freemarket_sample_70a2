@@ -5,7 +5,8 @@
       = image_tag 'logo.png', class: 'product_header__logo-img'
       
   .main
-    %form.main_display(action="#" id="main_display")
+    = form_for @product do |f|
+      -#メインを全て一括でフォームとして作成。一番下のサブミットボタン（%button.exhibition）を押すとこのフォームの内容が送られる。
       .main_image
         .main_display__title
           %label.title
@@ -15,12 +16,13 @@
         %p.main_image-text
           最大10枚までアップロードできます。
         .main_image-input
-          %label.input-label(for="input-function")
-            %input.input-function(type="file" accept="image/png,image/jpeg" id="input-function")
-            = image_tag 'icon_camera.png', class: 'logo_camera'
-            %p.input-text
-              ドラックアンドドロップ
-              %br またはクリックしてファイルをダウンロード
+          = f.fields_for :product_img do |i|
+            %label.input-label(for="input-function")
+              =i.file_field :image,acccept:"image/png,image/jpeg",class:'input-function'
+              = image_tag 'icon_camera.png', class: 'logo_camera'
+              %p.input-text
+                ドラックアンドドロップ
+                %br またはクリックしてファイルをダウンロード
 
       .main_text
         .main_text__input__name
@@ -30,7 +32,7 @@
             %span.required
               必須
           .main_text__input__name-form
-            %input.input-name(type="text" placeholder="40文字まで")
+            = f.text_field :name,class:'input-name',placeholder:"40文字まで"
 
         .main_text__input__explanation
           .main_display__title
@@ -39,11 +41,12 @@
             %span.required
               必須
           .main_text__input__explanation-form
-            %textarea.input-sentences(id="input-sentences" rows="7" placeholder="商品の説明（必須 1000文字以内）※色、素材、重さ、注意点など")
+            = f.text_area :product_introduction,class:'input-sentences', rows:"7", placeholder:"商品の説明（必須 1000文字以内）※色、素材、重さ、注意点など"
           .main_text__input__explanation-count
             %span.count(id="count")
               0
             ／1000
+            -#java scriptを使用して文字数制限を設定する
       
       .main_details
         %p.details
@@ -56,21 +59,22 @@
             %span.required
               必須
           .main_details__category-select
-            %select.category(name="category" id="category")
-              %option(selected value label="選択してください" aria-selected="true")
-              %option(label="レディース")
-              %option(label="メンズ")
-              %option(label="ベビー・キッズ")
-              %option(label="インテリア・住まい・小物")
-              %option(label="本・音楽・ゲーム")
-              %option(label="おもちゃ・ホビー・グッズ")
-              %option(label="コスメ・香水・美容" )
-              %option(label="家電・スマホ・カメラ")
-              %option(label="スポーツ・レジャー" )
-              %option(label="ハンドメイド" )
-              %option(label="チケット")
-              %option(label="自動車・オートバイ")
-              %option(label="その他")
+            = f.fields_for :category do |c|
+              = c.select :name,class:'category' do
+                %option(selected value label="選択してください" aria-selected="true")
+                %option(label="レディース")
+                %option(label="メンズ")
+                %option(label="ベビー・キッズ")
+                %option(label="インテリア・住まい・小物")
+                %option(label="本・音楽・ゲーム")
+                %option(label="おもちゃ・ホビー・グッズ")
+                %option(label="コスメ・香水・美容" )
+                %option(label="家電・スマホ・カメラ")
+                %option(label="スポーツ・レジャー" )
+                %option(label="ハンドメイド" )
+                %option(label="チケット")
+                %option(label="自動車・オートバイ")
+                %option(label="その他")
 
         .main_details__brand
           .main_display__title
@@ -79,7 +83,8 @@
             %span.optional
               任意
           .main_details__brand-form
-            %input.input-brand(type="text" name="name" placeholder="例）シャネル" id="input-brand")
+            = f.fields_for :brand do |b|
+              = b.text_field :name, class:'input-brand', placeholder:"例）シャネル"
           
         .main_details__status
           .main_display__title
@@ -88,14 +93,15 @@
             %span.required
               必須
           .main_details__status-select
-            %select.status(name="status" id="status")
-              %option(selected value label="選択してください" aria-selected="true")
-              %option(label="新品・未使用")
-              %option(label="未使用に近い")
-              %option(label="目立った傷や汚れなし")
-              %option(label="やや傷や汚れあり")
-              %option(label="傷や汚れあり")
-              %option(label="全体的に状態が悪い")
+            = f.fields_for :product_condition do |pc|
+              = pc.select :product_condition,class:'status' do
+                %option(selected value label="選択してください" aria-selected="true")
+                %option(label="新品・未使用")
+                %option(label="未使用に近い")
+                %option(label="目立った傷や汚れなし")
+                %option(label="やや傷や汚れあり")
+                %option(label="傷や汚れあり")
+                %option(label="全体的に状態が悪い")
             
       .main_delivery
         %p.delivery
@@ -107,10 +113,11 @@
             %span.required
               必須
           .main_delivery__fee-select
-            %select.delivery-fee(name="delivery-fee" id="delivery-fee")
-              %option(selected value label="選択してください" aria-selected="true")
-              %option(label="送料込み")
-              %option(label="着払い")
+            = f.fields_for :shipment do |s|
+              =s.select :charge_paument,class:'delivery-fee' do
+                %option(selected value label="選択してください" aria-selected="true")
+                %option(label="送料込み")
+                %option(label="着払い")
 
         .main_delivery__area
           .main_display__title
@@ -119,56 +126,57 @@
             %span.required
               必須
           .main_delivery__area-select
-            %select.area(name="area" id="area")
-              %option(selected value label="選択してください" aria-selected="true")
-              %option(label="北海道")
-              %option(label="青森県")
-              %option(label="岩手県")
-              %option(label="宮城県")
-              %option(label="秋田県")
-              %option(label="山形県")
-              %option(label="福島県")
-              %option(label="茨城県")
-              %option(label="栃木県")
-              %option(label="群馬県")
-              %option(label="埼玉県")
-              %option(label="千葉県")
-              %option(label="東京都")
-              %option(label="神奈川県")
-              %option(label="新潟県")
-              %option(label="富山県")
-              %option(label="石川県")
-              %option(label="福井県")
-              %option(label="山梨県")
-              %option(label="長野県")
-              %option(label="岐阜県")
-              %option(label="静岡県")
-              %option(label="愛知県")
-              %option(label="三重県")
-              %option(label="滋賀県")
-              %option(label="京都府")
-              %option(label="大阪府")
-              %option(label="兵庫県")
-              %option(label="奈良県")
-              %option(label="和歌山県")
-              %option(label="鳥取県")
-              %option(label="島根県")
-              %option(label="岡山県")
-              %option(label="広島県")
-              %option(label="山口県")
-              %option(label="徳島県")
-              %option(label="香川県")
-              %option(label="愛媛県")
-              %option(label="高知県")
-              %option(label="福岡県")
-              %option(label="佐賀県")
-              %option(label="長崎県")
-              %option(label="熊本県")
-              %option(label="大分県")
-              %option(label="宮崎県")
-              %option(label="鹿児島県")
-              %option(label="沖縄県")
-              %option(label="未定")
+            = f.fields_for :shipment do |s|
+              =s.select :area,class:'area' do
+                %option(selected value label="選択してください" aria-selected="true")
+                %option(label="北海道")
+                %option(label="青森県")
+                %option(label="岩手県")
+                %option(label="宮城県")
+                %option(label="秋田県")
+                %option(label="山形県")
+                %option(label="福島県")
+                %option(label="茨城県")
+                %option(label="栃木県")
+                %option(label="群馬県")
+                %option(label="埼玉県")
+                %option(label="千葉県")
+                %option(label="東京都")
+                %option(label="神奈川県")
+                %option(label="新潟県")
+                %option(label="富山県")
+                %option(label="石川県")
+                %option(label="福井県")
+                %option(label="山梨県")
+                %option(label="長野県")
+                %option(label="岐阜県")
+                %option(label="静岡県")
+                %option(label="愛知県")
+                %option(label="三重県")
+                %option(label="滋賀県")
+                %option(label="京都府")
+                %option(label="大阪府")
+                %option(label="兵庫県")
+                %option(label="奈良県")
+                %option(label="和歌山県")
+                %option(label="鳥取県")
+                %option(label="島根県")
+                %option(label="岡山県")
+                %option(label="広島県")
+                %option(label="山口県")
+                %option(label="徳島県")
+                %option(label="香川県")
+                %option(label="愛媛県")
+                %option(label="高知県")
+                %option(label="福岡県")
+                %option(label="佐賀県")
+                %option(label="長崎県")
+                %option(label="熊本県")
+                %option(label="大分県")
+                %option(label="宮崎県")
+                %option(label="鹿児島県")
+                %option(label="沖縄県")
+                %option(label="未定")
           
         .main_delivery__days
           .main_display__title
@@ -177,11 +185,12 @@
             %span.required
               必須
           .main_delivery__days-select
-            %select.days(name="days" id="days")
-              %option(selected value label="選択してください" aria-selected="true")
-              %option(label="1~2日で発送")
-              %option(label="2~3日で発送")
-              %option(label="4~7日で発送")
+            = f.fields_for :shipment do |s|
+              = s.select :days,class:'days' do
+                %option(selected value label="選択してください" aria-selected="true")
+                %option(label="1~2日で発送")
+                %option(label="2~3日で発送")
+                %option(label="4~7日で発送")
             
       .main_price
         .main_price__title
@@ -200,7 +209,7 @@
             %p.unit
               ¥
             .main_price__decide-input-form
-              %input.price(type="number" name="price" id="price" placeholder="0")
+              = f.number_field :price, class:'price',placeholder:"0"
           .main_price__decide-fee
             %p.fee-label
               販売手数料（10％）
@@ -213,10 +222,7 @@
               ー
 
       .main_send
-        %button.exhibition(type ="submit" tabindex="0" id="exhibition" form="main_display")
-          出品する
-        %button.draft(type="button" tabindex="0" id="draft")
-          下書きに保存
+        =f.submit class:'exhibition',value:'出品する'
         = link_to "#", class:"return" do
           もどる
       .main_warn
