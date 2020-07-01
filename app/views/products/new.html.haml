@@ -76,6 +76,17 @@
                 %option(label="自動車・オートバイ")
                 %option(label="その他")
 
+        .main_details__size
+          .main_display__title
+            %label.title
+              サイズ
+            %span.required
+              必須
+          .main_details__size-select
+            =f.fields_for :size do |si|
+              = si.select :size,class:'size' do
+                %option(selected value label="選択してください" aria-selected="true")
+
         .main_details__brand
           .main_display__title
             %label.title
@@ -114,7 +125,7 @@
               必須
           .main_delivery__fee-select
             = f.fields_for :shipment do |s|
-              =s.select :charge_paument,class:'delivery-fee' do
+              =s.select :charge_payment,class:'delivery-fee' do
                 %option(selected value label="選択してください" aria-selected="true")
                 %option(label="送料込み")
                 %option(label="着払い")

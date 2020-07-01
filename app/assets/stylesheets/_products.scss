@@ -157,6 +157,10 @@
         .details{
           @extend %main_title
         }
+        &__size{
+          margin-top: 32px;
+        }
+        
         &__brand{
           margin-top: 32px;
           .optional{
