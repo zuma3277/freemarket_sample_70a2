@@ -24,22 +24,31 @@
                   = image_tag "icon_brand.png", width:"30"
                   %span ブランドから探す
         .nav__lists--right
-          %ul
-            %li
-              = link_to "#" do
-                %i
-                %span いいね一覧
-            %li
-              = link_to "#" do
-                %i
-                %span お知らせ
-            %li
-              = link_to "#" do
-                %i
-                %span やることリスト
-            %li
-              = link_to mypages_path do
-                = image_tag "member_photo_noimage_thumb.png", width:"25"
-                %span マイページ
+          - if user_signed_in?
+            %ul
+              %li
+                = link_to "#" do
+                  %i
+                  %span いいね一覧
+              %li
+                = link_to "#" do
+                  %i
+                  %span お知らせ
+              %li
+                = link_to "#" do
+                  %i
+                  %span やることリスト
+              %li
+                = link_to mypages_path do
+                  = image_tag "member_photo_noimage_thumb.png", width:"25"
+                  %span マイページ
+          - else
+            %ul
+              %li
+                = link_to login_index_path do
+                  %span ログイン
+              %li
+                = link_to sign_up_index_path do
+                  %span 新規登録
 
 
