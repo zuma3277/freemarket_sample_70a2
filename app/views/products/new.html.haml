@@ -17,8 +17,8 @@
           最大10枚までアップロードできます。
         .main_image-input
           = f.fields_for :product_img do |i|
-            %label.input-label(for="input-function")
-              =i.file_field :image,acccept:"image/png,image/jpeg",class:'input-function'
+            %label.input-label
+              = i.file_field :image,acccept:"image/png,image/jpeg",class:'input-function'
               = image_tag 'icon_camera.png', class: 'logo_camera'
               %p.input-text
                 ドラックアンドドロップ

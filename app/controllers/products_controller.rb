@@ -5,13 +5,19 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = products.new(product_params)
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = '入力されていない項目があります。'
+      render :new
+    end
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:name,:price,:dealing_status,:products_introduction,category:[:name],brand:[:name],product_condition:[:product_condition],size:[:size],shipment:[:area,:charge_payment,:day],product_imgs:[:image])
+    params.require(:product).permit(:name,:price,:dealing_status,:product_introduction,:category_id,:product_condition_id,:size_id,brand:[:brand],shipment:[:area,:charge_payment,:day],product_imgs:[:image])
   end
   
 end
