@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_one :destination, dependent: :destroy
   has_many :favorite_products, dependent: :destroy
   has_many :products, dependent: :destroy
+  
 end
