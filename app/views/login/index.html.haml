@@ -1,0 +1,31 @@
+.login_main
+  %header.login_header
+    %h1
+      =image_tag  "logo.png" , width: "200px" , height: "50px"
+  %main.login_mid
+    .login_continer
+      .login_continer__login_panel
+        .login_continer__login_panel--no_account
+          %p
+            アカウントをお持ちでない方はこちら
+          %input{type: "submit" , class: "btn_default" , value: "新規会員登録"}
+            
+        .login_continer__login_panel--form
+          .input
+            %button{class: "btn_default btn_sns btn_sns_google"}
+              = icon('fab', 'google', class: 'icon icon_google')
+              Googleでログイン
+            %button{class: "btn_default btn_sns btn_sns_facebook"}
+              = icon('fab', 'facebook-f', class: 'icon icon_facebook')
+              facebookでログイン
+            %button{class: "btn_default btn_sns btn_sns_app"}
+              = icon('fab', 'apple', class: 'icon icon_app')
+              Appでログイン
+            %input{type: "text", class: "input__default", placeholder: "メールアドレス"}
+            %input{type: "password", class: "input__default", placeholder: "パスワード"}
+            %button{class: "btn_default btn_login"}
+              ログイン
+            =link_to "#" , class: "pass_info" do
+              パスワードをお忘れの方
+  %footer.login_footer
+    = render "login/simple_footer"
