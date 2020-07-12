@@ -18,8 +18,8 @@
         .main_image-input
           %ul#output-box
             %div#input-img
-              %label.input-label
-                = f.file_field :image,multiple: true,acccept:"image/png,image/jpeg",class:'input-function',id:'input-function'
+              =f.label :images, for: "input-images0",class:"input-label",data: {label_id: 0 } do 
+                = f.file_field :image,multiple: true, acccept:"image/png,image/jpeg",class:'input-function',id:'input-images0'
                 = image_tag 'icon_camera.png', class: 'logo_camera'
                 %p.input-text
                   ドラックアンドドロップ

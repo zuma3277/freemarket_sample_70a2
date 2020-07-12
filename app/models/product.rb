@@ -9,4 +9,5 @@ class Product < ApplicationRecord
   has_many :favorite_products, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many_attached :product_imgs
+  
 end
