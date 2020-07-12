@@ -16,16 +16,15 @@
     .sign_up_continer__registration__header
       %h.sign_up_continer__registration__header__info
         会員情報入力
-        
     .sign_up_continer__registration__main
       .sign_up_continer__registration__main__continer
         = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'form', local: true do |form|
           - if @user.errors.any?
             .sign_up_continer_if
-            %h2= "#{@user.errors.full_messages.count}件のエラーが発生しました。"
-            %ul
-              - @user.errors.full_messages.each do |message|
-                %li= message
+              %h2= "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+              %ul
+                - @user.errors.full_messages.each do |message|
+                  %li= message
           .input
             %label.input__label ニックネーム
             %span.input__require 必須
