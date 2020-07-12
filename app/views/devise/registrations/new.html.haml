@@ -42,11 +42,7 @@
             = form.password_field :password, autocomplete: "new-password",placeholder: '7文字以上の半角英数字' , class: :input__default ,id: :"js-password"
             = form.password_field :password_confirmation, placeholder: 'パスワード確認', class: :input__default ,id: :"js-password", autocomplete: "new-password"
             %p.form-info ※ 英字と数字の両方を含めて設定して下さい
-            .input-password-checkbox
-              .input-password-checkbox__default
-                -# = form.check_box ,placeholder: :PC・携帯どちらでも可, class: :input__default
-                %input{type: "checkbox", id:"password-reveal", class: "password-reveal"}
-                %lavel.password-display パスワードを表示する
+  
           .input
             %h2.text__info 
               本人確認
