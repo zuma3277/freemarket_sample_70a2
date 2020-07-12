@@ -2,17 +2,7 @@ class ProductsController < ApplicationController
   
   def new
     @product = Product.new
-    @category_parent =  Category.where("ancestry is null")
   end
-  
-  def category_children
-    @category_children = Category.find("#{params[:parent_id]}").children
-  end
-
-  def category_grand_children
-    @category_grand_children = Category.find("#{params[:child_id]}").children
-  end
-
   def create
     @product = Product.new(product_params)
     if @product.save
