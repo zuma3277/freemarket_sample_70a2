@@ -17,8 +17,8 @@
       %h.sign_up_continer__registration__header__info
         会員情報入力
        
-        -# - if @user.errors.any?
-        -#   = @message
+        - if @user.errors.any?
+          = @message
 
     .sign_up_continer__registration__main
       .sign_up_continer__registration__main__continer
