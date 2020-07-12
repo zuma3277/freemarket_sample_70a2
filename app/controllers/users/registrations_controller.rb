@@ -5,7 +5,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   def after_sign_up_path_for(resource)
-    comp_reg_index_path
+    if @user.save
+      comp_reg_index_path
+    else
+      render action: :new
+      @message = "記入ができていません"
+    end
+
   end
 
   def after_sign_out_path_for(resource)
