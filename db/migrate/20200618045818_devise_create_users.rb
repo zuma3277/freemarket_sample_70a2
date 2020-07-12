@@ -22,7 +22,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :city , null: false
       t.string :address , null: false
       t.string :building_name
-      t.integer :phone_number
+      t.string :phone_number
 
       ## Recoverable
       t.string   :reset_password_token

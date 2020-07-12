@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 2020_06_31_144818) do
     t.string "city", null: false
     t.string "address", null: false
     t.string "building_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
