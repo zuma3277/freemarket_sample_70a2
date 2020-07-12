@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       comp_reg_index_path
     else
       render action: :new
-      @message = "記入ができていません"
+      # @message = '記入できていません'
     end
 
   end

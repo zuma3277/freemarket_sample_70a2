@@ -37,10 +37,11 @@ ActiveRecord::Schema.define(version: 2020_06_31_144818) do
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.integer "card_number", null: false
+    t.integer "expiration_date", null: false
+    t.integer "security_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "customer_id", null: false
-    t.string "card_id", null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
@@ -77,9 +78,11 @@ ActiveRecord::Schema.define(version: 2020_06_31_144818) do
   end
 
   create_table "product_imgs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_imgs_on_product_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,15 +95,12 @@ ActiveRecord::Schema.define(version: 2020_06_31_144818) do
     t.bigint "size_id", null: false
     t.integer "dealing_status", default: 0, null: false
     t.bigint "shipment_id", null: false
-    t.bigint "product_img_id", null: false
-    t.integer "buyer_id"
     t.text "product_introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["product_condition_id"], name: "index_products_on_product_condition_id"
-    t.index ["product_img_id"], name: "index_products_on_product_img_id"
     t.index ["shipment_id"], name: "index_products_on_shipment_id"
     t.index ["size_id"], name: "index_products_on_size_id"
     t.index ["user_id"], name: "index_products_on_user_id"
@@ -156,10 +156,10 @@ ActiveRecord::Schema.define(version: 2020_06_31_144818) do
   add_foreign_key "destinations", "users"
   add_foreign_key "favorite_products", "products"
   add_foreign_key "favorite_products", "users"
+  add_foreign_key "product_imgs", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "product_conditions"
-  add_foreign_key "products", "product_imgs"
   add_foreign_key "products", "shipments"
   add_foreign_key "products", "sizes"
   add_foreign_key "products", "users"
