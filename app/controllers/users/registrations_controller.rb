@@ -10,7 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     User.create(sign_up_params)
-    redirect_to comp_reg_index_path
+  
+    if @user.save
+      redirect_to comp_reg_index_path
+    else
+      @message = "記入漏れがあります。"
+      render action: :new
+    end
   end
 
   # private
