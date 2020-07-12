@@ -105,10 +105,11 @@
               width: 20%;
               padding: 0px 4px;
               margin-top: 8px;
+              border: solid 1px rgb(204, 204, 204);
               &__figure{
                 margin:0 auto;
                 height: 118px;
-                background-color: rgb(245, 245, 245);
+                background-color:white;
                 img{
                   box-sizing: border-box;
                   width: 100%;
@@ -120,7 +121,6 @@
                 border-top-width: 1px;
                 border-top-color: rgb(204, 204, 204);
                 border-top-style: solid;
-                background-color: rgb(245, 245, 245);
                 justify-content: space-around;
                 display: flex;
                 align-items: center;
