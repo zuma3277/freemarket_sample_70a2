@@ -25,6 +25,14 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
+        nickname: "ニックネーム"
+        family name: "姓"
+        First name: "名"
+        Family name kana: "姓（カナ）"
+        First name kana: "名（カナ）"
+        Postal code: "郵便番号"
+        City: "市区町村"
+        Address: "番地"
     models:
       user: "ユーザ"
   devise:
