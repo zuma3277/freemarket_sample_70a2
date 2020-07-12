@@ -4,20 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  def new 
-    @user = User.new
-  end
-
-  def create
-    User.create(sign_up_params)
   
-    if @user.save
-      redirect_to comp_reg_index_path
-    else
-      @message = "記入漏れがあります。"
-      render action: :new
-    end
-  end
 
   # private
   # def user_params
