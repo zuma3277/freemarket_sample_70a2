@@ -21,7 +21,7 @@
           %br
           会員登録完了しました。
         .input
-          %input{type: "submit" , class: "btn_default" , value: "FURIMAを始める"}
+          = link_to  "FURIMAを始める" ,root_path ,class: :btn_default
         
         .comp_reg_continer__main--pic
           %h1
@@ -40,4 +40,15 @@
           = link_to "#" do
             = image_tag "google-play-badge.png", class:"googleApp__btn"
   %footer.comp_reg_footer
-    =render "login/simple_footer"
+    %ul.document
+      %li.privacy-policy
+        プライバシーポリシー
+      %li.frima-terms
+        フリマ利用規約
+      %li.law
+        特定商取引に関する表記
+    .login_footer__logo
+      = link_to root_path,class:"login_footer_logo" do
+        = image_tag 'logo.png', class: 'login_footer_logo__img'
+      %p.login_footer__furima
+        © FURIMA
