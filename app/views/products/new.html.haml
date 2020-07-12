@@ -59,8 +59,8 @@
             %span.required
               必須
           .main_details__category-select
-            = f.fields_for :category do |c|
-              = c.select :name,class:'category' do
+            = f.label :category_id, {class: 'sell-collection_select__label'} do
+              = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "選択して下さい"},{ class: 'sell-collection_select__input', id: 'category-select-parent', required: "required"}
                 %option(selected value label="選択してください" aria-selected="true")
                 %option(label="レディース")
                 %option(label="メンズ")
