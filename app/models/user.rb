@@ -9,8 +9,10 @@ class User < ApplicationRecord
   has_many :favorite_products, dependent: :destroy
   has_many :products, dependent: :destroy
 
+  has_secure_password
+
   validates :nickname,                         presence: true, uniqueness: true
-  validates :password,                         length: { in: 7..128 }
+  validates :password,                         presence: true, length: { in: 7..128 }
   validates :family_name, :first_name,           presence: true
   validates :family_name_kana, :first_name_kana, presence: true,
                                                format: {
