@@ -9,5 +9,19 @@ class Product < ApplicationRecord
   has_many :favorite_products, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many_attached :product_imgs
+
+  validate :images_presence
+  #バリデーションを呼び出す
+
+  def images_presence
+    if images.attached?
+      # inputに保持されているimagesがあるかを確認
+      if images.length > 10
+        errors.add(:image, '10枚まで投稿できます')
+      end
+    else
+      errors.add(:image, '画像がありません')
+    end
+  end
   
 end
