@@ -54,27 +54,12 @@
 
         .main_details__category
           .main_display__title
-            %label.title
-              カテゴリー
-            %span.required
-              必須
-          .main_details__category-select
-            = f.fields_for :category do |c|
-              = c.select :name,class:'category' do
-                %option(selected value label="選択してください" aria-selected="true")
-                %option(label="レディース")
-                %option(label="メンズ")
-                %option(label="ベビー・キッズ")
-                %option(label="インテリア・住まい・小物")
-                %option(label="本・音楽・ゲーム")
-                %option(label="おもちゃ・ホビー・グッズ")
-                %option(label="コスメ・香水・美容" )
-                %option(label="家電・スマホ・カメラ")
-                %option(label="スポーツ・レジャー" )
-                %option(label="ハンドメイド" )
-                %option(label="チケット")
-                %option(label="自動車・オートバイ")
-                %option(label="その他")
+            = f.label 'カテゴリー', class: 'main_display__label'
+            %span.main_display_require 必須
+            .main_select-wrapper
+              .main_select-wrapper__box
+                = f.select :category, @category_parent_array, {}, {class: 'main_select-wrapper__box--select', id: 'parent_category'}
+               %i.fas.fa-chevron-down.main_select-wrapper__box--arrow-down
 
         .main_details__size
           .main_display__title

@@ -1,74 +1,91 @@
 $(function(){
-  function categoryOption(category){
-    var optionHtml = `<option value="${category.id}">${category.name}</option>`;
-    return optionHtml;
+  function appendOption(category){
+    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    return html;
   }
-  $('#category-select-parent').on('change', function(){
-    let parentCategoryId = $(this).val();
-    if (parentCategoryId == ''){
-      $('#select-children-box').remove();
-      $('#select-grandchildren-box').remove();
-    }else{
+  function appendChidrenBox(insertHTML){
+    var childSelectHtml = '';
+    childSelectHtml = `<div class='main_select-wrapper__added' id= 'children_wrapper'>
+                        <div class='main_select-wrapper__box'>
+                          <select class="main_select-wrapper__box--select" id="child_category" name="category_id">
+                            <option value="---" data-category="---">---</option>
+                            ${insertHTML}
+                          <select>
+                          <i class='fas fa-chevron-down main_select-wrapper__box--arrow-down'></i>
+                        </div>
+                      </div>`;
+    $('.listing-product-detail__category').append(childSelectHtml);
+  }
+  function appendGrandchidrenBox(insertHTML){
+    var grandchildSelectHtml = '';
+    grandchildSelectHtml = `<div class='main_select-wrapper__added' id= 'grand_children_wrapper'>
+                              <div class='main_select-wrapper__box'>
+                                <select class="main_select-wrapper__box--select" id="grand_child_category" name="category_id">
+                                  <option value="---" data-category="---">---</option>
+                                  ${insertHTML}
+                                <select>
+                                <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
+                              </div>
+                            </div>`;
+    $('.listing-product-detail__category').append(grandchildSelectHtml);
+  }
+  $('#parent_category').on('change', function(){
+    var parentCategory = document.getElementById('parent_category').value; 
+    if (parentCategory != "---"){
       $.ajax({
-        url: '/items/category_children',
+        url: 'get_category_children',
         type: 'GET',
-        data: { parent_id: parentCategoryId },
+        data: { parent_name: parentCategory },
         dataType: 'json'
       })
-      .done(function(category_children){
-        $('#select-children-box').remove();
-        $('#select-grandchildren-box').remove();
-        let optionHtml = '';
-        category_children.forEach(function(child){
-          optionHtml += categoryOption(child);
+      .done(function(children){
+        $('#children_wrapper').remove();
+        $('#grand_children_wrapper').remove();
+        $('#size_wrapper').remove();
+        $('#brand_wrapper').remove();
+        var insertHTML = '';
+        children.forEach(function(child){
+          insertHTML += appendOption(child);
         });
-        $('#error-category').before(`<div class="sell-collection_select " id="select-children-box">
-                                        <label class="sell-collection_select__label" for="item_category_id">
-                                          <select class="sell-collection_select__input" id="category-select-children" required="required" name="item[category_id]">
-                                            <option value="">選択して下さい</option>
-                                            ${optionHtml}
-                                          </select>
-                                          <i class="fas fa-chevron-down"></i>
-                                        </label>
-                                      </div>`
-        );
+        appendChidrenBox(insertHTML);
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
-      });
+      })
+    }else{
+      $('#children_wrapper').remove();
+      $('#grand_children_wrapper').remove();
+      $('#size_wrapper').remove();
+      $('#brand_wrapper').remove();
     }
   });
-  $('.sell-container__content__details').on('change', '#category-select-children', function(){
-    let childrenCategoryId = $(this).val();
-    if (childrenCategoryId == ''){
-      $('#select-grandchildren-box').remove(); 
-    }else{
+  $('.listing-product-detail__category').on('change', '#child_category', function(){
+    var childId = $('#child_category option:selected').data('category');
+    if (childId != "---"){ 
       $.ajax({
-        url: '/items/category_grandchildren',
+        url: 'get_category_grand_children',
         type: 'GET',
-        data: { child_id: childrenCategoryId },
+        data: { child_id: childId },
         dataType: 'json'
       })
-      .done(function(category_grandchildren){
-        $('#select-grandchildren-box').remove();
-        let optionHtml = '';
-        category_grandchildren.forEach(function(grandchildren){
-          optionHtml += categoryOption(grandchildren);
-        });
-        $('#error-category').before(`<div class="sell-collection_select " id="select-grandchildren-box">
-                                        <label class="sell-collection_select__label" for="item_category_id">
-                                          <select class="sell-collection_select__input" id="category-select-grandchildren" required="required" name="item[category_id]">
-                                            <option value="">選択して下さい</option>
-                                            ${optionHtml}
-                                          </select>
-                                          <i class="fas fa-chevron-down"></i>
-                                        </label>
-                                      </div>`
-        );
+      .done(function(grand_children){
+        if (grandchildren.length != 0) {
+          $('#grandchildren_wrapper').remove();
+          $('#size_wrapper').remove();
+          $('#brand_wrapper').remove();
+          var insertHTML = '';
+          grandchildren.forEach(function(grandchild){
+            insertHTML += appendOption(grandchild);
+          });
+          appendGrandchidrenBox(insertHTML);
+        }
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
-      });
+      })
+    }else{
+      $('#grandchildren_wrapper').remove(); 
+      $('#brand_wrapper').remove();
     }
   });
 });
