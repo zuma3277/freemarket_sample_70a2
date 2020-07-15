@@ -41,7 +41,7 @@
                 = image_tag "d.png", class: "sub__images--pic-3", height: "87px"
         .item__box--price
           %span
-            ¥ 
+            ¥
             = @products.price
           .item__box--price-detail
             %span
@@ -49,7 +49,7 @@
             %span
               送料込み
         .item__box--three-btn
-        - if user_signed_in?
+        - if user_signed_in? && current_user.id == @products.user_id
           .item__box--three-btn--change-btn
             = link_to "商品の編集", purchase_index_path, class:"item__box--three-btn--change-btn--edit"
             %p.text__box OR
@@ -58,13 +58,14 @@
           .item__box--three-btn--Purchase-btn
             = link_to "購入画面に進む", purchase_index_path
         .item__box--text 
-          親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+          = @products.product_introduction
         .item__box--table
           %table
             %tbody
               %tr
                 %th 出品者
                 %td 
+                  = @products.user.nickname
               %tr
                 %th カテゴリー
                 %td
@@ -79,23 +80,28 @@
               %tr
                 %th ブランド
                 %td
+                  = @products.brand.name
               %tr
                 %th 商品のサイズ
                 %td
+                  = @products.size.size
               %tr
                 %th 商品の状態
-                %td 未使用に近い
+                %td 
+                  = @products.product_condition.product_condition
               %tr
                 %th 配送料の負担
-                %td 送料込み（出品者負担）
+                %td 
+                  = @products.shipment.charge_payment
               %tr
                 %th 発送元の地域
                 %td
                   = link_to "#", class:"prefectures" do
-                    発送元の都道府県名
+                    = @products.shipment.area
               %tr
                 %th 発送日の目安
-                %td 4-7日で発送
+                %td 
+                  = @products.shipment.days
         .item__box--option
           .like
             = icon('fa', 'star', class: 'like__icon')

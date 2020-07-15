@@ -80,10 +80,11 @@
     .display__sentence
       = link_to "新規投稿商品", "/", class: "display__link"
     .display__lists
-      = render 'display'
-      = render 'display'
-      = render 'display'
-      = render 'display'
+      - @products.each do |product|
+        = render 'display' , locals: { product: product }
+        = render 'display'
+        = render 'display'
+        = render 'display'
 .display
   .display__title ピックアップブランド
   .display__contents
