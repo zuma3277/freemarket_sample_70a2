@@ -35,7 +35,7 @@
             %span.required
               必須
           .main_text__input__name-form
-            = f.text_field :name,class:'input-name',placeholder:"40文字まで"
+            = f.text_field :name,class:'input-name',placeholder:"40文字まで",maxlength: '40'
 
         .main_text__input__explanation
           .main_display__title
@@ -44,11 +44,11 @@
             %span.required
               必須
           .main_text__input__explanation-form
-            = f.text_area :product_introduction,class:'input-sentences', rows:"7", placeholder:"商品の説明（必須 1000文字以内）※色、素材、重さ、注意点など"
+            = f.text_area :product_introduction,class:'input-sentences',required: "required",maxlength: '1000', rows:"7", placeholder:"商品の説明（必須 1000文字以内）※色、素材、重さ、注意点など"
           .main_text__input__explanation-count
             %span.count(id="count")
               0
-            ／1000
+            &#47;1000
             -#java scriptを使用して文字数制限を設定する
       
       .main_details

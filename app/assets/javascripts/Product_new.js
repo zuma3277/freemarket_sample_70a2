@@ -75,7 +75,13 @@ $(document).on("click","preview-image__button__delete",function(){
 });
 
 
-
+//商品の説明の文字カウント機能
+$(function(){
+  $('.input-sentences').keyup(function(){
+    var count =$(this).val().length;
+    $('.count').text(count);
+  });
+});
 
 
 
