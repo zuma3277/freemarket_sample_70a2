@@ -94,6 +94,9 @@ html {
                   span {
                     font-size: 15px;
                     margin-right: 10px;
+                    &:hover {
+                      color: $orange;
+                    }
                   }
                 }
               }
@@ -116,6 +119,9 @@ html {
                 span {
                   padding-left: 10px;
                   display: block;
+                  &:hover {
+                    color: $orange;
+                  }
                 }
               }
             }
