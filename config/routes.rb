@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   resources :purchase, only: [:index]
   resources :logout, only: [:index]
-  resources :creditcard, only:[:index, :new, :create]
   resources :mypages, only: [:index]
   resources :item_page, only: [:index]
   resources :comp_reg, only: [:index]
@@ -22,4 +21,11 @@ Rails.application.routes.draw do
   resources :sign_up, only: [:index, :new, :create]
   resources :login, only: [:index]
   resources :users
+  resources :creditcard, only:[:index, :new, :show] do
+    collection do
+      post 'show', to: 'creditcard#show'
+      post 'pay', to: 'creditcard#pay'
+      post 'delete', to: 'creditcard#delete'
+    end
+  end 
 end

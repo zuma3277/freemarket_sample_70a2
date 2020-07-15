@@ -1,0 +1,31 @@
+.wrapper
+  = render "mypages/header"
+  %main.main__lists
+    .main__lists__contents
+      .main__lists__contents--edit
+        %h2.edit__frame__title
+          登録クレジットカード情報
+        .edit__frame__contents
+          .credit__card__lists
+            .credit__card__lists--title
+              クレジットカード一覧
+            .credit__card__lists--view
+              .credit__card__lists--view--group
+                .credit__card__info
+                  .credit_card__info--brand
+                    = image_tag "#{@card_src}", width: 40, height: 28
+                  .credit__card__info--numbers
+                  .number
+                    = "**** **** **** " + @default_card_information.last4
+                  .expiration__date
+                    .expiration__date__info
+                      - exp_month = @default_card_information.exp_month.to_s
+                      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                      = exp_month + " / " + exp_year
+                      = form_tag(delete_creditcard_index_path, method: :post, id: 'charge-form', class:"delete__btn", name: "inputForm") do
+                        %input{ type: "hidden", name: "card_id", value: "" }
+                        %button 削除する
+    = render "mypages/navlists"
+  = render "mypages/aside"
+  = render "mypages/footer"
+  = render "mypages/exhibition_icon"
