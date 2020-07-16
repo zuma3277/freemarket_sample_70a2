@@ -186,7 +186,7 @@ $(document).on('turbolinks:load',function(){
     }
   });
   
-  // 各フォームの入力チェック
+  // 各フォームの入力チェック・エラーハンドリング
   $(function(){
   //画像
     $('#input-img').on('focus',function(){
@@ -216,5 +216,124 @@ $(document).on('turbolinks:load',function(){
       $('#error-image').text('');
     }
   });
+
+  //商品名
+  $('.input-name').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-name').text('入力してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-name').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //商品説明
+  $('.input-sentences').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-text').text('入力してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-text').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+   //カテゴリーのエラーハンドリング
+   function categoryError(categorySelect){
+    let value = $(categorySelect).val();
+    if(value == ""){
+      $('#error-category').text('選択して下さい');
+      $(categorySelect).css('border-color','red');
+    }else{
+      $('#error-category').text('');
+      $(categorySelect).css('border-color','rgb(204, 204, 204)');
+    }
+  };
+  //親カテゴリー
+  $('#parent_category').on('blur',function(){
+    categoryError('#parent_category')
+  });
+  //子カテゴリー
+  $('.main_details__category').on('blur', '#child_category', function(){
+    categoryError('#child_category')
+  });
+  //孫カテゴリー
+  $('.main_details__category').on('blur', '#grand_child_category', function(){
+    categoryError('#grand_child_category')
+  });
   
+  //状態
+  $('#product_size').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-size').text('選択して下さい');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-size').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+    });
+
+  //状態
+  $('#product_product_condition').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-condition').text('選択して下さい');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-condition').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //送料負担
+  $('#product_delivery_fee_id').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-deliverycost').text('選択して下さい');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-deliverycost').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //発送元
+  $('#product_prefecture_id').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-pref').text('選択して下さい');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-pref').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+  //発送までの日数
+  $('#product_delivery_days_id').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-delivery_days').text('選択して下さい');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-delivery_days').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //価格
+  $('#price').on('blur',function(){
+    let value = $(this).val();
+    if(value < 300 || value > 9999999){
+      $('#error-price').text('入力してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-price').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
 });

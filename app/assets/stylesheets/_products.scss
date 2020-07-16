@@ -281,6 +281,10 @@
               }
             }
           }
+          #error-price{
+            box-sizing: border-box;
+            text-align: right;
+          }
 
           &-fee{
             display: flex;
