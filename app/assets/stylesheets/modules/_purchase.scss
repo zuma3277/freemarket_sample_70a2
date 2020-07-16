@@ -141,6 +141,7 @@ h3 {
           padding: 32px 0;
           .buy-content-inner {
             max-width: 343px;
+            height: 60px;
             margin: 0 auto;
             a{
               text-decoration:none; 
@@ -244,4 +245,25 @@ h3 {
       font-size: 13px;
     }
   }
+}
+
+.payment{
+  height: 80px;
+  &-img{
+    padding-top: 10px;
+    padding-right: 280px;
+  }
+  &-info{
+    padding-top: 10px;
+    padding-right: 170px;
+  }
+}
+
+.adress{
+  text-align: left;
+  margin-left: 10px;
+  height: 80px;
+  width: 300px;
+  padding-top: 10px;
+  
 }

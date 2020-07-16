@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get "sign_out", :to => "users/sessions#destroy" 
   end
 
-  resources :purchase, only: [:index]
+  
   resources :logout, only: [:index]
   resources :mypages, only: [:index]
   resources :item_page, only: [:index]
@@ -27,5 +27,12 @@ Rails.application.routes.draw do
       post 'pay', to: 'creditcard#pay'
       post 'delete', to: 'creditcard#delete'
     end
-  end 
+  end
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
 end
