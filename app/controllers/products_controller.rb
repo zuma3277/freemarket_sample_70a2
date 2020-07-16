@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  
+
   def new
     @product = Product.new
     @category_parent_array =["---"]
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   def get_category_grand_children
     @category_grand_children = Category.find("#{params[:child_id]}").children
   end
-  
+
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -26,10 +26,11 @@ class ProductsController < ApplicationController
     end
   end
 
+
   private
 
   def product_params
-    params.require(:product).permit(:name,:price,:dealing_status,:product_introduction,:category_id,:product_condition_id,:size_id,brand:[:brand],shipment:[:area,:charge_payment,:day],product_imgs:[])
+    params.require(:product).permit(:name, :price, :dealing_status,:product_introduction, :category_id,:product_condition_id, :size_id,:brand[:brand], :delivery_fee_id, :prefecture_id, :delivery_days_id, product_imgs:[])
   end
-  
+
 end

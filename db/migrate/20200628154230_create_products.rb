@@ -9,7 +9,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :product_condition, null: false, foreign_key: true
       t.references :size,              null: false, foreign_key: true
       t.integer    :dealing_status,    null: false, default: 0
-      t.references :shipment,          null: false, foreign_key: true
+      t.integer :delivery_fee_id,      null: false
+      t.integer :prefecture_id,        null: false
+      t.integer :delivery_days_id,     null: false
       t.references :product_img,       null: false, foreign_key: true
       t.integer    :buyer_id
       t.text       :product_introduction

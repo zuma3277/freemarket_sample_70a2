@@ -24,5 +24,7 @@ class Product < ApplicationRecord
       errors.add(:image, '画像がありません')
     end
   end
-  
+
+
+
 end
