@@ -30,8 +30,8 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){
-        $('#children_wrapper').remove();
-        $('#grand_children_wrapper').remove();
+        $('#child_category').remove();
+        $('#grand_child_category').remove();
         $('#size_wrapper').remove();
         $('#brand_wrapper').remove();
         var insertHTML = '';
@@ -44,13 +44,13 @@ $(function(){
         alert('カテゴリー取得に失敗しました');
       })
     }else{
-      $('#children_wrapper').remove();
-      $('#grand_children_wrapper').remove();
+      $('#child_category').remove();
+      $('#grand_child_category').remove();
       $('#size_wrapper').remove();
       $('#brand_wrapper').remove();
     }
   });
-  $('.main_display__title').on('change', '#child_category', function(){
+  $('.main_details__category').on('change', '#child_category', function(){
     var childId = $('#child_category option:selected').data('category');
     if (childId != "---"){ 
       $.ajax({
@@ -61,7 +61,7 @@ $(function(){
       })
       .done(function(grandchildren){
         if (grandchildren.length != 0) {
-          $('#grandchildren_wrapper').remove();
+          $('#grand_child_category').remove();
           $('#size_wrapper').remove();
           $('#brand_wrapper').remove();
           var insertHTML = '';
@@ -75,7 +75,7 @@ $(function(){
         alert('カテゴリー取得に失敗しました');
       })
     }else{
-      $('#grandchildren_wrapper').remove(); 
+      $('#rand_child_category').remove(); 
       $('#brand_wrapper').remove();
     }
   });
