@@ -36,6 +36,7 @@
               必須
           .main_text__input__name-form
             = f.text_field :name,class:'input-name',placeholder:"40文字まで",maxlength: '40'
+          .error-messages#error-name
 
         .main_text__input__explanation
           .main_display__title
@@ -49,7 +50,8 @@
             %span.count(id="count")
               0
             &#47;1000
-            -#java scriptを使用して文字数制限を設定する
+          .error-messages#error-text
+            
       
       .main_details
         %p.details
@@ -61,6 +63,7 @@
             %span.main_display_require 必須
           .main_select-wrapper__box
             = f.select :category, @category_parent_array, {}, {class: 'main_select-wrapper__box--select', id: 'parent_category'}
+          .error-messages#error-category
 
         .main_details__size
           .main_display__title
@@ -96,6 +99,7 @@
               %option(label="やや傷や汚れあり")
               %option(label="傷や汚れあり")
               %option(label="全体的に状態が悪い")
+          .error-messages#error-condition
             
       .main_delivery
         %p.delivery
@@ -111,6 +115,7 @@
               %option(selected value label="選択してください" aria-selected="true")
               %option(label="送料込み")
               %option(label="着払い")
+          .error-messages#error-deliverycost
 
         .main_delivery__area
           .main_display__title
@@ -169,6 +174,7 @@
               %option(label="鹿児島県")
               %option(label="沖縄県")
               %option(label="未定")
+          .error-messages#error-pref
           
         .main_delivery__days
           .main_display__title
@@ -182,6 +188,7 @@
               %option(label="1~2日で発送")
               %option(label="2~3日で発送")
               %option(label="4~7日で発送")
+          .error-messages#error-delivery_days
             
       .main_price
         .main_price__title
@@ -201,6 +208,8 @@
               ¥
             .main_price__decide-input-form
               = f.number_field :price, class:'price',placeholder:"0",id:'price'
+            .error-messages#error-price
+
           .main_price__decide-fee
             %p.fee-label
               販売手数料（10％）
@@ -213,7 +222,7 @@
               ー
 
       .main_send
-        =f.submit class:'exhibition',value:'出品する'
+        = f.submit class:'exhibition',value:'出品する'
         = link_to "#", class:"return" do
           もどる
       .main_warn
