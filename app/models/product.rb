@@ -11,6 +11,7 @@ class Product < ApplicationRecord
   has_many_attached :product_imgs
 
   validate :images_presence
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   #バリデーションを呼び出す
 
   def images_presence
