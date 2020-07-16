@@ -200,16 +200,16 @@
             %p.unit
               ¥
             .main_price__decide-input-form
-              = f.number_field :price, class:'price',placeholder:"0"
+              = f.number_field :price, class:'price',placeholder:"0",id:'price'
           .main_price__decide-fee
             %p.fee-label
               販売手数料（10％）
-            %span.fee-value
+            %span.fee-value(id="fee-value")
               ー
           .main_price__decide-profit
             %p.profit-label
               販売利益
-            %span.profit-value
+            %span.profit-value(id="profit-value")
               ー
 
       .main_send

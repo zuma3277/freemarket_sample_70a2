@@ -169,4 +169,21 @@ $(document).on('turbolinks:load',function(){
       }
     });
   });
+
+  //販売手数料と利益の計算機能
+  $('#price').keyup(function(){
+    let price = $(this).val();
+    if(price >= 300 && price <=9999999){
+      let fee = Math.floor(price * 0.1);
+      // 小数点以下切り捨て
+      let profit = (price - fee);
+      $('#fee-value').text('¥'+fee.toLocaleString());
+      // 対象要素の文字列書き換える
+      $('#profit-value').text('¥'+profit.toLocaleString());
+    } else {
+      $('#fee-value').html('ー');
+      $('#profit-value').html('ー');
+    }
+  });
+  
 });
