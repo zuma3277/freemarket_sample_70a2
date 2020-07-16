@@ -3,31 +3,22 @@ $(function(){
     var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
+  
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='main_select-wrapper__added' id= 'children_wrapper'>
-                        <div class='main_select-wrapper__box'>
-                          <select class="main_select-wrapper__box--select" id="child_category" name="category_id">
-                            <option value="---" data-category="---">---</option>
-                            ${insertHTML}
-                          <select>
-                          <i class='fas fa-chevron-down main_select-wrapper__box--arrow-down'></i>
-                        </div>
-                      </div>`;
-    $('.listing-product-detail__category').append(childSelectHtml);
+    childSelectHtml = `<select class="main_select-wrapper__box--select" id="child_category" name="product[category]">
+                        <option value="---">---</option>
+                        ${insertHTML}
+                      </select>`;
+    $('.main_select-wrapper__box').append(childSelectHtml);
   }
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<div class='main_select-wrapper__added' id= 'grand_children_wrapper'>
-                              <div class='main_select-wrapper__box'>
-                                <select class="main_select-wrapper__box--select" id="grand_child_category" name="category_id">
-                                  <option value="---" data-category="---">---</option>
-                                  ${insertHTML}
-                                <select>
-                                <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
-                              </div>
-                            </div>`;
-    $('.listing-product-detail__category').append(grandchildSelectHtml);
+    grandchildSelectHtml = `<select class="main_select-wrapper__box--select" id="grand_child_category" name="product[category]">
+                              <option value="---">---</option>
+                              ${insertHTML}
+                            </select>`;
+    $('.main_select-wrapper__box').append(grandchildSelectHtml);
   }
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value; 
@@ -59,7 +50,7 @@ $(function(){
       $('#brand_wrapper').remove();
     }
   });
-  $('.listing-product-detail__category').on('change', '#child_category', function(){
+  $('.main_display__title').on('change', '#child_category', function(){
     var childId = $('#child_category option:selected').data('category');
     if (childId != "---"){ 
       $.ajax({
@@ -68,7 +59,7 @@ $(function(){
         data: { child_id: childId },
         dataType: 'json'
       })
-      .done(function(grand_children){
+      .done(function(grandchildren){
         if (grandchildren.length != 0) {
           $('#grandchildren_wrapper').remove();
           $('#size_wrapper').remove();
