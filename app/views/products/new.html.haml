@@ -68,9 +68,7 @@
               サイズ
             %span.required
               必須
-          .main_details__size-select
-            = f.select :size,class:'size' do
-              %option(selected value label="選択してください" aria-selected="true")
+          =f.select :size, Size.sizes.keys ,{ include_blank: "選択してください"},class:"main_details__size-select"
 
         .main_details__brand
           .main_display__title
@@ -87,15 +85,7 @@
               商品の状態
             %span.required
               必須
-          .main_details__status-select
-            = f.select :product_condition,class:'status' do
-              %option(selected value label="選択してください" aria-selected="true")
-              %option(label="新品・未使用")
-              %option(label="未使用に近い")
-              %option(label="目立った傷や汚れなし")
-              %option(label="やや傷や汚れあり")
-              %option(label="傷や汚れあり")
-              %option(label="全体的に状態が悪い")
+          =f.select :product_condition, ProductCondition.product_conditions.keys ,{ include_blank: "選択してください"},class:"main_details__status-select"
             
       .main_delivery
         %p.delivery
