@@ -186,4 +186,35 @@ $(document).on('turbolinks:load',function(){
     }
   });
   
+  // 各フォームの入力チェック
+  $(function(){
+  //画像
+    $('#input-img').on('focus',function(){
+      $('#error-image').text('');
+      $('#input-img').on('blur',function(){
+        $('#error-image').text('');
+        let imageLength = $('#output-box').children('li').length;
+        if(imageLength==''){
+          $('#error-image').text('画像がありません');
+        }else if(imageLength >10){
+          $('#error-image').text('画像を10枚以下にして下さい');
+        }else{
+          $('#error-image').text('');
+        }
+      });
+    });
+  });
+
+  //送信しようとした時
+  $('form').on('submit',function(){
+    let imageLength = $('#output-box').children('li').length;
+    if(imageLength == ''){
+      $('#error-image').text('画像がありません');
+    }else if(imageLength >10){
+      $('#error-image').text('画像を10枚以下にして下さい');
+    }else{
+      $('#error-image').text('');
+    }
+  });
+  
 });
