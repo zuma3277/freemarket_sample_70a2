@@ -6,6 +6,6 @@ class ProductsController < ApplicationController
     
   end
   def show
-    @products = Product.find(params[:id])
+    @products = Product.order('created_at DESC').find(params[:id])
   end
 end
