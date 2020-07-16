@@ -59,9 +59,8 @@
           .main_display__title
             = f.label 'カテゴリー', class: 'main_display__label'
             %span.main_display_require 必須
-            .main_select-wrapper__box
-              = f.select :category, @category_parent_array, {}, {class: 'main_select-wrapper__box--select', id: 'parent_category'}
-              %i.fas.fa-chevron-down.main_select-wrapper__box--arrow-down
+          .main_select-wrapper__box
+            = f.select :category, @category_parent_array, {}, {class: 'main_select-wrapper__box--select', id: 'parent_category'}
 
         .main_details__size
           .main_display__title
