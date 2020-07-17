@@ -1,7 +1,5 @@
-class ProductCondition < ApplicationRecord
+class Product_condition < ActiveHash::Base
 
-  has_many :products
-  
-  enum product_condition: {新品未、使用: 1, 未使用に近い: 2,目立った傷や汚れなし: 3,やや傷や汚れあり: 4,傷や汚れあり: 5,全体的に状態が悪い: 6}
+  self.data = [ {id: 1, name: '新品未、使用'}, {id: 2, name: '未使用に近い'}, {id: 3, name: '目立った傷や汚れなし'}, {id: 4, name: 'やや傷や汚れあり'}, {id: 5, name: '傷や汚れあり'}, {id: 6, name: '全体的に状態が悪い'}]
 
 end

@@ -70,7 +70,7 @@
               サイズ
             %span.required
               必須
-          = f.select :size, Size.sizes.keys ,{ include_blank: "選択してください"},class:"main_details__size-select"
+          = f.collection_select(:size_id, Size.all, :id, :name,{include_blank: "---"}, {class: "main_details__size-select"})
           .error-messages#error-size
 
         .main_details__brand
@@ -89,7 +89,7 @@
               商品の状態
             %span.required
               必須
-          = f.select :product_condition_id, ProductCondition.product_conditions.keys ,{ include_blank: "選択してください"},class:"main_details__status-select"
+          = f.collection_select(:product_condition_id, Product_condition.all, :id, :name,{include_blank: "---"}, {class: "main_details__status-select"})
           .error-messages#error-condition
 
       .main_delivery
@@ -124,7 +124,7 @@
           .main_delivery__days-select
             = f.collection_select(:delivery_days_id, Delivery_days.all, :id, :name,{include_blank: "---"}, {class: "days"})
           .error-messages#error-delivery_days
-      
+
       .main_price
         .main_price__title
           %p.price
