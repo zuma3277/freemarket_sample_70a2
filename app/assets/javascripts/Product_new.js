@@ -75,7 +75,7 @@ $(function(){
         alert('カテゴリー取得に失敗しました');
       })
     }else{
-      $('#rand_child_category').remove(); 
+      $('#grand_child_category').remove(); 
       $('#brand_wrapper').remove();
     }
   });
