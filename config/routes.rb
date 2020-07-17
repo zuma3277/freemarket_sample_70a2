@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
   root "index#index"
-
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -18,7 +16,8 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :item_page, only: [:index]
   resources :comp_reg, only: [:index]
-  resources :products, only: [:index]
+  resources :products, only: [:index, :new, :show]
+  resources :sign_up, only: [:index, :new, :create]
   resources :login, only: [:index]
   resources :users
 end
