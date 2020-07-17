@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    #@item.destroy
+    #@product.destroy
     #redirect_to  delete_products_path
   end
 end
