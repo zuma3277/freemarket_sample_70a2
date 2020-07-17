@@ -20,7 +20,7 @@
             %button{class: "btn_default btn_sns btn_sns_app"}
               = icon('fab', 'apple', class: 'icon icon_app')
               Appでログイン
-            = form_with scope: :session, url: user_session_path(resource_name),local: true do |f|
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .field
                 = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "input__default"
               .field

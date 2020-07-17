@@ -79,3 +79,7 @@ gem 'devise'
 gem 'payjp'
 gem "jquery-rails"
 gem 'pry-rails'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n'
+gem 'factory_bot_rails'
