@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   enum dealing_status: { good: 0, normal: 1, bad: 2 }
-  belongs_to :user
+  belongs_to :user, foreign_key: 'user_id'
   belongs_to :brand
   belongs_to :size
   belongs_to :category
@@ -11,6 +11,7 @@ class Product < ApplicationRecord
   has_many_attached :product_imgs
 
   validate :images_presence
+  validates :name, :product_introduction, :category_id, :siza_id, :product_condition_id, :user_id, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   #バリデーションを呼び出す
 

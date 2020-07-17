@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      flash.now[:alert] = '入力されていない項目があります。'
       render :new
     end
   end

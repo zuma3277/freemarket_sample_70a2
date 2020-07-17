@@ -18,7 +18,7 @@
         .main_image-input
           %ul#output-box
             %div#input-img
-              =f.label :image, for: "input-images0",class:"input-label",data: {label_id: 0 } do
+              = f.label :image, for: "input-images0",class:"input-label",data: {label_id: 0 } do
                 = f.fields_for :product_imgs do |i|
                   = i.file_field :image,multiple: true, acccept:"image/png,image/jpeg",class:'input-function',id:'input-images0'
                   = image_tag 'icon_camera.png', class: 'logo_camera'
@@ -35,7 +35,7 @@
             %span.required
               必須
           .main_text__input__name-form
-            = f.text_field :name,class:'input-name',placeholder:"40文字まで",maxlength: '40'
+            = f.text_field :name,class:'input-name',placeholder:"40文字まで",maxlength:'40'
           .error-messages#error-name
 
         .main_text__input__explanation
@@ -49,9 +49,8 @@
           .main_text__input__explanation-count
             %span.count(id="count")
               0
+            &#47;1000
           .error-messages#error-text
-
-
 
       .main_details
         %p.details
@@ -71,7 +70,7 @@
               サイズ
             %span.required
               必須
-          =f.select :size, Size.sizes.keys ,{ include_blank: "選択してください"},class:"main_details__size-select"
+          = f.select :size, Size.sizes.keys ,{ include_blank: "選択してください"},class:"main_details__size-select"
           .error-messages#error-size
 
         .main_details__brand
@@ -81,7 +80,8 @@
             %span.optional
               任意
           .main_details__brand-form
-            = f.text_field :name, class:'input-brand', placeholder:"例）シャネル"
+            = f.fields_for :brand do |b|
+              = b.text_field :name, class:'input-brand', placeholder:"例）シャネル"
 
         .main_details__status
           .main_display__title
@@ -89,7 +89,7 @@
               商品の状態
             %span.required
               必須
-          =f.select :product_condition_id, ProductCondition.product_conditions.keys ,{ include_blank: "選択してください"},class:"main_details__status-select"
+          = f.select :product_condition_id, ProductCondition.product_conditions.keys ,{ include_blank: "選択してください"},class:"main_details__status-select"
           .error-messages#error-condition
 
       .main_delivery
@@ -157,7 +157,7 @@
               ー
 
       .main_send
-        = f.submit class:'exhibition',value:'出品する'
+        = f.submit '出品する',class:'exhibition'
         = link_to "#", class:"return" do
           もどる
       .main_warn
