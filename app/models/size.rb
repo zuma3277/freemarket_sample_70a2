@@ -1,6 +1,6 @@
-class Size < ApplicationRecord
-  has_many :products
-  
-  enum size: {Sサイズ: 1, Mサイズ: 2, Lサイズ: 3}
+
+class Size < ActiveHash::Base
+
+  self.data = [ {id: 1, name: 'Sサイズ'}, {id: 2, name: 'Mサイズ'}, {id: 3, name: 'Lサイズ'}]
 
 end
