@@ -1,5 +1,5 @@
 class CreditcardController < ApplicationController
-  #PAYJPとやり取りするために、payjpをロード
+  
   require "payjp"
 
   def new
@@ -9,18 +9,14 @@ class CreditcardController < ApplicationController
 
   def pay
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-    
     if params["payjp-token"].blank?
       redirect_to action: "new"
     else
-      # 生成したトークンから、顧客情報と紐付け、PAY.JP管理サイトに登録
       customer = Payjp::Customer.create(
         card: params["payjp-token"],
         metadata: {user_id: current_user.id}
       )
-      # 今度はトークン化した情報を自アプリのCredit_cardsテーブルに登録
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      # 無事、トークン作成とともにcredit_cardsテーブルに登録された場合、createビューが表示されるように条件分岐
       if @card.save
         redirect_to action: "show"
       else
@@ -29,7 +25,7 @@ class CreditcardController < ApplicationController
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
+  def delete 
     card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
     else
@@ -41,7 +37,7 @@ class CreditcardController < ApplicationController
       redirect_to action: "new"
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
+  def show 
     card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
