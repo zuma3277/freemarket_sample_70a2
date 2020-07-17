@@ -13,7 +13,6 @@ class Product < ApplicationRecord
   validate :images_presence
   validates :name, :product_introduction, :category_id, :siza_id, :product_condition_id, :user_id, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
-  #バリデーションを呼び出す
 
   def images_presence
     if images.attached?
