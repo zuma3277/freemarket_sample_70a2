@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  
+
   def new
     @product = Product.new
     @category_parent_array =["---"]
@@ -15,21 +15,25 @@ class ProductsController < ApplicationController
   def get_category_grand_children
     @category_grand_children = Category.find("#{params[:child_id]}").children
   end
-  
+
   def create
     @product = Product.new(product_params)
-    if @product.save
+    @brand = Brand.new(brand_params)
+    if @@product.save && @brand.save
       redirect_to root_path
     else
-      flash.now[:alert] = '入力されていない項目があります。'
       render :new
     end
   end
 
+
   private
 
   def product_params
-    params.require(:product).permit(:name,:price,:dealing_status,:product_introduction,:category_id,:product_condition_id,:size_id,brand:[:brand],shipment:[:area,:charge_payment,:day],product_imgs:[:image])
+    params.require(:product).permit( :name, :price, :product_introduction, :category_id, :product_condition_id, :size_id, :delivery_fee_id, :prefecture_id, :delivery_days_id,product_imgs:[:image]).merge(user_id: current_user.id, dealing_status:1)
   end
-  
+
+  def brand_params
+    params.require(:product).require(:brand).permit(:name)
+  end
 end

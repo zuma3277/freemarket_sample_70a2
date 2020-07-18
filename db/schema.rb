@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_05_044657) do
+ActiveRecord::Schema.define(version: 2020_07_18_103104) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -97,6 +97,9 @@ ActiveRecord::Schema.define(version: 2020_07_05_044657) do
     t.text "product_introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "delivery_fee_id"
+    t.integer "prefecture_id"
+    t.integer "delivery_days_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["product_condition_id"], name: "index_products_on_product_condition_id"
@@ -125,6 +128,7 @@ ActiveRecord::Schema.define(version: 2020_07_05_044657) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "ensure_password", default: "", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
@@ -139,7 +143,7 @@ ActiveRecord::Schema.define(version: 2020_07_05_044657) do
     t.string "city", null: false
     t.string "address", null: false
     t.string "building_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
