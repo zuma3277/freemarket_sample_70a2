@@ -89,13 +89,13 @@ $(document).on('turbolinks:load',function(){
   //カテゴリーの選択機能
   $(function(){
     function appendOption(category){
-      var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+      var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
       return html;
     }
   
     function appendChidrenBox(insertHTML){
       var childSelectHtml = '';
-      childSelectHtml = `<select class="main_select-wrapper__box--select" id="child_category" name="product[category]">
+      childSelectHtml = `<select class="main_select-wrapper__box--select" id="child_category" name="product[category_id]">
                           <option value="---">---</option>
                           ${insertHTML}
                         </select>`;
@@ -103,7 +103,7 @@ $(document).on('turbolinks:load',function(){
     }
     function appendGrandchidrenBox(insertHTML){
       var grandchildSelectHtml = '';
-      grandchildSelectHtml = `<select class="main_select-wrapper__box--select" id="grand_child_category" name="product[category]">
+      grandchildSelectHtml = `<select class="main_select-wrapper__box--select" id="grand_child_category" name="product[category_id]">
                                 <option value="---">---</option>
                                 ${insertHTML}
                               </select>`;

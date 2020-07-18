@@ -11,7 +11,7 @@ class Product < ApplicationRecord
   has_many_attached :product_imgs
 
   validate :images_presence
-  validates :name, :product_introduction, :category_id, :siza_id, :product_condition_id, :user_id, presence: true
+  validates :name, :product_introduction, :category_id, :size_id, :product_condition_id, :user_id, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 
   def images_presence
