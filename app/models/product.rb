@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   belongs_to :brand
   belongs_to :size
   belongs_to :category
-  belongs_to :shipment
   belongs_to :product_condition
   has_many :favorite_products, dependent: :destroy
   has_many :comments, dependent: :destroy
