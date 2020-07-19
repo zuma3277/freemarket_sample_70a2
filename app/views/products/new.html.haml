@@ -18,13 +18,12 @@
         .main_image-input
           %ul#output-box
             %div#input-img
-              = f.label :image, for: "input-images0",class:"input-label",data: {label_id: 0 } do
-                = f.fields_for :product_imgs do |i|
-                  = i.file_field :image,multiple: true, acccept:"image/png,image/jpeg",class:'input-function',id:'input-images0'
-                  = image_tag 'icon_camera.png', class: 'logo_camera'
-                  %p.input-text
-                    ドラックアンドドロップ
-                    またはクリックしてファイルをダウンロード
+              = f.label :images, for: "input-images0",class:"input-label",data: {label_id: 0 } do
+                = f.file_field :images,multiple: true, acccept:"image/png,image/jpeg",class:'input-function',id:'input-images0'
+                = image_tag 'icon_camera.png', class: 'logo_camera'
+                %p.input-text
+                  ドラックアンドドロップ
+                  またはクリックしてファイルをダウンロード
         .error-messages#error-image
 
       .main_text
@@ -80,8 +79,7 @@
             %span.optional
               任意
           .main_details__brand-form
-            = f.fields_for :brand do |b|
-              = b.text_field :name, class:'input-brand', placeholder:"例）シャネル"
+            = f.text_field :brand, class:'input-brand', placeholder:"例）シャネル"
 
         .main_details__status
           .main_display__title

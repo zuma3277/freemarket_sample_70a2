@@ -18,8 +18,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @brand = Brand.new(brand_params)
-    if @@product.save && @brand.save
+    if @product.save
       redirect_to root_path
     else
       render :new
@@ -30,10 +29,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit( :name, :price, :product_introduction, :category_id, :product_condition_id, :size_id, :delivery_fee_id, :prefecture_id, :delivery_days_id,product_imgs:[:image]).merge(user_id: current_user.id, dealing_status:1)
-  end
-
-  def brand_params
-    params.require(:product).require(:brand).permit(:name)
+    params.require(:product).permit( :name, :price, :brand, :product_introduction, :category_id, :product_condition_id, :size_id, :delivery_fee_id, :prefecture_id, :delivery_days_id,images: []).merge(user_id: current_user.id, dealing_status:1)
   end
 end

@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   belongs_to :product_condition
   has_many :favorite_products, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many_attached :product_imgs
+  has_many_attached :images
 
   validate :images_presence
   validates :name, :product_introduction, :category_id, :size_id, :product_condition_id, :user_id, presence: true
