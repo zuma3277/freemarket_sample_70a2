@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
   end
 
   create_table "product_conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "product_condition", null: false
+    t.integer "product_condition", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -109,24 +109,22 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
     t.integer "price", null: false
     t.bigint "category_id", null: false
     t.bigint "brand_id", null: false
-    t.bigint "product_condition_id", null: false
-    t.bigint "size_id", null: false
+    t.integer "product_condition_id", null: false
+    t.integer "size_id", null: false
     t.integer "dealing_status", default: 0, null: false
-    t.bigint "shipment_id", null: false
+    t.integer "delivery_fee_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "delivery_days_id", null: false
     t.bigint "product_img_id", null: false
     t.integer "buyer_id"
     t.text "product_introduction"
+    t.string "brand"
+    t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "delivery_fee_id"
-    t.integer "prefecture_id"
-    t.integer "delivery_days_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["product_condition_id"], name: "index_products_on_product_condition_id"
     t.index ["product_img_id"], name: "index_products_on_product_img_id"
-    t.index ["shipment_id"], name: "index_products_on_shipment_id"
-    t.index ["size_id"], name: "index_products_on_size_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -140,7 +138,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "size", null: false
+    t.integer "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -183,9 +181,6 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
   add_foreign_key "favorite_products", "users"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
-  add_foreign_key "products", "product_conditions"
   add_foreign_key "products", "product_imgs"
-  add_foreign_key "products", "shipments"
-  add_foreign_key "products", "sizes"
   add_foreign_key "products", "users"
 end

@@ -15,6 +15,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :product_img,       null: false, foreign_key: true
       t.integer    :buyer_id
       t.text       :product_introduction
+      t.string     :brand
+      t.string     :image,              null: false
       t.timestamps
     end
   end
