@@ -33,12 +33,6 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "ancestry"
@@ -91,56 +85,25 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
     t.index ["user_id"], name: "index_favorite_products_on_user_id"
   end
 
-  create_table "product_conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_condition", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "product_imgs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name", null: false
     t.integer "price", null: false
     t.bigint "category_id", null: false
-    t.bigint "brand_id", null: false
     t.integer "product_condition_id", null: false
     t.integer "size_id", null: false
     t.integer "dealing_status", default: 0, null: false
     t.integer "delivery_fee_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "delivery_days_id", null: false
-    t.bigint "product_img_id", null: false
     t.integer "buyer_id"
     t.text "product_introduction"
     t.string "brand"
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["product_img_id"], name: "index_products_on_product_img_id"
     t.index ["user_id"], name: "index_products_on_user_id"
-  end
-
-  create_table "shipments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "shipment", null: false
-    t.string "area", null: false
-    t.string "charge_payment", null: false
-    t.string "days", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "size", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -179,8 +142,6 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
   add_foreign_key "destinations", "users"
   add_foreign_key "favorite_products", "products"
   add_foreign_key "favorite_products", "users"
-  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
-  add_foreign_key "products", "product_imgs"
   add_foreign_key "products", "users"
 end
