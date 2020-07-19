@@ -264,7 +264,7 @@ $(document).on('turbolinks:load',function(){
     categoryError('#grand_child_category')
   });
   
-  //状態
+  //サイズ
   $('#product_size').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
@@ -274,7 +274,7 @@ $(document).on('turbolinks:load',function(){
       $('#error-size').text('');
       $(this).css('border-color','rgb(204, 204, 204)');
     }
-    });
+  });
 
   //状態
   $('#product_product_condition').on('blur',function(){
