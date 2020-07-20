@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
   root "index#index"
-
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -18,6 +16,7 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :item_page, only: [:index]
   resources :comp_reg, only: [:index]
+  
   resources :products, only: [:create, :index, :show, :new, :edit, :destroy] do
     collection do
       get 'get_category_children', defaults: {format: 'json'}
