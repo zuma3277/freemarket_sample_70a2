@@ -5,6 +5,11 @@ $(document).on('turbolinks:load',function(){
   $('#input-img').on('change',function(e){
     // 画像が選択された時プレビュー表示、inputの親要素のdivをイベント元に指定
 
+    if($("#error-image")){
+      $("#error-image").remove()
+    };
+
+
     //ファイルオブジェクトを取得する
     let files = e.target.files;
     $.each(files, function(index,file){
@@ -186,14 +191,16 @@ $(document).on('turbolinks:load',function(){
   });
   
   // 各フォームの入力チェック・エラーハンドリング
-  $(function(){
+  // $(function(){
   //画像
-    $('#input-img').on('focus',function(){
+  
+    $('#input-images0').on('click',function(e){
+      console.log(e.target.files.length)
       $('#error-image').text('');
-      $('#input-img').on('blur',function(){
+      // $('#input-img').on('change',function(){
         $('#error-image').text('');
         let imageLength = $('#output-box').children('li').length;
-        if(imageLength==''){
+        if(imageLength==0){
           $('#error-image').text('画像がありません');
         }else if(imageLength >10){
           $('#error-image').text('画像を10枚以下にして下さい');
@@ -201,8 +208,8 @@ $(document).on('turbolinks:load',function(){
           $('#error-image').text('');
         }
       });
-    });
-  });
+    // });
+  // });
 
   //送信しようとした時
   $('form').on('submit',function(){
@@ -243,7 +250,7 @@ $(document).on('turbolinks:load',function(){
    //カテゴリーのエラーハンドリング
    function categoryError(categorySelect){
     let value = $(categorySelect).val();
-    if(value == ""){
+    if(value == "---"){
       $('#error-category').text('選択して下さい');
       $(categorySelect).css('border-color','red');
     }else{
@@ -265,7 +272,7 @@ $(document).on('turbolinks:load',function(){
   });
   
   //サイズ
-  $('#product_size').on('blur',function(){
+  $('#product_size_id').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-size').text('選択して下さい');
@@ -277,7 +284,7 @@ $(document).on('turbolinks:load',function(){
   });
 
   //状態
-  $('#product_product_condition').on('blur',function(){
+  $('#product_product_condition_id').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-condition').text('選択して下さい');
