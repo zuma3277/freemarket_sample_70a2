@@ -14,7 +14,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer    :buyer_id
       t.text       :product_introduction
       t.string     :brand
-      t.string     :image,              null: false
       t.timestamps
     end
   end

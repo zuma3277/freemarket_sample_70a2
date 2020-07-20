@@ -19,7 +19,7 @@
           %ul#output-box
             %div#input-img
               = f.label :images, for: "input-images0",class:"input-label",data: {label_id: 0 } do
-                = f.file_field :images,multiple: true, acccept:"image/png,image/jpeg",class:'input-function',id:'input-images0'
+                = f.file_field :images, multiple: true, acccept:"image/png,image/jpeg",class:'input-function',id:'input-images0'
                 = image_tag 'icon_camera.png', class: 'logo_camera'
                 %p.input-text
                   ドラックアンドドロップ
