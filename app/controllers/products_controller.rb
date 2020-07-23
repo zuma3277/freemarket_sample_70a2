@@ -19,9 +19,13 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path
+      redirect_to "/mypages"
     else
-      render :new
+      @category_parent_array =["---"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+      redirect_to action: :new
     end
   end
 
