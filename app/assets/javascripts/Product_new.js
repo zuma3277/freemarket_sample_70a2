@@ -1,31 +1,31 @@
 
 
 $(document).on('turbolinks:load',function(){
-  //写真の複数投稿機能
+
   $('#input-img').on('change',function(e){
-    // 画像が選択された時プレビュー表示、inputの親要素のdivをイベント元に指定
+    
 
     if($("#error-image")){
       $("#error-image").remove()
     };
 
 
-    //ファイルオブジェクトを取得する
+    
     let files = e.target.files;
     $.each(files, function(index,file){
       let reader = new FileReader(); 
 
-      //画像でない場合は処理終了
+      
       if(file.type.indexOf("image") < 0){
         alert("画像ファイルを指定してください。");
         return false;
       };
 
-      //アップロードした画像を設定する
+      
       reader.onload = (function(file){
         return function(e){
           let imageLength = $('#output-box').children('li').length;
-          // 表示されているプレビューの数を数える
+          
 
           let labelLength = $("#input-img>label").eq(-1).data('label-id');
 
@@ -38,10 +38,10 @@ $(document).on('turbolinks:load',function(){
                                       </div>
                                     </li>`);
           $("#input-img>label").eq(-1).css('display','none');
-          // 入力されたlabelを見えなくする
+          
 
           if (imageLength < 9) {
-            // 表示されているプレビューが９以下なら、新たにinputを生成する
+            
             $("#input-img").append(`<label for="input-images${labelLength+1}" class="input-label" data-label-id="${labelLength+1}">
                                         <input multiple="multiple" class="input-function" id="input-images${labelLength+1}" style="display: none;" type="file" >
                                         <img class="logo_camera" src="/assets/icon_camera-24c5a3dec3f777b383180b053077a49d0416a4137a1c541d7dd3f5ce93194dee.png">
@@ -68,7 +68,7 @@ $(document).on('turbolinks:load',function(){
     let imageLength = $('#output-box').children('li').length;
     if (imageLength < 9) {
       let labelLength = $("#input-img>label").eq(-1).data('label-id');
-      // 表示されているプレビューが９以下なら、新たにinputを生成する
+      
       $("#input-img").append(`<label for="input-images${labelLength+1}" class="input-label" data-label-id="${labelLength+1}">
                                   <input multiple="multiple" class="input-function" id="input-images${labelLength+1}" style="display: none;" type="file" >
                                   <img class="logo_camera" src="/assets/icon_camera-24c5a3dec3f777b383180b053077a49d0416a4137a1c541d7dd3f5ce93194dee.png">
@@ -81,7 +81,7 @@ $(document).on('turbolinks:load',function(){
   });
 
 
-  //商品の説明の文字カウント機能
+  
 
   $('.input-sentences').keyup(function(){
     var count =$(this).val().length;
@@ -91,7 +91,7 @@ $(document).on('turbolinks:load',function(){
 
 
 
-  //カテゴリーの選択機能
+  
   $(function(){
     function appendOption(category){
       var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
@@ -174,15 +174,15 @@ $(document).on('turbolinks:load',function(){
     });
   });
 
-  //販売手数料と利益の計算機能
+  
   $('#price').keyup(function(){
     let price = $(this).val();
     if(price >= 300 && price <=9999999){
       let fee = Math.floor(price * 0.1);
-      // 小数点以下切り捨て
+      
       let profit = (price - fee);
       $('#fee-value').text('¥'+fee.toLocaleString());
-      // 対象要素の文字列書き換える
+      
       $('#profit-value').text('¥'+profit.toLocaleString());
     } else {
       $('#fee-value').html('ー');
@@ -190,14 +190,12 @@ $(document).on('turbolinks:load',function(){
     }
   });
   
-  // 各フォームの入力チェック・エラーハンドリング
-  // $(function(){
-  //画像
+  
   
     $('#input-images0').on('click',function(e){
       console.log(e.target.files.length)
       $('#error-image').text('');
-      // $('#input-img').on('change',function(){
+      
         $('#error-image').text('');
         let imageLength = $('#output-box').children('li').length;
         if(imageLength==0){
@@ -208,10 +206,7 @@ $(document).on('turbolinks:load',function(){
           $('#error-image').text('');
         }
       });
-    // });
-  // });
-
-  //送信しようとした時
+    
   $('form').on('submit',function(){
     let imageLength = $('#output-box').children('li').length;
     if(imageLength == ''){
@@ -223,7 +218,7 @@ $(document).on('turbolinks:load',function(){
     }
   });
 
-  //商品名
+  
   $('.input-name').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
@@ -235,7 +230,7 @@ $(document).on('turbolinks:load',function(){
     }
   });
 
-  //商品説明
+ 
   $('.input-sentences').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
@@ -247,7 +242,7 @@ $(document).on('turbolinks:load',function(){
     }
   });
 
-   //カテゴリーのエラーハンドリング
+   
    function categoryError(categorySelect){
     let value = $(categorySelect).val();
     if(value == "---"){
@@ -258,20 +253,20 @@ $(document).on('turbolinks:load',function(){
       $(categorySelect).css('border-color','rgb(204, 204, 204)');
     }
   };
-  //親カテゴリー
+  
   $('#parent_category').on('blur',function(){
     categoryError('#parent_category')
   });
-  //子カテゴリー
+  
   $('.main_details__category').on('blur', '#child_category', function(){
     categoryError('#child_category')
   });
-  //孫カテゴリー
+  
   $('.main_details__category').on('blur', '#grand_child_category', function(){
     categoryError('#grand_child_category')
   });
   
-  //サイズ
+  
   $('#product_size_id').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
@@ -295,7 +290,7 @@ $(document).on('turbolinks:load',function(){
     }
   });
 
-  //送料負担
+  
   $('#product_delivery_fee_id').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
@@ -307,7 +302,7 @@ $(document).on('turbolinks:load',function(){
     }
   });
 
-  //発送元
+  
   $('#product_prefecture_id').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
@@ -318,7 +313,7 @@ $(document).on('turbolinks:load',function(){
       $(this).css('border-color','rgb(204, 204, 204)');
     }
   });
-  //発送までの日数
+  
   $('#product_delivery_days_id').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
@@ -330,7 +325,7 @@ $(document).on('turbolinks:load',function(){
     }
   });
 
-  //価格
+  
   $('#price').on('blur',function(){
     let value = $(this).val();
     if(value < 300 || value > 9999999){
