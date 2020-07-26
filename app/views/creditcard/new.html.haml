@@ -4,12 +4,12 @@
     .main__lists__contents
       %section.main__lists__contents--details
         %h2.card__title クレジットカード情報入力
-        = form_tag("/creditcard", method: :post, id: 'charge-form',  name: "inputForm", class: "main__lists__contents--details--input") do
+        = form_tag(pay_creditcard_index_path, method: :post, id: 'charge-form', name: "inputForm", class: "main__lists__contents--details--input") do
           .form__main__container
             .form__content
               %label.payment__card カード番号
               %span.require__form 必須
-              = text_field_tag 'payment_card_no', "", class: 'creditcardnumber', id: "payment_card_no", placeholder: '半角数字のみ', type: "text", maxlength: "16"
+              = text_field_tag 'payment_card_no', "", class: 'creditcardnumber', id: "card_number", placeholder: '半角数字のみ', type: "text", maxlength: "16"
               .card__list
                 .card__list__picture
                   = image_tag "logo_visa.gif", width:"34",height:"22"
@@ -23,7 +23,7 @@
               %span.require__form 必須
               .select__box
                 .select__box__half
-                  %select.select__default#payment_card_month{name: "payment_card_month", type: "text"}
+                  %select#exp_month{class: "select__default",name: "exp_month", type: "text"}
                     %option{value: ""} --
                     %option{value: "1"}01
                     %option{value: "2"}02
@@ -40,7 +40,7 @@
                   %span 月
                 .select__box__half
                   .icon
-                  %select.select__default#payment_card_year{name: "payment_card_year", type: "text"}
+                  %select#exp_year{class: "select__defaultname",name: "exp_year", type: "text"}
                     %option{value: ""} --
                     %option{value: "2020"}20
                     %option{value: "2021"}21
@@ -57,13 +57,14 @@
             .form__content.top__contents
               %label セキュリティーコード
               %span.require__form 必須
-              = text_field_tag "payment_card_cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "payment_card_cvc"
+              = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+              #card_token
               .single__code
                 .single__code__text
                   %span.form__question ? 
                   %span カードの裏面の番号とは？
             .add
-              = submit_tag "登録する", class: "add__btn", id: "payment_card_submit-button"
+              = submit_tag "登録する", class: "add__btn", id: "token_submit"
     = render "mypages/navlists"
   = render "mypages/aside"
   = render "mypages/footer"
