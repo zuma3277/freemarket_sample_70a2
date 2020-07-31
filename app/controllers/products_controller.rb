@@ -31,11 +31,11 @@ class ProductsController < ApplicationController
 
   def show
     @products = Product.order('created_at DESC').find(params[:id])
-    @size = Size.find(@products.size_id)
-    @product_condition = Product_condition.find(@products.product_condition_id)
-    @delivery_fee = Delivery_fee.find(@products.delivery_fee_id)
-    @prefecture = Prefecture.find(@products.prefecture_id)
-    @delivery_days = Delivery_days.find(@products.delivery_days_id)
+    @size = @products.size.name
+    @product_condition = @products.product_condition.name
+    @delivery_fee = @products.delivery_fee.name
+    @prefecture = @products.prefecture.name
+    @delivery_days = @products.delivery_days.name
   end
 
   def destroy

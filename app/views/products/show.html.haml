@@ -34,13 +34,13 @@
         .item__box--photos
           .main
             .main__image
-          - if @products.images.attached?
-            -  @products.images.each do |image|
-              = image_tag image, class: "main__image--pic", height: "346px"
-              .sub__images
-                = image_tag image, class: "sub__images--pic-1", height: "87px"
-                = image_tag image, class: "sub__images--pic-2", height: "87px"
-                = image_tag image, class: "sub__images--pic-3", height: "87px"
+              - if @products.images.attached?
+                -  @products.images.each do |image|
+                  = image_tag image, class: "main__image--pic", height: "346px"
+                  .sub__images
+                    = image_tag image, class: "sub__images--pic-1", height: "87px"
+                    = image_tag image, class: "sub__images--pic-2", height: "87px"
+                    = image_tag image, class: "sub__images--pic-3", height: "87px"
         .item__box--price
           %span
             ¥
@@ -86,24 +86,24 @@
               %tr
                 %th 商品のサイズ
                 %td
-                  = @size.name
+                  = @size
               %tr
                 %th 商品の状態
                 %td 
-                  = @product_condition.name
+                  = @product_condition
               %tr
                 %th 配送料の負担
                 %td 
-                  = @delivery_fee.name
+                  = @delivery_fee
               %tr
                 %th 発送元の地域
                 %td
                   = link_to "#", class:"prefectures" do
-                    = @prefecture.name
+                    = @prefecture
               %tr
                 %th 発送日の目安
                 %td 
-                  = @delivery_days.name
+                  = @delivery_days
         .item__box--option
           .like
             = icon('fa', 'star', class: 'like__icon')
