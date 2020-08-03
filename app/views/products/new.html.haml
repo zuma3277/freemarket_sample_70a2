@@ -87,7 +87,7 @@
               商品の状態
             %span.required
               必須
-          = f.collection_select(:product_condition_id, Product_condition.all, :id, :name,{include_blank: "---"}, {class: "main_details__status-select"})
+          = f.collection_select(:product_condition_id, ProductCondition.all, :id, :name,{include_blank: "---"}, {class: "main_details__status-select"})
           .error-messages#error-condition
 
       .main_delivery
@@ -100,7 +100,7 @@
             %span.required
               必須
           .main_delivery__fee-select
-            = f.collection_select(:delivery_fee_id, Delivery_fee.all, :id, :name,{include_blank: "---"}, {class: "delivery-fee"})
+            = f.collection_select(:delivery_fee_id, DeliveryFee.all, :id, :name,{include_blank: "---"}, {class: "delivery-fee"})
           .error-messages#error-deliverycost
 
         .main_delivery__area
@@ -120,7 +120,7 @@
             %span.required
               必須
           .main_delivery__days-select
-            = f.collection_select(:delivery_days_id, Delivery_days.all, :id, :name,{include_blank: "---"}, {class: "days"})
+            = f.collection_select(:delivery_days_id, DeliveryDays.all, :id, :name,{include_blank: "---"}, {class: "days"})
           .error-messages#error-delivery_days
 
       .main_price

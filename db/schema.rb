@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "ensure_password", default: "", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
@@ -141,6 +142,5 @@ ActiveRecord::Schema.define(version: 2020_07_18_132507) do
   add_foreign_key "favorite_products", "products"
   add_foreign_key "favorite_products", "users"
   add_foreign_key "products", "categories"
-
   add_foreign_key "products", "users"
 end
