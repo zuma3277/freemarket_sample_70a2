@@ -31,6 +31,7 @@ class ProductsController < ApplicationController
 
   def show
     @products = Product.order('created_at DESC').find(params[:id])
+    @categorys = Category.all
     @size = @products.size.name
     @product_condition = @products.product_condition.name
     @delivery_fee = @products.delivery_fee.name

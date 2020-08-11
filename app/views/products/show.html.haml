@@ -71,14 +71,11 @@
               %tr
                 %th カテゴリー
                 %td
-                  = link_to "#", class:"big-category" do
-                    大カテゴリー
+                  = link_to @categorys.find(@products.category_id).parent.parent.name
                   %br/
-                  = link_to "#", class:"middle-category" do
-                    中カテゴリー
+                  = link_to @categorys.find(@products.category_id).parent.name
                   %br/
-                  = link_to "#", class:"small-category" do
-                    小カテゴリー
+                  = link_to @categorys.find(@products.category_id).name
               %tr
                 %th ブランド
                 %td
