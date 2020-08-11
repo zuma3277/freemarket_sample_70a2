@@ -71,11 +71,11 @@
               %tr
                 %th カテゴリー
                 %td
-                  = link_to @categorys.find(@products.category_id).parent.parent.name
+                  = @products.category.parent.parent.name
                   %br/
-                  = link_to @categorys.find(@products.category_id).parent.name
+                  = @products.category.parent.name
                   %br/
-                  = link_to @categorys.find(@products.category_id).name
+                  = @products.category.name
               %tr
                 %th ブランド
                 %td
