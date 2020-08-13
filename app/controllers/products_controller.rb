@@ -30,13 +30,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @products = Product.order('created_at DESC').find(params[:id])
-    @categorys = @products.category
-    @size = @products.size.name
-    @product_condition = @products.product_condition.name
-    @delivery_fee = @products.delivery_fee.name
-    @prefecture = @products.prefecture.name
-    @delivery_days = @products.delivery_days.name
+    @product = Product.find(params[:id])
+    @category = @product.category
+    @size = @product.size.name
+    @product_condition = @product.product_condition.name
+    @delivery_fee = @product.delivery_fee.name
+    @prefecture = @product.prefecture.name
+    @delivery_days = @product.delivery_days.name
   end
 
   def destroy
