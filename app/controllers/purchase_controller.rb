@@ -6,15 +6,14 @@ class PurchaseController < ApplicationController
     @post_address =  current_user.city + current_user.address
     @post_name = current_user.destination_family_name + current_user.destination_first_name
     card = CreditCard.where(user_id: current_user.id).first
-    
+
     if card.blank?
-      
+
       redirect_to controller: "creditcard", action: "new"
     else
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-      
+
       customer = Payjp::Customer.retrieve(card.customer_id)
-     
       @default_card_information = customer.cards.retrieve(card.card_id)
       customer_card = customer.cards.retrieve(card.card_id)
       @card_brand = customer_card.brand

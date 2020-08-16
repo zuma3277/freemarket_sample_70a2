@@ -4,23 +4,23 @@
   %nav.root
     .root__lists
       %li
-        = link_to "#", class: "root__lists--top-page" do
+        = link_to root_path, class: "root__lists--top-page" do
           FURIMA
       %li
         = icon('fa', 'angle-right', class: 'root__lists__icon')
       %li
         = link_to "#", class: "root__lists--big-category" do
-          大カテゴリー
+          = @product.category.parent.parent.name
       %li
         = icon('fa', 'angle-right', class: 'root__lists__icon')
       %li
         = link_to "#", class: "root__lists--middle-category" do
-          中カテゴリー
+          = @product.category.parent.name
       %li
         = icon('fa', 'angle-right', class: 'root__lists__icon')
       %li
         = link_to "#", class: "root__lists--small-category" do
-          小カテゴリー
+          = @product.category.name
       %li
         = icon('fa', 'angle-right', class: 'root__lists__icon')
       %li
@@ -144,7 +144,6 @@
                   = icon('fa', 'star', class: 'item__info__icon')
                   0
                 %p (税込)
-                
   = render "mypages/aside"
   = render "mypages/footer"
   = render "mypages/exhibition_icon"
