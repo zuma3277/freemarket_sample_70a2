@@ -220,4 +220,4 @@ Things you may want to cover:
 |shipment |string|null: false|
 
 ### Association
-- has_many :products
+- has_many :products# freemarket_sample_70a
