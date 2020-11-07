@@ -1,4 +1,4 @@
-server '54.65.217.158', user: 'ec2-user', roles: %w{app db web}
+server '18.176.44.248', user: 'ec2-user', roles: %w{app db web}
 
 # Basic認証を本番環境のみに適用する
 set :rails_env, "production"
