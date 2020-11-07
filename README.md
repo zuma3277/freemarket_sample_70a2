@@ -222,3 +222,4 @@ Things you may want to cover:
 ### Association
 - has_many :products# freemarket_sample_70a
 # freemarket_sample_70a
+# freemarket_sample_70a
