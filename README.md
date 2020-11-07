@@ -224,3 +224,5 @@ test
 - has_many :products# freemarket_sample_70a
 # freemarket_sample_70a
 # freemarket_sample_70a
+# freemarket_sample_70a
+# freemarket_sample_70a2
